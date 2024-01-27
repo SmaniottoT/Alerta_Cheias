@@ -1,0 +1,218 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: KoHo;
+}
+
+body {
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.DivPai {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 100vw;
+  height: 100vh;
+  background: url("/assets/4071457.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  margin: 0;
+}
+
+.Painel_Esquerda {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  height: 50%;
+  background: rgba(47, 60, 92, 0.8);
+  opacity: 1;
+  position: relative;
+  border-radius: 100px;
+  box-shadow: 10px 10px 40px rgba(0, 0, 0, 1);
+}
+
+.Painel_Esquerda_Titulo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  height: 20%;
+  color: rgba(255, 255, 255, 1);
+  font-weight: Bold;
+  font-size: 35px;
+  opacity: 1;
+
+  margin: 10px;
+}
+
+.Painel_Esquerda_Input_Titulo {
+  width: 90%;
+  color: rgba(255, 255, 255, 1);
+  font-weight: Bold;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+  margin: 5px;
+  margin-left: 40px;
+}
+
+.Painel_Esquerda_Input {
+  width: 90%;
+  height: 10%;
+  background: rgba(75, 125, 176, 0.800000011920929);
+  opacity: 1;
+
+  overflow: hidden;
+  margin: 10px;
+
+  box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.800000011920929);
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
+
+.Painel_Esquerda_NivelDoRio {
+  width: 90%;
+  color: rgba(255, 255, 255, 1);
+  font-weight: Bold;
+  font-size: 40px;
+  opacity: 1;
+  text-align: center;
+  margin: 10px;
+}
+
+/* DIREITA */
+
+.Painel_Direita {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  height: 50%;
+  background: rgba(47, 60, 92, 0.8);
+  opacity: 1;
+  position: relative;
+  border-radius: 100px;
+  box-shadow: 10px 10px 40px rgba(0, 0, 0, 1);
+}
+
+.Painel_Direita_Titulo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  height: 20%;
+  color: rgba(255, 255, 255, 1);
+  font-weight: Bold;
+  font-size: 35px;
+  opacity: 1;
+  margin: 10px;
+}
+
+.User_Input_Titulo {
+  width: 90%;
+  color: rgba(255, 255, 255, 1);
+  font-weight: Bold;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+  margin: 5px;
+  margin-left: 40px;
+}
+
+.User_Input {
+  width: 90%;
+  height: 10%;
+  background: rgba(75, 125, 176, 0.800000011920929);
+  opacity: 1;
+
+  overflow: hidden;
+  margin: 5px;
+
+  box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.800000011920929);
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
+
+.User_Password_Input_Titulo {
+  width: 90%;
+  color: rgba(255, 255, 255, 1);
+  font-weight: Bold;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+  margin: 5px;
+  margin-left: 40px;
+}
+
+.User_Password_Input {
+  width: 90%;
+  height: 10%;
+  background: rgba(75, 125, 176, 0.800000011920929);
+  opacity: 1;
+
+  overflow: hidden;
+  margin: 5px;
+
+  box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.800000011920929);
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
+
+.Botão_Login {
+  width: 50%;
+  color: rgba(255, 255, 255, 1);
+  background: rgba(75, 125, 176, 0.8);
+  opacity: 1;
+  border-radius: 100px;
+  box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  font-weight: Bold;
+  font-size: 25px;
+  opacity: 1;
+  text-align: center;
+  margin: 10px;
+}
+
+.Links_Login {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.Botão_EsqueciMinhaSenha {
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: rgba(255, 255, 255, 1);
+  font-weight: Bold;
+  font-size: 15px;
+  opacity: 1;
+  text-align: left;
+  margin: 5px;
+}
+
+.Botão_SignUp {
+  width: 100%;
+  color: rgba(255, 255, 255, 1);
+  font-weight: Bold;
+  font-size: 15px;
+  opacity: 1;
+  text-align: left;
+  margin: 5px;
+}
