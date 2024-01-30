@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <link href="https://fonts.googleapis.com/css?family=KoHo&display=swap" rel="stylesheet" />
     <link href="../style/login.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -22,6 +23,19 @@
         <div class="Painel_Esquerda">
 
             <div class="Painel_Esquerda_Titulo">RIVER LEVEL</div>
+
+            <div class="Painel_Esquerda_Input_Titulo">STATE</div>
+
+            <div class="dropdown">
+                <button onclick="toggleDropdown()" class="dropbtn">Selecione seu estado</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="#">Santa Catarina</a>
+                    <a href="#">São Paulo</a>
+                    <a href="#">Rio de Janeiro</a>
+                </div>
+
+            </div>
+
             <div class="Painel_Esquerda_Input_Titulo">CITY</div>
 
             <div class="dropdown">
@@ -35,7 +49,7 @@
             </div>
 
             <div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="white" class="bi bi-water"
+                <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="white" class="bi bi-water"
                     viewBox="0 0 16 16">
                     <path
                         d="M.036 3.314a.5.5 0 0 1 .65-.278l1.757.703a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.757-.703a.5.5 0 1 1 .372.928l-1.758.703a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0L.314 3.964a.5.5 0 0 1-.278-.65m0 3a.5.5 0 0 1 .65-.278l1.757.703a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.757-.703a.5.5 0 1 1 .372.928l-1.758.703a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0L.314 6.964a.5.5 0 0 1-.278-.65m0 3a.5.5 0 0 1 .65-.278l1.757.703a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.757-.703a.5.5 0 1 1 .372.928l-1.758.703a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0L.314 9.964a.5.5 0 0 1-.278-.65m0 3a.5.5 0 0 1 .65-.278l1.757.703a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.757-.703a.5.5 0 1 1 .372.928l-1.758.703a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.757-.703a.5.5 0 0 1-.278-.65" />
@@ -53,7 +67,7 @@
 
             <div class="Input">
 
-                <input type="text" class="Input_Text" /> <!-- AGORA É UM INPUT -->
+                <input type="text" class="Input_Text" />
 
             </div>
 
@@ -62,13 +76,13 @@
 
 
             <div class="Input">
-                <input type="password" class="Input_Text" /> <!-- AGORA É UM INPUT DO TIPO SENHA -->
+                <input type="password" class="Input_Text" />
             </div>
 
 
             <button class="Botão_Login" id="oneClickButton" onclick="buttonClick()">
                 <span class="Login_Text">LOGIN</span>
-            </button> <!-- AGORA É UM BOTÃO -->
+            </button>
             <div class="Links_Login">
                 <div class="Botão_SignUp">SIGN UP</div>
 
@@ -80,6 +94,29 @@
 
     </div>
 
+    <footer>
+        <div class="Background_Footer">
+
+
+            <a class="Logo_Icon" href="#" target="_blank" > <img src="/Alerta_Cheia/assets/Logo_01_SemFundo.png" alt="Alerta Cheias" height="35px"  ></a>
+          
+            <a href="#">&copy; 2024 AlertaCheias</a>
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+            <a href="#">Docs</a>
+            <a href="#">Contact</a>
+            <a href="#">All rights reserved </a>
+            
+
+            <button class="Botão_FAQ" id="oneClickButton" onclick="buttonClick()">
+                <span class="Login_Text">FAQ</span>
+            </button>
+
+
+        </div>
+
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
@@ -88,6 +125,8 @@
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </body>
+
+
 
 
 </html>

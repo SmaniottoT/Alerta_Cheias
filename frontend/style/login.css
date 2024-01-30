@@ -14,14 +14,15 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   width: 100vw;
-  height: 100vh;
+  height: 95vh;
   background: url("/Alerta_Cheia/assets/4071457.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   margin: 0;
+
 }
 
 .Painel_Esquerda {
@@ -36,7 +37,9 @@ body {
   position: relative;
   border-radius: 100px;
   box-shadow: 10px 10px 40px rgba(0, 0, 0, 1);
+
 }
+
 
 .Painel_Esquerda_Titulo {
   display: flex;
@@ -81,7 +84,7 @@ body {
   width: 90%;
   color: rgba(255, 255, 255, 1);
   font-weight: Bold;
-  font-size: 40px;
+  font-size: 35px;
   opacity: 1;
   text-align: center;
   margin: 10px;
@@ -101,8 +104,7 @@ body {
   position: relative;
   border-radius: 100px;
   box-shadow: 10px 10px 40px rgba(0, 0, 0, 1);
-  padding: 0px;
-  margin: 10px;
+
 }
 
 .Painel_Direita_Titulo {
@@ -118,6 +120,8 @@ body {
   opacity: 1;
   margin: 10px;
 }
+
+
 
 .User_Input_Titulo {
   width: 90%;
@@ -152,6 +156,7 @@ body {
   width: 90%;
   height: 90%;
   border: 0;
+  font-size: 20px;
   margin-left: 10px;
 }
 
@@ -172,8 +177,8 @@ input:focus {
 }
 
 .Botão_Login {
-  width: 70%;
-  height: 50%;
+  width: 50%;
+  height: 10%;
   color: rgba(255, 255, 255, 1);
   background: rgba(75, 125, 176, 0.8);
   opacity: 1;
@@ -191,7 +196,7 @@ input:focus {
   justify-content: center;
 }
 
-.Login_Text{
+.Login_Text {
   margin: 5px;
 }
 
@@ -216,7 +221,7 @@ input:focus {
   width: 100%;
   color: rgba(255, 255, 255, 1);
   font-weight: Bold;
-  font-size: 10px;
+  font-size: 15px;
   opacity: 1;
   text-align: center;
   margin: 5px;
@@ -226,8 +231,50 @@ input:focus {
   width: 100%;
   color: rgba(255, 255, 255, 1);
   font-weight: Bold;
-  font-size: 10px;
+  font-size: 15px;
   opacity: 1;
   text-align: center;
   margin: 5px;
+}
+
+
+
+.Background_Footer {
+  width: 100vw;
+  height: 5vh;
+  background-color: rgba(43, 50, 76);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-top: 5px;
+
+}
+
+
+.Botão_FAQ {
+  width: 4%;
+  height: 90%;
+  color: rgba(255, 255, 255, 1);
+  background: rgba(75, 125, 176, 0.8);
+  opacity: 1;
+  border-radius: 100px;
+  box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.8);
+  overflow: visible;
+  font-weight: Bold;
+  font-size: 20px;
+  opacity: 1;
+  border: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Botão_FAQ:hover {
+  background-color: rgba(75, 125, 176);
+}
+
+.Botão_FAQ:active {
+  background-color: rgba(75, 125, 176, 0.20);
 }

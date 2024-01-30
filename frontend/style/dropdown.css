@@ -7,13 +7,19 @@
 }
 
 .dropdown {
-    position: relative;
-    display: inline-block;
 
+    position: relative;
+    display: flex;
+
+    
+    justify-content: center;
+    width: 90%;
+    
 }
 
 .dropbtn {
     
+    width: 90%;
     padding: 10px;
     font-size: 16px;
     border: none;
@@ -33,21 +39,25 @@
 }
 
 .dropdown-content {
+    width: 90%;
+    margin-top: 45px;
     display: none;
-    position: relative;
+    position: absolute;
     min-width: 160px;
     z-index: 1;
+    
 }
 
 .dropdown-content a {
+    
     color: rgba(255, 255, 255, 1);
     padding: 12px 16px;
     text-decoration: none;
     display: block;
     text-align: center;
+    background-color: rgb(63, 113, 163);
 
-
-    box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.800000011920929);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.800000011920929);
     border-top-left-radius: 100px;
     border-top-right-radius: 100px;
     border-bottom-left-radius: 100px;
@@ -57,10 +67,11 @@
 }
 
 .dropdown-content a:hover {
-    background-color: rgb(63, 113, 163);
+    background-color: rgb(50, 99, 148);
 }
 
 /* Exibir o dropdown quando o botão é clicado */
 .show {
+    
     display: block;
 }
