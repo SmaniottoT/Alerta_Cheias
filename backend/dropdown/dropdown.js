@@ -1,9 +1,13 @@
 // JavaScript (script.js)
-function toggleDropdown() {
-    var dropdown = document.getElementById("myDropdown");
+function toggleDropdownState() {
+    var dropdown = document.getElementById("DropdownState");
     dropdown.classList.toggle("show");
 }
 
+function toggleDropdownCity() {
+    var dropdown = document.getElementById("DropdownCity");
+    dropdown.classList.toggle("show");
+}
 // Fechar o dropdown se o usuário clicar fora dele
 window.onclick = function(event) {
     if (!event.target.matches('.dropbtn')) {
