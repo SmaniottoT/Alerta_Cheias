@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +9,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <!-- Adicione o link para a biblioteca Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.18.1/font/bootstrap-icons.css">
+    
 </head>
-
 <body>
     <div class="navbar">
         <img src="/Alerta_Cheia/assets/ALERTA CHEIAS logo1testecorte.png" alt="Logo">
@@ -21,23 +20,69 @@
             <div class="image-box"></div>
             <div class="image-box"></div>
         </div>
-        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="60" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-        </svg>
+        <button id="userButton" class="icon-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="60" fill="currentColor" class="iconeUser" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+            </svg>
+        </button>
     </div>
 
     <div class="main-section">
-        <!-- Conteúdo da seção principal aqui -->
+        <!-- Div para conter o mapa -->
+        <div id="map"></div>
     </div>
-
-    <!-- Ícone de ajuda -->
-    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-question-circle-fill help-icon" viewBox="0 0 16 16">
-        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247m2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"/>
-    </svg>
 
     <!-- Adicione o link para a biblioteca Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
 
+    <!-- Carregamento da API do Google Maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=SUACHAVEDEAPI&callback=initMap" async defer></script>
+    <!-- Substitua SUACHAVEDEAPI pela sua chave de API do Google Maps -->
+
+    <footer>
+        <div class="Background_Footer">
+            <div class="Footer_Logo_Box">
+                <img src="/Alerta_Cheia/assets/ALERTA CHEIAS logo1testecorte.png" alt="Alerta Cheias" height="40px">
+            </div>
+            <div class="Footer_Text_Box">
+                <a class="custom-no-underline" href="#">&copy; 2024 AlertaCheias</a>
+                <a class="custom-no-underline" href="/Alerta_Cheia/frontend/pages/footer_pages/terms.html">Terms</a>
+                <a class="custom-no-underline" href="/Alerta_Cheia/frontend/pages/footer_pages/privacy.html">Privacy</a>
+                <a class="custom-no-underline" href="/Alerta_Cheia/frontend/pages/footer_pages/docs.html">Docs</a>
+                <a class="custom-no-underline" href="/Alerta_Cheia/frontend/pages/footer_pages/contact.html">Contact</a>
+                <a class="custom-no-underline" href="#">All rights reserved </a>
+            </div>
+            <div class="Footer_FAQ_Box">
+                <button class="Botão_FAQ" id="FAQ_Button" fill="currentColor" onclick="buttonClick()">
+                    <a class="FAQ_Text" href="/Alerta_Cheia/frontend/pages/footer_pages/FAQ.html" >FAQ</a>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Função de inicialização do mapa
+        function initMap() {
+            // Coordenadas do centro do mapa (exemplo: Rio de Janeiro)
+            var rioDeJaneiro = {lat: -22.9068, lng: -43.1729};
+
+            // Opções do mapa
+            var mapOptions = {
+                center: rioDeJaneiro,
+                zoom: 13
+            };
+
+            // Criação do mapa
+            var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+            // Adiciona um marcador
+            var marker = new google.maps.Marker({
+                position: rioDeJaneiro,
+                map: map,
+                title: 'Rio de Janeiro'
+            });
+        }
+    </script>
+</body>
 </html>
