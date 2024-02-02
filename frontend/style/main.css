@@ -156,6 +156,30 @@ body {
     font-size: 15px;
 }
 
+.abaPrimeira {
+    position: absolute;
+    top: calc(110% - 15px); /* Posiciona a aba 30px abaixo do topo do elemento pai */
+    left: -10px; /* Expande a aba para a esquerda */
+    width: calc(10% + 20px); /* Expande a aba para os lados */
+    height: 60px;
+    background-color: rgba(75, 125, 176, 0.8);
+    border-top-left-radius: 30px; /* Arredonda a borda superior esquerda */
+    border-bottom-left-radius: 30px; /* Arredonda a borda inferior esquerda */
+    z-index: 1000; /* Certifique-se de que esteja acima de outros elementos, se necessário */
+}
+
+.abaPrimeira::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; /* Posiciona o pseudo-elemento 2px abaixo da borda inferior */
+    left: -10px; /* Expande o pseudo-elemento para a esquerda */
+    width: calc(100% + 20px); /* Expande o pseudo-elemento para os lados */
+    height: 2px; /* Altura da "borda" apagada */
+    background-color: rgba(75, 125, 176, 0.8); /* Cor da "borda" apagada */
+    z-index: -1; /* Coloca o pseudo-elemento atrás do elemento principal */
+}
+
+
 @media (max-width: 768px) {
     /* Estilos para telas menores ou iguais a 768px */
     .navbar {
