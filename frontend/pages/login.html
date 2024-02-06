@@ -11,6 +11,7 @@
     <script src="/Alerta_Cheia/backend/dropdown/dropdown.js" defer></script>
     <script src="/Alerta_Cheia/backend/loginFunction.js" defer></script>
     <script src="/Alerta_Cheia/backend/FAQFunction.js" defer></script>
+    <script src="/Alerta_Cheia/backend/SelectorFunction.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
@@ -29,24 +30,27 @@
         <div class="DivBody">
             <div class="Painel_Esquerda">
                 <div class="Painel_Esquerda_Titulo">RIVER LEVEL</div>
+
+
                 <div class="Painel_Esquerda_Input_Titulo">STATE</div>
-                <div class="dropdown">
-                    <button onclick="toggleDropdownState()" class="dropbtn">Selecione seu estado</button>
-                    <div id="DropdownState" class="dropdown-content">
-                        <a href="#">Santa Catarina</a>
-                        <a href="#">São Paulo</a>
-                        <a href="#">Rio de Janeiro</a>
-                    </div>
-                </div>
+
+                <!-- SELETOR ESTADO -->
+                <select id="State" class="form-select dropbtn" aria-label="Default select example">
+                    <option selected>Select your state </option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="RJ">Rio de Janeiro</option>
+
+                </select>
+
                 <div class="Painel_Esquerda_Input_Titulo">CITY</div>
-                <div class="dropdown">
-                    <button onclick="toggleDropdownCity()" class="dropbtn">Selecione sua cidade</button>
-                    <div id="DropdownCity" class="dropdown-content">
-                        <a href="#">Timbó</a>
-                        <a href="#">Indaial</a>
-                        <a href="#">Blumenau</a>
-                    </div>
-                </div>
+
+                <!-- SELETOR CIDADE -->
+                <select id="City" class="form-select dropbtn" aria-label="Default select example">
+                    <option selected>Select your city </option>
+                  
+
+                </select>
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="white" class="bi bi-water"
                         viewBox="0 0 16 16">
@@ -77,6 +81,8 @@
             </div>
         </div>
     </div>
+
+
     <footer>
         <div class="Background_Footer">
             <div class="Footer_Logo_Box">
