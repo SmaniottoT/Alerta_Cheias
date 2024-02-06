@@ -13,14 +13,14 @@
 
     justify-content: center;
     width: 90%;
-    
+
 }
 
 .dropbtn {
-    
+
     width: 90%;
     padding: 10px;
-    font-size: 16px;
+
     border: none;
     cursor: pointer;
 
@@ -35,6 +35,9 @@
     border-bottom-left-radius: 100px;
     border-bottom-right-radius: 100px;
 
+
+    font-size: 16px;
+
 }
 
 .dropdown-content {
@@ -44,11 +47,11 @@
     position: absolute;
     min-width: 160px;
     z-index: 1;
-    
+
 }
 
 .dropdown-content a {
-    
+
     color: rgba(255, 255, 255, 1);
     padding: 12px 16px;
     text-decoration: none;
@@ -71,6 +74,77 @@
 
 /* Exibir o dropdown quando o botão é clicado */
 .show {
-    
+
     display: block;
+}
+
+
+@media screen and (max-width: 430px) {
+
+    .dropbtn {
+
+        width: 90%;
+        height: 4vh;
+        padding: 10px;
+
+        border: none;
+        cursor: pointer;
+
+        background: rgba(75, 125, 176, 0.800000011920929);
+        opacity: 1;
+
+        overflow: visible;
+
+        box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.800000011920929);
+        border-top-left-radius: 100px;
+        border-top-right-radius: 100px;
+        border-bottom-left-radius: 100px;
+        border-bottom-right-radius: 100px;
+
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 20px;
+
+    }
+  
+
+    /* Itens do Dropdown */
+    .dropdown-content a {
+
+   
+        color: rgba(255, 255, 255, 1);
+        padding: 2px 16px;
+
+        text-decoration: none;
+        display: block;
+        text-align: center;
+        background-color: rgb(63, 113, 163);
+
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.800000011920929);
+        border-top-left-radius: 100px;
+        border-top-right-radius: 100px;
+        border-bottom-left-radius: 100px;
+        border-bottom-right-radius: 100px;
+
+        font-size: 20px;
+
+
+    }
+
+    .dropdown-content a:hover {
+        background-color: rgb(50, 99, 148);
+    }
+
+    /* Exibir o dropdown quando o botão é clicado */
+    .show {
+
+        display: block;
+    }
+
+
+
+
 }

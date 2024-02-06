@@ -11,6 +11,8 @@
     <script src="/Alerta_Cheia/backend/dropdown/dropdown.js" defer></script>
     <script src="/Alerta_Cheia/backend/loginFunction.js" defer></script>
     <script src="/Alerta_Cheia/backend/FAQFunction.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
     <title>ALERTA CHEIAS</title>
 
@@ -20,8 +22,9 @@
     <div class="DivBackground">
         <div class="DivLogo">
 
-            <img class="Logo" src="/Alerta_Cheia/assets/Logo_01_SemFundo.png" alt="LogoIcon_AlertaCheias" height="80px" width="130">
-        
+            <img class="Logo" src="/Alerta_Cheia/assets/Logo_01_SemFundo.png" alt="LogoIcon_AlertaCheias" height="80px"
+                width="130">
+
         </div>
         <div class="DivBody">
             <div class="Painel_Esquerda">
@@ -67,8 +70,9 @@
                     <span class="Login_Text">LOGIN</span>
                 </button>
                 <div class="Links_Login">
-                    <div class="Botão_SignUp">SIGN UP</div>
-                    <div class="Botão_EsqueciMinhaSenha">FORGOT PASSWORD</div>
+                    <a href="/Alerta_Cheia/frontend/pages/signUp.html" class="Botão_SignUp">SIGN UP</a>
+                    <a href="#" class="Botão_EsqueciMinhaSenha">FORGOT PASSWORD</a>
+
                 </div>
             </div>
         </div>
@@ -76,8 +80,8 @@
     <footer>
         <div class="Background_Footer">
             <div class="Footer_Logo_Box">
-                <a href="/Alerta_Cheia/frontend/pages/login.html" > <img src="/Alerta_Cheia/assets/Logo_01_SemFundo.png"
-                        alt="Alerta Cheias" height="35px"></a>
+                <a href="/Alerta_Cheia/frontend/pages/login.html"> <img class="Footer_Logo_Image"
+                        src="/Alerta_Cheia/assets/Logo_01_SemFundo.png" alt="Alerta Cheias" height="35px"></a>
             </div>
             <div class="Footer_Text_Box">
                 <a class="custom-no-underline" href="#">&copy; 2024 AlertaCheias</a>
@@ -85,11 +89,11 @@
                 <a class="custom-no-underline" href="/Alerta_Cheia/frontend/pages/footer_pages/privacy.html">Privacy</a>
                 <a class="custom-no-underline" href="/Alerta_Cheia/frontend/pages/footer_pages/docs.html">Docs</a>
                 <a class="custom-no-underline" href="/Alerta_Cheia/frontend/pages/footer_pages/contact.html">Contact</a>
-                <a class="custom-no-underline" href="#">All rights reserved </a>
+
             </div>
             <div class="Footer_FAQ_Box">
                 <button class="Botão_FAQ" id="FAQ_Button" onclick="buttonClick()">
-                    <a class="FAQ_Text" href="/Alerta_Cheia/frontend/pages/footer_pages/FAQ.html" >FAQ</a>
+                    <a class="FAQ_Text" href="/Alerta_Cheia/frontend/pages/footer_pages/FAQ.html">FAQ</a>
                 </button>
             </div>
         </div>
