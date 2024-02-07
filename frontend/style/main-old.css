@@ -1,0 +1,209 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url("/Alerta_Cheia/assets/4071457.jpg");
+    position: relative;
+}
+
+.navbar {
+    background: rgba(75, 125, 176, 0.8);
+    height: 130px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-bottom: 0;
+    border-bottom: 2px solid #fff; /* Adiciona uma borda na parte inferior da barra de navegação */
+}
+
+.container-options {
+    display: flex;
+    align-items: center;
+    background: rgba(75, 125, 176, 0.8);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.image-box {
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 80px;
+    background-color: #fff;
+    margin-right: 10px;
+}
+
+.main-section {
+    display: flex;
+    align-items: center;
+    margin-top: 150px; /* Desloca o conteúdo abaixo da barra de navegação */
+    margin-bottom: 50px; /* Desloca o conteúdo acima do footer */
+    padding: 20px;
+    background: rgba(75, 125, 176, 0.8);
+    border-radius: 10px; /* Adiciona bordas arredondadas */
+    width: 80%; /* Defina a largura desejada */
+    max-width: 800px; /* Defina a largura máxima, se desejar */
+    margin-left: auto; /* Centraliza à esquerda */
+    margin-right: auto; /* Centraliza à direita */
+}
+
+.navbar img {
+    width: 150px; /* Ajuste o tamanho conforme necessário */
+    margin: 15px; /* Remova as margens antigas */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Adicione um espaçamento interno */
+}
+
+#userButton {
+            cursor: pointer;
+        }
+
+.icon-button {
+            background: none;
+            border: none;
+            padding: 0;
+            margin: 0;
+            color: white;
+            padding: 20px;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+.Background_Footer {
+    width: 100vw;
+    height: 5vh;
+    background-color: rgba(43, 50, 76);
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    position: fixed;
+    bottom: 0;
+}
+
+.Footer_Logo_Box {
+    width: 10vw;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.Footer_Text_Box {
+    width: 80vw;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0px 25%;
+}
+
+.custom-no-underline {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.Footer_FAQ_Box {
+    width: 10vw;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Botão_FAQ {
+    width: 50%;
+    height: 90%;
+    font-weight: Bold;
+    font-size: 20px;
+    color: white;
+    background: rgba(75, 125, 176, 0.8);
+    box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.8);
+    opacity: 1;
+    border-radius: 100px;
+    overflow: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+}
+
+.Botão_FAQ:hover {
+    background-color: rgba(75, 125, 176);
+}
+
+.Botão_FAQ:active {
+    background-color: rgba(75, 125, 176, 0.2);
+}
+
+.FAQ_Text {
+    font-size: 15px;
+}
+
+.abaPrimeira {
+    position: absolute;
+    top: calc(110% - 15px); /* Posiciona a aba 30px abaixo do topo do elemento pai */
+    left: -10px; /* Expande a aba para a esquerda */
+    width: calc(10% + 20px); /* Expande a aba para os lados */
+    height: 60px;
+    background-color: rgba(75, 125, 176, 0.8);
+    border-top-left-radius: 30px; /* Arredonda a borda superior esquerda */
+    border-bottom-left-radius: 30px; /* Arredonda a borda inferior esquerda */
+    z-index: 1000; /* Certifique-se de que esteja acima de outros elementos, se necessário */
+}
+
+.abaPrimeira::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; /* Posiciona o pseudo-elemento 2px abaixo da borda inferior */
+    left: -10px; /* Expande o pseudo-elemento para a esquerda */
+    width: calc(100% + 20px); /* Expande o pseudo-elemento para os lados */
+    height: 2px; /* Altura da "borda" apagada */
+    background-color: rgba(75, 125, 176, 0.8); /* Cor da "borda" apagada */
+    z-index: -1; /* Coloca o pseudo-elemento atrás do elemento principal */
+}
+
+
+@media (max-width: 768px) {
+    /* Estilos para telas menores ou iguais a 768px */
+    .navbar {
+        height: 100px;
+        padding: 0 10px;
+    }
+
+    .navbar img {
+        width: 80px;
+    }
+
+    .container-options {
+        padding: 5px;
+    }
+
+    .image-box {
+        width: 150px;
+        height: 60px;
+        margin-right: 5px;
+    }
+
+    .main-section {
+        margin-top: 100px; /* Ajuste para corresponder à altura da navbar */
+        padding: 10px;
+    }
+}
