@@ -20,47 +20,98 @@
 
 <body>
 
-
-    <!-- NAV -->
-    <nav class="navbar">
-        <!-- BOX DO LOGO -->
-        <div class="DivLogo">
-            <!-- LOGO -->
-            <img class="Logo" src="/Alerta_Cheia/assets/Logo_01_SemFundo.png" alt="Logo">
-        </div>
-        <!-- CONTAINER IMAGENS MAPAS -->
-        <div class="container-options container text-center ContainerImagens">
-            <div class="image-box"></div>
-            <div class="image-box"></div>
-            <div class="image-box"></div>
-            <div class="image-box"></div>
-        </div>
-
-        <!-- BOX DO ICONE DO USER -->
-        <div class="DivIcone">
-            <!-- BOTAO PERFIL DO USUARIO-->
-            <button class="icon-button">
-                <!-- REFERENCIA SVG AO BOOTSTRAP -->
-                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="Icone_User" viewBox="0 0 16 16">
-                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-                    <path fill-rule="evenodd"
-                        d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
-                </svg>
-            </button>
-        </div>
-    </nav>
-
-
-    <!-- BOX PRINCIPAL -->
     <div class="DivBackground">
+        <!-- NAV -->
+        <nav class="navbar">
+            <!-- BOX DO LOGO -->
+            <div class="DivLogo">
+                <!-- LOGO -->
+                <img class="Logo" src="/Alerta_Cheia/assets/Logo_01_SemFundo.png" alt="Logo">
+            </div>
+            <div class="Div_ContainerImagens">
+                <!-- CONTAINER IMAGENS MAPAS -->
+                <div class="container-options container text-center ContainerImagens">
+                    <div class="image-box"></div>
+                    <div class="image-box"></div>
+                    <div class="image-box"></div>
+                    <div class="image-box"></div>
+                </div>
+            </div>
+            <!-- BOX DO ICONE DO USER -->
+            <div class="DivIcone">
+                <!-- NOME DO USUARIO -->
+                <span class="User_Text">Username</span>
+                <!-- BOTAO PERFIL DO USUARIO-->
+                <button class="icon-button">
+                    <!-- REFERENCIA SVG AO BOOTSTRAP -->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="Icone_User" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                        <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
 
-        <!-- MAPA PRINCIPAL -->
-        <div class="Box_Mapa">
-            <!-- INSERIR O MAPA AQUI -->
-           
+
+        <!-- BOX PRINCIPAL -->
+        <div class="DivPrincipal">
+
+            <div class="DivMapa">
+                <!-- MAPA PRINCIPAL -->
+                <div class="Box_Mapa">
+                    <!-- INSERIR O MAPA AQUI -->
+
+                </div>
+            </div>
+
+
+            <!-- DROPUPS -->
+            <div class="DropUps">
+                <!-- DROPUP RIVER LEVEL -->
+                <div class="dropup-center dropup">
+                    <button class="btn btn-secondary dropdown-toggle DropButton_Fechado" type="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        RIVER LEVEL
+                    </button>
+                    <ul class="dropdown-menu DropButton">
+                        <li><a class="dropdown-item" href="#">Info-01</a></li>
+                        <li><a class="dropdown-item" href="#">Info-02</a></li>
+                        <li><a class="dropdown-item" href="#">Info-03</a></li>
+                    </ul>
+                </div>
+
+                <!-- DROPUP DAM INFO -->
+                <div class="dropup-center dropup">
+                    <button class="btn btn-secondary dropdown-toggle DropButton_Fechado" type="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        DAM INFO
+                    </button>
+                    <ul class="dropdown-menu DropButton">
+                        <li><a class="dropdown-item" href="#">Info-01</a></li>
+                        <li><a class="dropdown-item" href="#">Info-02</a></li>
+                        <li><a class="dropdown-item" href="#">Info-03</a></li>
+                    </ul>
+                </div>
+
+                <!-- DROPUP WEATHER REPORT -->
+                <div class="dropup-center dropup">
+                    <button class="btn btn-secondary dropdown-toggle DropButton_Fechado" type="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        WEATHER REPORT
+                    </button>
+                    <ul class="dropdown-menu DropButton">
+                        <li><a class="dropdown-item" href="#">Info-01</a></li>
+                        <li><a class="dropdown-item" href="#">Info-02</a></li>
+                        <li><a class="dropdown-item" href="#">Info-03</a></li>
+                    </ul>
+                </div>
+
+
+            </div>
+
+
         </div>
-
-
     </div>
 
 
