@@ -121,7 +121,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
+
 }
 
 /* BOX AZUL DO MAPA */
@@ -136,12 +136,12 @@ body {
     align-items: center;
     justify-content: center;
 
-    
-  box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.800000011920929);
-  border-top-left-radius: 100px;
-  border-top-right-radius: 100px;
-  border-bottom-left-radius: 100px;
-  border-bottom-right-radius: 100px;
+
+    box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.800000011920929);
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
 }
 
 .MapaZero {
@@ -166,19 +166,30 @@ body {
 }
 
 
-.DropButton_Fechado {
-    background: rgba(75, 125, 176, 0.8);
-    color: #fff;
+.dropup {
+    color: white;
+    background: rgba(75, 125, 176);
+    box-shadow: inset 0px 0px 15px rgba(43, 50, 76);
+
 }
+
+
+
+
+
 
 
 .DropButton.show {
     background: rgba(75, 125, 176, 0.8);
 }
 
+.DropButton a {
+    pointer-events: none;
+}
+
 .DropButton li a {
     background: rgba(75, 125, 176, 0.8);
-    box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.8);
+
     color: rgba(255, 255, 255, 1);
     font-weight: bold;
 }

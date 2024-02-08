@@ -28,6 +28,7 @@
     <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
     <script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
     <script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+    <script src="/Alerta_Cheias/frontend/pages/UserButton.js" defer></script>
     <title>ALERTA CHEIAS</title>
 </head>
 
@@ -56,8 +57,10 @@
             <div class="DivIcone">
                 <!-- NOME DO USUARIO -->
                 <span class="User_Text">Username</span>
+
+
                 <!-- BOTAO PERFIL DO USUARIO-->
-                <button class="icon-button">
+                <button class="icon-button" id="User_Button" onclick="buttonClick()">
                     <!-- REFERENCIA SVG AO BOOTSTRAP -->
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="Icone_User" viewBox="0 0 16 16">
                         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
@@ -85,7 +88,7 @@
             <div class="DropUps">
                 <!-- DROPUP RIVER LEVEL -->
                 <div class="dropup-center dropup">
-                    <button class="btn btn-secondary dropdown-toggle DropButton_Fechado" type="button"
+                    <button class="btn dropdown-toggle DropButton_Fechado" type="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         RIVER LEVEL
                     </button>
@@ -98,7 +101,7 @@
 
                 <!-- DROPUP DAM INFO -->
                 <div class="dropup-center dropup">
-                    <button class="btn btn-secondary dropdown-toggle DropButton_Fechado" type="button"
+                    <button class="btn dropdown-toggle DropButton_Fechado" type="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         DAM INFO
                     </button>
@@ -111,7 +114,7 @@
 
                 <!-- DROPUP WEATHER REPORT -->
                 <div class="dropup-center dropup">
-                    <button class="btn btn-secondary dropdown-toggle DropButton_Fechado" type="button"
+                    <button class="btn dropdown-toggle DropButton_Fechado" type="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         WEATHER REPORT
                     </button>
