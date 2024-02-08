@@ -2,41 +2,56 @@
 <html lang="en">
 
 <head>
-
     <!-- Meta/MediaQueries -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS -->
-    <link rel="stylesheet" href="/Alerta_Cheia/frontend/style/main.css">
+    <link rel="stylesheet" href="/Alerta_Cheias/frontend/style/main.css">
     <!-- FONTES -->
     <link href="https://fonts.googleapis.com/css?family=KoHo&display=swap" rel="stylesheet" />
     <!-- Link para a biblioteca Bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.18.1/font/bootstrap-icons.css">
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"
+        defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"
+        defer></script>
+    <!-- Jquery 3.6.4 -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" defer></script>
+    <!-- JavaSript HereMaps API -->
+    <script src="/Alerta_Cheias/frontend/pages/HereMaps.js" defer></script>
+    <!-- Para linkar os dados de HereMaps API -->
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
     <title>ALERTA CHEIAS</title>
-
 </head>
 
 <body>
-
+    <!-- PLANO DE FUNDO -->
     <div class="DivBackground">
         <!-- NAV -->
         <nav class="navbar">
             <!-- BOX DO LOGO -->
             <div class="DivLogo">
                 <!-- LOGO -->
-                <img class="Logo" src="/Alerta_Cheia/assets/Logo_01_SemFundo.png" alt="Logo">
+                <img class="Logo" src="/Alerta_Cheias/assets/Logo_01_SemFundo.png" alt="Logo">
             </div>
+
             <div class="Div_ContainerImagens">
                 <!-- CONTAINER IMAGENS MAPAS -->
                 <div class="container-options container text-center ContainerImagens">
-                    <div class="image-box"></div>
-                    <div class="image-box"></div>
-                    <div class="image-box"></div>
-                    <div class="image-box"></div>
+                    <div class="map-container" id="mapa1"></div> <!-- Mapa 1 -->
+                    <div class="map-container" id="mapa2"></div> <!-- Mapa 2 -->
+                    <div class="map-container" id="mapa3"></div> <!-- Mapa 3 -->
+                    <div class="map-container" id="mapa4"></div> <!-- Mapa 4 -->
                 </div>
             </div>
+
             <!-- BOX DO ICONE DO USER -->
             <div class="DivIcone">
                 <!-- NOME DO USUARIO -->
@@ -59,9 +74,9 @@
 
             <div class="DivMapa">
                 <!-- MAPA PRINCIPAL -->
-                <div class="Box_Mapa">
-                    <!-- INSERIR O MAPA AQUI -->
-
+                <div class="Painel_Mapa">
+                    <!-- MapaZero -->
+                    <div class="MapaZero" id="mapa0"> </div>
                 </div>
             </div>
 
@@ -120,7 +135,7 @@
         <div class="Background_Footer">
             <div class="Footer_Logo_Box">
                 <a href="/Alerta_Cheia/frontend/pages/login.html"> <img class="Footer_Logo_Image"
-                        src="/Alerta_Cheia/assets/Logo_01_SemFundo.png" alt="Alerta Cheias" height="35px"></a>
+                        src="/Alerta_Cheias/assets/Logo_01_SemFundo.png" alt="Alerta Cheias" height="35px"></a>
             </div>
             <div class="Footer_Text_Box">
                 <a class="custom-no-underline" href="#">&copy; 2024 AlertaCheias</a>
@@ -138,8 +153,7 @@
         </div>
     </footer>
 
-    <!-- Link para a biblioteca Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 
 </body>
 
