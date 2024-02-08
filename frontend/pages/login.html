@@ -10,6 +10,9 @@
     <script src="/Alerta_Cheia/backend/dropdown/dropdown.js" defer></script>
     <script src="/Alerta_Cheia/backend/loginFunction.js" defer></script>
     <script src="/Alerta_Cheia/backend/FAQFunction.js" defer></script>
+    <script src="/Alerta_Cheia/backend/SelectorFunction.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
     <title>ALERTA CHEIAS</title>
 
@@ -19,30 +22,34 @@
     <div class="DivBackground">
         <div class="DivLogo">
 
-            <img class="Logo" src="/Alerta_Cheia/assets/Logo_01_SemFundo.png" alt="LogoIcon_AlertaCheias" height="80px" width="130">
-        
+            <img class="Logo" src="/Alerta_Cheia/assets/Logo_01_SemFundo.png" alt="LogoIcon_AlertaCheias" height="80px"
+                width="130">
+
         </div>
         <div class="DivBody">
             <div class="Painel_Esquerda">
                 <div class="Painel_Esquerda_Titulo">RIVER LEVEL</div>
+
+
                 <div class="Painel_Esquerda_Input_Titulo">STATE</div>
-                <div class="dropdown">
-                    <button onclick="toggleDropdownState()" class="dropbtn">Selecione seu estado</button>
-                    <div id="DropdownState" class="dropdown-content">
-                        <a href="#">Santa Catarina</a>
-                        <a href="#">São Paulo</a>
-                        <a href="#">Rio de Janeiro</a>
-                    </div>
-                </div>
+
+                <!-- SELETOR ESTADO -->
+                <select id="State" class="form-select dropbtn" aria-label="Default select example">
+                    <option selected>Select your state </option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="RJ">Rio de Janeiro</option>
+
+                </select>
+
                 <div class="Painel_Esquerda_Input_Titulo">CITY</div>
-                <div class="dropdown">
-                    <button onclick="toggleDropdownCity()" class="dropbtn">Selecione sua cidade</button>
-                    <div id="DropdownCity" class="dropdown-content">
-                        <a href="#">Timbó</a>
-                        <a href="#">Indaial</a>
-                        <a href="#">Blumenau</a>
-                    </div>
-                </div>
+
+                <!-- SELETOR CIDADE -->
+                <select id="City" class="form-select dropbtn" aria-label="Default select example">
+                    <option selected>Select your city </option>
+                  
+
+                </select>
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="white" class="bi bi-water"
                         viewBox="0 0 16 16">
@@ -66,17 +73,20 @@
                     <span class="Login_Text">LOGIN</span>
                 </button>
                 <div class="Links_Login">
-                    <div class="Botão_SignUp">SIGN UP</div>
-                    <div class="Botão_EsqueciMinhaSenha">FORGOT PASSWORD</div>
+                    <a href="/Alerta_Cheia/frontend/pages/signUp.html" class="Botão_SignUp">SIGN UP</a>
+                    <a href="#" class="Botão_EsqueciMinhaSenha">FORGOT PASSWORD</a>
+
                 </div>
             </div>
         </div>
     </div>
+
+
     <footer>
         <div class="Background_Footer">
             <div class="Footer_Logo_Box">
-                <a href="/Alerta_Cheia/frontend/pages/login.html" > <img src="/Alerta_Cheia/assets/Logo_01_SemFundo.png"
-                        alt="Alerta Cheias" height="35px"></a>
+                <a href="/Alerta_Cheia/frontend/pages/login.html"> <img class="Footer_Logo_Image"
+                        src="/Alerta_Cheia/assets/Logo_01_SemFundo.png" alt="Alerta Cheias" height="35px"></a>
             </div>
             <div class="Footer_Text_Box">
                 <a class="custom-no-underline" href="#">&copy; 2024 AlertaCheias</a>
@@ -84,11 +94,11 @@
                 <a class="custom-no-underline" href="/Alerta_Cheia/frontend/pages/footer_pages/privacy.html">Privacy</a>
                 <a class="custom-no-underline" href="/Alerta_Cheia/frontend/pages/footer_pages/docs.html">Docs</a>
                 <a class="custom-no-underline" href="/Alerta_Cheia/frontend/pages/footer_pages/contact.html">Contact</a>
-                <a class="custom-no-underline" href="#">All rights reserved </a>
+
             </div>
             <div class="Footer_FAQ_Box">
                 <button class="Botão_FAQ" id="FAQ_Button" onclick="buttonClick()">
-                    <a class="FAQ_Text" href="/Alerta_Cheia/frontend/pages/footer_pages/FAQ.html" >FAQ</a>
+                    <a class="FAQ_Text" href="/Alerta_Cheia/frontend/pages/footer_pages/FAQ.html">FAQ</a>
                 </button>
             </div>
         </div>
