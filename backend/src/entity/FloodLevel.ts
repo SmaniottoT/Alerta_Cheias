@@ -11,9 +11,9 @@ export class Benchmark {
   @Column()
   street: string;
 
-  @Column()
-  number: number;
+  @Column("decimal")
+  lat: number;
 
-  @Column()
-  reference: string;
+  @Column("decimal")
+  long: number;
 }
