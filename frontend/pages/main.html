@@ -5,8 +5,7 @@
     <!-- Meta/MediaQueries -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CSS -->
-    <link rel="stylesheet" href="/Alerta_Cheias/frontend/style/main.css">
+
     <!-- FONTES -->
     <link href="https://fonts.googleapis.com/css?family=KoHo&display=swap" rel="stylesheet" />
     <!-- Link para a biblioteca Bootstrap -->
@@ -22,13 +21,17 @@
     <!-- Jquery 3.6.4 -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" defer></script>
     <!-- JavaSript HereMaps API -->
-    <script src="/Alerta_Cheias/frontend/pages/HereMaps.js" defer></script>
+    <script src="/Alerta_Cheias/frontend/pages/HereMaps_Fixo.js" defer></script>
+    <script src="/Alerta_Cheias/frontend/pages/HereMaps_Interativo.js" defer></script>
     <!-- Para linkar os dados de HereMaps API -->
     <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
     <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
     <script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
     <script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
     <script src="/Alerta_Cheias/frontend/pages/UserButton.js" defer></script>
+
+    <!-- CSS MAIN -->
+    <link rel="stylesheet" href="/Alerta_Cheias/frontend/style/main.css">
     <title>ALERTA CHEIAS</title>
 </head>
 
@@ -75,6 +78,8 @@
         <!-- BOX PRINCIPAL -->
         <div class="DivPrincipal">
 
+
+
             <div class="DivMapa">
                 <!-- MAPA PRINCIPAL -->
                 <div class="Painel_Mapa">
@@ -83,15 +88,13 @@
                 </div>
             </div>
 
-            <!-- BATATA -->
-
 
             <!-- DROPUPS -->
             <div class="DropUps">
                 <!-- DROPUP RIVER LEVEL -->
                 <div class="dropup-center dropup">
-                    <button class="btn dropdown-toggle DropButton_Fechado" type="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="btn dropdown-toggle DropButton_Fechado" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
                         RIVER LEVEL
                     </button>
                     <ul class="dropdown-menu DropButton">
@@ -103,8 +106,8 @@
 
                 <!-- DROPUP DAM INFO -->
                 <div class="dropup-center dropup">
-                    <button class="btn dropdown-toggle DropButton_Fechado" type="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="btn dropdown-toggle DropButton_Fechado" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
                         DAM INFO
                     </button>
                     <ul class="dropdown-menu DropButton">
@@ -116,8 +119,8 @@
 
                 <!-- DROPUP WEATHER REPORT -->
                 <div class="dropup-center dropup">
-                    <button class="btn dropdown-toggle DropButton_Fechado" type="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="btn dropdown-toggle DropButton_Fechado" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
                         WEATHER REPORT
                     </button>
                     <ul class="dropdown-menu DropButton">
