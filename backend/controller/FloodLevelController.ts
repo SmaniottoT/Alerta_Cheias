@@ -6,14 +6,15 @@ export class FloodLevelController {
   async createBenchmark(
     floodLevel: number,
     street: string,
-    number: number,
-    reference: string
+    lat: number,
+    long: number
   ) {
     const benchmarkRepository = AppDataSource.getRepository(Benchmark);
     const benchmarkExists = await benchmarkRepository.existsBy({
       floodLevel,
       street,
-      number,
+      lat,
+      long
     });
 
     if (benchmarkExists) {
@@ -23,8 +24,8 @@ export class FloodLevelController {
     const benchmark = new Benchmark();
     benchmark.floodLevel = floodLevel;
     benchmark.street = street;
-    benchmark.number = number;
-    benchmark.reference = reference;
+    benchmark.lat = lat;
+    benchmark.long = long;
 
     return await benchmarkRepository.save(benchmark);
   }

@@ -2,15 +2,28 @@
 <html lang="en">
 
 <head>
+    <!-- FONTE DE TEXTO -->
     <link href="https://fonts.googleapis.com/css?family=KoHo&display=swap" rel="stylesheet" />
-    <link href="/Alerta_Cheias/frontend/style/login.css" rel="stylesheet" />
+    <!-- BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="/Alerta_Cheias/frontend/style/dropdown.css">
-    <script src="/Alerta_Cheia/backend/dropdown/dropdown.js" defer></script>
-    <script src="/Alerta_Cheias/backend/loginFunction.js" defer></script>
-    <script src="/Alerta_Cheias/backend/FAQFunction.js" defer></script>
-    <script src="/Alerta_Cheias/backend/SelectorFunction.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"
+        defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"
+        defer></script>
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- DROPDOWN CSS -->
+    <link rel="stylesheet" href="/Alerta_Cheias/frontend/pages/login/dropdown.css">
+    <!-- FUNCTIONS -->
+    <script src="/Alerta_Cheias/frontend/pages/login/loginFunction.js" defer></script>
+    <script src="/Alerta_Cheias/frontend/pages/FAQ/FAQFunction.js" defer></script>
+    <script src="/Alerta_Cheias/frontend/pages/login/SelectorFunction.js" defer></script>
+    <!-- LOGIN CSS -->
+    <link href="/Alerta_Cheias/frontend/pages/login/login.css" rel="stylesheet" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
@@ -47,7 +60,7 @@
                 <!-- SELETOR CIDADE -->
                 <select id="City" class="form-select dropbtn" aria-label="Default select example">
                     <option selected>Select your city </option>
-                  
+                    <!-- as cidades devem ser acrescidas em SelectorFunction.js -->
 
                 </select>
                 <div>
@@ -73,7 +86,7 @@
                     <span class="Login_Text">LOGIN</span>
                 </button>
                 <div class="Links_Login">
-                    <a href="/Alerta_Cheias/frontend/pages/signUp.html" class="Botão_SignUp">SIGN UP</a>
+                    <a href="/Alerta_Cheias/frontend/pages/signUp/signUp.html" class="Botão_SignUp">SIGN UP</a>
                     <a href="#" class="Botão_EsqueciMinhaSenha">FORGOT PASSWORD</a>
 
                 </div>
@@ -85,32 +98,25 @@
     <footer>
         <div class="Background_Footer">
             <div class="Footer_Logo_Box">
-                <a href="/Alerta_Cheia/frontend/pages/login.html"> <img class="Footer_Logo_Image"
+                <a href="/Alerta_Cheias/frontend/pages/login/login.html"> <img
                         src="/Alerta_Cheias/assets/Logo_01_SemFundo.png" alt="Alerta Cheias" height="35px"></a>
             </div>
             <div class="Footer_Text_Box">
-                <a class="custom-no-underline" href="#">&copy; 2024 AlertaCheias</a>
-                <a class="custom-no-underline" href="/Alerta_Cheias/frontend/pages/footer_pages/terms.html">Terms</a>
-                <a class="custom-no-underline" href="/Alerta_Cheia/frontend/pages/footer_pages/privacy.html">Privacy</a>
-                <a class="custom-no-underline" href="/Alerta_Cheia/frontend/pages/footer_pages/docs.html">Docs</a>
-                <a class="custom-no-underline" href="/Alerta_Cheia/frontend/pages/footer_pages/contact.html">Contact</a>
-
+                <a class="custom-no-underline">&copy; 2024 AlertaCheias</a>
+                <a class="custom-no-underline" href="/Alerta_Cheias/frontend/pages/terms/terms.html">Terms</a>
+                <a class="custom-no-underline" href="/Alerta_Cheias/frontend/pages/privacy/privacy.html">Privacy</a>
+                <a class="custom-no-underline" href="/Alerta_Cheias/frontend/pages/docs/docs.html">Docs</a>
+                <a class="custom-no-underline" href="/Alerta_Cheias/frontend/pages/contact/contact.html">Contact</a>
             </div>
             <div class="Footer_FAQ_Box">
                 <button class="Botão_FAQ" id="FAQ_Button" onclick="buttonClick()">
-                    <a class="FAQ_Text" href="/Alerta_Cheia/frontend/pages/footer_pages/FAQ.html">FAQ</a>
+                    <a class="FAQ_Text" href="/Alerta_Cheias/frontend/pages/FAQ/">FAQ</a>
                 </button>
             </div>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
 </body>
 
 

@@ -19,7 +19,6 @@ body {
 .DivLogo {
   width: 100vw;
   height: 10vh;
-
 }
 
 .Logo {
@@ -208,7 +207,7 @@ input:focus {
 }
 
 .Botão_Login:active {
-  background-color: rgba(75, 125, 176, 0.20);
+  background-color: rgba(75, 125, 176, 0.2);
 }
 
 .Links_Login {
@@ -258,7 +257,6 @@ input:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
 .Footer_Text_Box {
@@ -283,7 +281,6 @@ input:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
 .Botão_FAQ {
@@ -308,40 +305,25 @@ input:focus {
 }
 
 .Botão_FAQ:active {
-  background-color: rgba(75, 125, 176, 0.20);
+  background-color: rgba(75, 125, 176, 0.2);
 }
 
 .FAQ_Text {
   text-decoration: none;
   color: #ffffff;
   font-size: 15px;
- 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* RESPONSIVIDADE PARA OUTROS DISPOSITIVOS */
 
 @media screen and (max-width: 430px) {
-
   body {
     font-size: 14px;
     box-sizing: border-box;
   }
 
   .DivBackground {
-    background: url("/Alerta_Cheia/assets/4071457.jpg");
+    background: url("/Alerta_Cheias/assets/4071457.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -350,12 +332,11 @@ input:focus {
   .DivLogo {
     width: 100vw;
     height: 5vh;
-
   }
 
   .Logo {
     margin-left: 20px;
-    height:45px ;
+    height: 45px;
     width: 70px;
   }
 
@@ -409,7 +390,6 @@ input:focus {
     margin: 5px;
     margin-left: 40px;
 
-
     font-size: 20px;
   }
 
@@ -433,8 +413,6 @@ input:focus {
     width: 60px;
   }
 
-
-
   .Painel_Esquerda_NivelDoRio {
     width: 90%;
     color: rgba(255, 255, 255, 1);
@@ -443,7 +421,6 @@ input:focus {
     opacity: 1;
     text-align: center;
     margin: 10px;
-
 
     font-size: 25px;
   }
@@ -567,11 +544,10 @@ input:focus {
   }
 
   .Botão_Login:active {
-    background-color: rgba(75, 125, 176, 0.20);
+    background-color: rgba(75, 125, 176, 0.2);
   }
 
   .Links_Login {
-   
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -588,9 +564,8 @@ input:focus {
     opacity: 1;
     text-align: center;
     margin: 5px;
-    
-    font-size: 12.5px;
 
+    font-size: 12.5px;
   }
 
   .Botão_SignUp {
@@ -602,7 +577,7 @@ input:focus {
     text-align: center;
     margin: 5px;
     text-decoration: none;
-    
+
     font-size: 12.5px;
   }
 
@@ -617,7 +592,6 @@ input:focus {
   }
 
   .Footer_Logo_Box {
-
     width: 15vw;
     height: 90%;
     display: flex;
@@ -655,7 +629,6 @@ input:focus {
     display: flex;
     align-items: center;
     justify-content: center;
-
   }
 
   .Botão_FAQ {
@@ -679,18 +652,12 @@ input:focus {
   }
 
   .Botão_FAQ:active {
-    background-color: rgba(75, 125, 176, 0.20);
+    background-color: rgba(75, 125, 176, 0.2);
   }
 
   .FAQ_Text {
     color: #ffffff;
-
     text-decoration: none;
-
     font-size: 20px;
   }
-
-
-
-
 }

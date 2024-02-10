@@ -3,127 +3,125 @@
   padding: 0;
   font-family: KoHo;
 }
-
 body {
   font-size: 14px;
   box-sizing: border-box;
 }
-
-.background {
-  background: url("/Alerta_Cheia/assets/4071457.jpg");
+.tirarSublinhado {
+  text-decoration: none;
+  color: #ffffff;
+}
+#imgpos {
+  position: absolute;
+  left: 2%;
+  top: 10%;
+}
+#img2 {
+  position: absolute;
+  left: 2%;
+  top: 60%;
+}
+#img3 {
+  position: absolute;
+  left: 88%;
+  top: 60%;
+}
+#img4 {
+  position: absolute;
+  left: 88%;
+  top: 10%;
+}
+.texto {
+  columns: auto;
+  position: absolute;
+  left: 13%;
+  top: 10%;
+  color: white;
+}
+.texto1 {
+  columns: auto;
+  position: absolute;
+  left: 13%;
+  top: 60%;
+  color: white;
+}
+.texto2 {
+  columns: auto;
+  position: absolute;
+  left: 66%;
+  top: 60%;
+  color: white;
+}
+.texto3 {
+  columns: auto;
+  position: absolute;
+  left: 70%;
+  top: 10%;
+  color: white;
+}
+.DivBackground {
+  background: url("/Alerta_Cheias/assets/4071457.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  position: relative;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.logo {
-  width: 100vw;
-  height: 10vh;
-}
-.logo_image {
-  width: 130px;
-  height: 80px;
-  margin-left: 20px;
-}
+/*
+.container text-center {
+position: absolute;
+left:50%;
+right: 50%;
+} */
 
-.main_box {
+.DivBody {
   width: 100vw;
   height: 85vh;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
   margin: 0;
 }
 
-.panel {
+.Painel_Esquerda {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: auto;
-  height: auto;
+  width: 79%;
+  height: 84%;
   background: rgba(47, 60, 92, 0.8);
   opacity: 1;
   position: relative;
   border-radius: 100px;
   box-shadow: 10px 10px 40px rgba(0, 0, 0, 1);
-  color: rgba(255, 255, 255, 1);
-  padding: 10px 100px;
 }
 
-.input {
-  margin: 5px;
-  padding-bottom: 10px;
-}
-
-.title {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 90%;
-  height: 20%;
+.Painel_Esquerda_Titulo {
   color: rgba(255, 255, 255, 1);
-  font-weight: Bold;
-  font-size: 40px;
+  font-weight: bold;
+  font-size: 45px;
   opacity: 1;
   margin: 10px;
 }
 
-h4 {
-  color: rgba(255, 255, 255, 1);
-}
-
-input {
-  width: 40vw;
-  height: 7vh;
-  background: rgba(75, 125, 176, 0.800000011920929);
-  opacity: 1;
-  overflow: visible;
-  margin: 5px;
-  box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.800000011920929);
-  border-radius: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 15px;
-  color: rgba(255, 255, 255, 1);
-  font-size: 20px !important;
-}
-
-.signUp_button {
-  width: auto;
-  height: auto;
-  padding: 2px 20px;
-  color: rgba(255, 255, 255, 1);
-  background: rgba(75, 125, 176, 0.8);
-  opacity: 1;
-  border-radius: 100px;
-  box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.8);
-  overflow: visible;
-  font-weight: Bold;
-  font-size: 30px;
-  opacity: 1;
-  margin: 10px;
-  border: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* footer */
 .Background_Footer {
   width: 100vw;
   height: 5vh;
   background-color: rgba(43, 50, 76);
-
   display: flex;
   align-items: center;
-  flex-direction: row;
+  justify-content: space-between;
 }
 
-.Footer_Logo_Box {
+.Footer_Logo_Box,
+.Footer_FAQ_Box {
   width: 10vw;
   height: 90%;
   display: flex;
@@ -147,18 +145,10 @@ input {
   font-weight: normal;
 }
 
-.Footer_FAQ_Box {
-  width: 10vw;
-  height: 90%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .Botão_FAQ {
   width: 50%;
   height: 90%;
-  font-weight: Bold;
+  font-weight: bold;
   font-size: 20px;
   color: rgba(255, 255, 255, 1);
   background: rgba(75, 125, 176, 0.8);

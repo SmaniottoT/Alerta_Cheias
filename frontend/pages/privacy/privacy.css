@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: KoHo;
+}
+
+body {
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.DivBackground {
+  background: url("/Alerta_Cheias/assets/4071457.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.DivLogo {
+  width: 100vw;
+  height: 10vh;
+
+}
+.Logo{
+  margin-left: 20px;
+}
+
+.DivBody {
+  width: 100vw;
+  height: 85vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0;
+}
+
+.Painel_Esquerda {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  height: 60%;
+  background: rgba(47, 60, 92, 0.8);
+  opacity: 1;
+  position: relative;
+  border-radius: 100px;
+  box-shadow: 10px 10px 40px rgba(0, 0, 0, 1);
+}
+
+.Painel_Esquerda_Titulo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  height: 20%;
+  color: rgba(255, 255, 255, 1);
+  font-weight: Bold;
+  font-size: 35px;
+  opacity: 1;
+  margin: 10px;
+}
+
+
+
+
+.Background_Footer {
+  width: 100vw;
+  height: 5vh;
+  background-color: rgba(43, 50, 76);
+
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.Footer_Logo_Box {
+ width: 10vw;
+ height: 90%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+
+}
+
+.Footer_Text_Box {
+  width: 80vw;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+padding:  0px 25%;
+}
+
+.custom-no-underline {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.Footer_FAQ_Box {
+  width: 10vw;
+  height: 90%;
+  display: flex;
+ align-items: center;
+ justify-content: center;
+  
+}
+
+.Botão_FAQ {
+width: 50%;
+  height: 90%;
+  font-weight: Bold;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 1);
+  background: rgba(75, 125, 176, 0.8);
+  box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.8);
+  opacity: 1;
+  border-radius: 100px;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+}
+
+.Botão_FAQ:hover {
+  background-color: rgba(75, 125, 176);
+}
+
+.Botão_FAQ:active {
+  background-color: rgba(75, 125, 176, 0.20);
+}
+
+.FAQ_Text{
+  font-size: 15px;
+}
