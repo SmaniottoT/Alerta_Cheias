@@ -1,5 +1,7 @@
 import { AppDataSource } from "../data-source";
 import { User } from "../entity/User";
+import bcrypt from "bcrypt";
+
 
 export class UserController {
   async createUser(
@@ -21,7 +23,7 @@ export class UserController {
     user.username = username;
     user.name = name;
     user.email = email;
-    user.password = password;
+    user.password = await bcrypt.hash(password, 10);
 
     return await userRepository.save(user);
   }
