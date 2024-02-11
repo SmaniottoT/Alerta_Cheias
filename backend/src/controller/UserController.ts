@@ -1,7 +1,7 @@
 import { AppDataSource } from "../data-source";
 import { User } from "../entity/User";
 import bcrypt from "bcrypt";
-
+import { UsernameTakenException } from "../exceptions/UsernameTakenException";
 
 export class UserController {
   async createUser(
@@ -15,9 +15,7 @@ export class UserController {
       username,
     });
     if (userExists) {
-      throw new Error(
-        "Username already in use. Please, choose a diferent username."
-      );
+      throw new UsernameTakenException();
     }
     const user = new User();
     user.username = username;

@@ -66,6 +66,7 @@ server.use(new AuthenticationMiddleware().validateAuthentication);
 
 server.use(
   (err: Error, request: Request, response: Response, next: NextFunction) => {
+    console.error("Error caught:", err);
     const exception = err as BaseHttpException;
     if (exception.statusCode) {
       return response.status(exception.statusCode).json({

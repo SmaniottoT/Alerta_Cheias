@@ -2,6 +2,8 @@ import { AppDataSource } from "../data-source";
 import { User } from "../entity/User";
 import bcrypt from "bcrypt";
 import jwt, { JwtPayload } from "jsonwebtoken";
+import { UserNotFoundException } from "../exceptions/UserNotFoundException";
+import { UnauthorizedUserException } from "../exceptions/UnauthUserException";
 
 const SECRET_KEY = "senha_secreta_que_NÃO_deve_ficar_salva_aqui";
 
@@ -17,12 +19,13 @@ export class SessionController {
     const user = await userRepository.findOneBy({ username });
 
     if (!user) {
-      throw new Error("Username or password invalid!");
+      throw new UserNotFoundException();
     }
-    const validPassword = await bcrypt.compare(password, (await user).password);
+
+    const validPassword = await bcrypt.compare(password, user.password);
 
     if (!validPassword) {
-      throw new Error("Username or password invalid!");
+      throw new UserNotFoundException();
     }
 
     return jwt.sign({ userId: user.id }, SECRET_KEY);
@@ -30,13 +33,13 @@ export class SessionController {
 
   verifyToken(token?: string) {
     if (!token) {
-      throw new Error("User not authenticated!");
+      throw new UnauthorizedUserException();
     }
     try {
       const jwtPayload = jwt.verify(token, SECRET_KEY) as DecodedTokenPayload;
       return jwtPayload;
     } catch (error) {
-      throw new Error("Invalid token!");
+      throw new UnauthorizedUserException();
     }
   }
 }
