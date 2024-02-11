@@ -10,7 +10,7 @@ body {
 }
 
 .DivBackground {
-  background: url("/Alerta_Cheias/assets/4071457.jpg");
+  background: url("/Alerta_Cheias/frontend/assets/4071457.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -323,7 +323,7 @@ input:focus {
   }
 
   .DivBackground {
-    background: url("/Alerta_Cheias/assets/4071457.jpg");
+    background: url("/Alerta_Cheias/frontend/assets/4071457.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
