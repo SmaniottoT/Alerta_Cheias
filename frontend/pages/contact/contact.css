@@ -164,6 +164,11 @@ body {
 }
 
 
+.tirarSublinhado {
+  text-decoration: none;
+  color: #ffffff;
+}
+
 
 /* FOOTER */
 .Background_Footer {
@@ -235,14 +240,3 @@ body {
   font-weight: Bold;
   font-size: 20px;
 }
-
-
-/*  */
-
-
-.tirarSublinhado {
-  text-decoration: none;
-  color: #ffffff;
-}
-
-

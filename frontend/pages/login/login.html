@@ -2,11 +2,17 @@
 <html lang="en">
 
 <head>
-    <!-- FONTE DE TEXTO -->
+
+    <!-- Meta/MediaQueries -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FONTES -->
     <link href="https://fonts.googleapis.com/css?family=KoHo&display=swap" rel="stylesheet" />
     <!-- BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.18.1/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"
         defer></script>
@@ -15,18 +21,15 @@
         defer></script>
     <!-- JQUERY -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <!-- DROPDOWN CSS -->
-    <link rel="stylesheet" href="/Alerta_Cheias/frontend/pages/login/dropdown.css">
-    <!-- FUNCTIONS -->
-    <script src="/Alerta_Cheias/frontend/dist/index.js" defer></script>
+    <!-- FUNÇÕES -->
     <script src="/Alerta_Cheias/frontend/pages/FAQ/FAQFunction.js" defer></script>
     <script src="/Alerta_Cheias/frontend/pages/login/SelectorFunction.js" defer></script>
+    <!-- INDEX.JS -->
+    <script src="/Alerta_Cheias/frontend/dist/index.js" defer></script>
     <!-- LOGIN CSS -->
     <link href="/Alerta_Cheias/frontend/pages/login/login.css" rel="stylesheet" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
+    <!-- DROPDOWN CSS -->
+    <link rel="stylesheet" href="/Alerta_Cheias/frontend/pages/login/dropdown.css">
     <title>ALERTA CHEIAS</title>
 
 </head>
@@ -35,8 +38,8 @@
     <div class="DivBackground">
         <div class="DivLogo">
 
-            <img class="Logo" src="/Alerta_Cheias/frontend/assets/logo_icon/Logo_AlertaCheias.png" alt="LogoIcon_AlertaCheias"
-                height="80px" width="130">
+            <img class="Logo" src="/Alerta_Cheias/frontend/assets/logo_icon/Logo_AlertaCheias.png"
+                alt="LogoIcon_AlertaCheias" height="80px" width="130">
 
         </div>
         <div class="DivBody">
@@ -99,7 +102,8 @@
         <div class="Background_Footer">
             <div class="Footer_Logo_Box">
                 <a href="/Alerta_Cheias/frontend/pages/login/login.html"> <img
-                        src="/Alerta_Cheias/frontend/assets/Logo_01_SemFundo.png" alt="Alerta Cheias" height="35px"></a>
+                        src="/Alerta_Cheias/frontend/assets/logo_icon/Logo_AlertaCheias.png" alt="Alerta Cheias"
+                        height="35px"></a>
             </div>
             <div class="Footer_Text_Box">
                 <a class="custom-no-underline">&copy; 2024 AlertaCheias</a>
@@ -110,7 +114,7 @@
             </div>
             <div class="Footer_FAQ_Box">
                 <button class="Botão_FAQ" id="FAQ_Button" onclick="buttonClick()">
-                    <a class="FAQ_Text" href="/Alerta_Cheias/frontend/pages/FAQ/">FAQ</a>
+                    <a class="FAQ_Text" href="/Alerta_Cheias/frontend/pages/FAQ/FAQ.html">FAQ</a>
                 </button>
             </div>
         </div>

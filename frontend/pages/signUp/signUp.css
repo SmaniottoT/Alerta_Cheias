@@ -112,12 +112,12 @@ input {
   justify-content: center;
 }
 
-/* footer */
+
+/* FOOTER */
 .Background_Footer {
   width: 100vw;
   height: 5vh;
   background-color: rgba(43, 50, 76);
-
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -143,7 +143,7 @@ input {
 .custom-no-underline {
   text-decoration: none;
   color: #ffffff;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: normal;
 }
 
@@ -158,9 +158,6 @@ input {
 .Botão_FAQ {
   width: 50%;
   height: 90%;
-  font-weight: Bold;
-  font-size: 20px;
-  color: rgba(255, 255, 255, 1);
   background: rgba(75, 125, 176, 0.8);
   box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.8);
   opacity: 1;
@@ -181,5 +178,8 @@ input {
 }
 
 .FAQ_Text {
-  font-size: 15px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: Bold;
+  font-size: 20px;
 }

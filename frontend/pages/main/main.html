@@ -20,16 +20,17 @@
         defer></script>
     <!-- Jquery 3.6.4 -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" defer></script>
-    <!-- JavaSript HereMaps API -->
-    <script src="/Alerta_Cheias/frontend/pages/main/HereMaps_Fixo.js" defer></script>
-    <script src="/Alerta_Cheias/frontend/pages/main/HereMaps_Interativo.js" defer></script>
     <!-- Para linkar os dados de HereMaps API -->
     <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
     <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
     <script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
     <script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+    <!-- FUNÇÕES -->
+    <script src="/Alerta_Cheias/frontend/pages/FAQ/FAQFunction.js" defer></script>
     <script src="/Alerta_Cheias/frontend/pages/main/UserButton.js" defer></script>
-
+    <!-- JavaSript HereMaps API -->
+    <script src="/Alerta_Cheias/frontend/pages/main/HereMaps_Fixo.js" defer></script>
+    <script src="/Alerta_Cheias/frontend/pages/main/HereMaps_Interativo.js" defer></script>
     <!-- CSS MAIN -->
     <link rel="stylesheet" href="/Alerta_Cheias/frontend/pages/main/main.css">
     <title>ALERTA CHEIAS</title>
@@ -59,17 +60,19 @@
             <!-- BOX DO ICONE DO USER -->
             <div class="DivIcone">
                 <!-- NOME DO USUARIO -->
-                <span class="User_Text"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-                  </svg></span>
+                <span class="User_Text"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+                        fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                        <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                    </svg></span>
 
 
                 <!-- BOTAO PERFIL DO USUARIO-->
                 <div class="dropdown-center">
                     <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                           UserProfile   
+                        UserProfile
                     </button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Config</a></li>
@@ -147,8 +150,9 @@
     <footer>
         <div class="Background_Footer">
             <div class="Footer_Logo_Box">
-                <a href="/Alerta_Cheias/frontend/pages/login/login.html"> <img
-                        src="/Alerta_Cheias/assets/Logo_01_SemFundo.png" alt="Alerta Cheias" height="35px"></a>
+                <a href="/Alerta_Cheias/frontend/pages/main/main.html"> <img
+                        src="/Alerta_Cheias/frontend/assets/logo_icon/Logo_AlertaCheias.png" alt="Alerta Cheias"
+                        height="35px"></a>
             </div>
             <div class="Footer_Text_Box">
                 <a class="custom-no-underline">&copy; 2024 AlertaCheias</a>
@@ -159,7 +163,7 @@
             </div>
             <div class="Footer_FAQ_Box">
                 <button class="Botão_FAQ" id="FAQ_Button" onclick="buttonClick()">
-                    <a class="FAQ_Text" href="/Alerta_Cheias/frontend/pages/FAQ/">FAQ</a>
+                    <a class="FAQ_Text" href="/Alerta_Cheias/frontend/pages/FAQ/FAQ.html">FAQ</a>
                 </button>
             </div>
         </div>

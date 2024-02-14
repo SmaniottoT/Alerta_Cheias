@@ -98,56 +98,51 @@ body {
  
  
  
+/* FOOTER */
 .Background_Footer {
   width: 100vw;
   height: 5vh;
   background-color: rgba(43, 50, 76);
- 
   display: flex;
   align-items: center;
   flex-direction: row;
 }
- 
+
 .Footer_Logo_Box {
- width: 10vw;
- height: 90%;
- display: flex;
- align-items: center;
- justify-content: center;
- 
+  width: 10vw;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
- 
+
 .Footer_Text_Box {
   width: 80vw;
   height: 90%;
   display: flex;
   align-items: center;
   justify-content: space-around;
-padding:  0px 25%;
+  padding: 0px 25%;
 }
- 
+
 .custom-no-underline {
   text-decoration: none;
   color: #ffffff;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: normal;
 }
- 
+
 .Footer_FAQ_Box {
   width: 10vw;
   height: 90%;
   display: flex;
- align-items: center;
- justify-content: center;
- 
+  align-items: center;
+  justify-content: center;
 }
- 
+
 .Botão_FAQ {
-width: 50%;
+  width: 50%;
   height: 90%;
-  font-weight: Bold;
-  font-size: 20px;
-  color: rgba(255, 255, 255, 1);
   background: rgba(75, 125, 176, 0.8);
   box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.8);
   opacity: 1;
@@ -158,15 +153,18 @@ width: 50%;
   justify-content: center;
   border: 0;
 }
- 
+
 .Botão_FAQ:hover {
   background-color: rgba(75, 125, 176);
 }
- 
+
 .Botão_FAQ:active {
-  background-color: rgba(75, 125, 176, 0.20);
+  background-color: rgba(75, 125, 176, 0.2);
 }
- 
-.FAQ_Text{
-  font-size: 15px;
+
+.FAQ_Text {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: Bold;
+  font-size: 20px;
 }
