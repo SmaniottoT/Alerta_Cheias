@@ -2,6 +2,10 @@
   margin: 0;
   padding: 0;
   font-family: KoHo;
+  color: #fff;
+}
+*{
+  text-decoration: none;
 }
 
 body {
@@ -41,28 +45,54 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  flex-direction: column;
 }
 
+/* CONTEM OS 4 MAPAS */
 .ContainerImagens {
+  height: 100%;
+  width: 100%;
   margin: 0px;
   padding: 0px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-
+  flex-direction: row;
   background-color: rgba(43, 50, 76, 0.7);
   border-radius: 10px;
 }
 
-/* image-box > map-container */
-.map-container {
-  width: 14vw;
-  height: 12vh;
+.Box_Mapas {
+  height: 100%;
+  width: 100%;
+
   display: flex;
   align-items: center;
-  background-color: #fff;
-  margin: 10px;
+  justify-content: space-evenly;
+  flex-direction: column;
 }
+
+/* image-box > map-container */
+/* EDITA OS 4 MAPAS */
+.map-container {
+  width: 90%;
+  height: 90vh;
+  margin-top: 5px;
+  background-color: #fff;
+
+
+  border-radius: 2rem;
+  /* Define o raio da borda para criar cantos arredondados */
+  overflow: hidden;
+  /* Garante que o conteúdo dentro do contêiner não ultrapasse as bordas arredondadas */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
 
 .DivIcone {
   width: 10vw;
@@ -143,8 +173,12 @@ body {
 }
 
 .MapaZero {
-  height: 90%;
-  width: 90%;
+  height: 95%;
+  width: 95%;
+  border-radius: 100px;
+  /* Define o raio da borda para criar cantos arredondados */
+  overflow: hidden;
+  /* Garante que o conteúdo dentro do contêiner não ultrapasse as bordas arredondadas */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -258,24 +292,32 @@ body {
 
 /* USER BUTTON */
 .button-user {
-  width: 50px; /* Ajuste o tamanho conforme necessário */
-  height: 50px; /* Ajuste o tamanho conforme necessário */
+  width: 50px;
+  /* Ajuste o tamanho conforme necessário */
+  height: 50px;
+  /* Ajuste o tamanho conforme necessário */
   background: none;
   border: none;
   padding: 0;
   margin: 0;
-  border-radius: 50%; /* Deixa o botão redondo */
-  overflow: hidden; /* Garante que a imagem fique dentro do botão redondo */
+  border-radius: 50%;
+  /* Deixa o botão redondo */
+  overflow: hidden;
+  /* Garante que a imagem fique dentro do botão redondo */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .button-user img {
-  width: 100%; /* Ajuste o tamanho da imagem conforme necessário */
-  height: auto; /* Mantém a proporção da imagem */
-  display: flex; /* Garante que a imagem seja exibida corretamente */
-  margin: auto; /* Centraliza a imagem dentro do botão */
+  width: 100%;
+  /* Ajuste o tamanho da imagem conforme necessário */
+  height: auto;
+  /* Mantém a proporção da imagem */
+  display: flex;
+  /* Garante que a imagem seja exibida corretamente */
+  margin: auto;
+  /* Centraliza a imagem dentro do botão */
 }
 
 .dropdown-center {
