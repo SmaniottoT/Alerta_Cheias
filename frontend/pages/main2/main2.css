@@ -1,36 +1,44 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: KoHo;
 }
-.header{
-    width: 100%;
+
+.Background {
+    width: 100vw;
     height: 100vh;
-    background-image: url(/Alerta_Cheias/frontend/assets/Background.jpg);
-    background-position: center;
-    background-size: cover;
+    margin: 0;
 }
 
-.side-nav{
+
+.MapaZero {
+    height: 100%;
+    width: 100%;
+}
+
+
+
+.side-nav {
     width: 110px;
     height: 100%;
     position: fixed;
     top: 0;
     left: 0;
     padding: 30px 15px;
-    background: rgba(255,255,255,0.2);
+    background: rgba(57, 107, 153, 0.2);
     backdrop-filter: blur(5px);
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     transition: width 0.5s;
 }
-.user{
+
+.user {
     display: flex;
-    align-items:  center;
+    align-items: center;
     justify-content: space-between;
-    width: 60px;
+    width: 80px;
     font-size: 12px;
     padding: 10px;
     border-radius: 8px;
@@ -39,70 +47,82 @@
     overflow: hidden;
 }
 
-.user div{
+.user div {
     display: none;
 }
 
-.user h2{
+.user h2 {
     font-size: 15px;
     font-weight: 600;
     white-space: nowrap;
 }
-.user-img{
-    width: 40px;
+
+.user-img {
+    width: 60px;
     border-radius: 50%;
     margin: auto;
 }
 
-.star-img{
-   width: 20px;
-   display: none;
-
+.Premium {
+    width: 30px;
+    display: none;
 }
-.ul{
+
+ul {
     list-style: none;
     padding: 0 15px;
+
 }
-.ul li{
-margin: 30px 0;
-display: flex;
-align-items:  center;
-justify-content: center;
-cursor: pointer;
+
+.map-container {
+    width: 90%;
+    height: 13vh;
+    margin-top: 5px;
+    background-color: #fff;
+
+    border-radius: 2rem;
+    /* Define o raio da borda para criar cantos arredondados */
+    overflow: hidden;
+    /* Garante que o conteúdo dentro do contêiner não ultrapasse as bordas arredondadas */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
-.ul li img{
+
+.mapas {
+    margin: 5px 0px;
+}
+
+.Texto_mapas {
+    margin: 5px 0px;
+}
+
+
+
+ul li {
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+ul li img {
     width: 30px;
     margin-right: 0px;
 }
-.ul li p{
+
+ul li p {
     white-space: nowrap;
     display: none;
 }
 
-.side-nav:hover{
-    width: 250px;
-}
-.side-nav:hover .user div{
-    display: block;
-}
-.side-nav:hover .user{
-    width: 100%;
-    background: rgba(255,255,255,0.2);
-    backdrop-filter:blur(5px);
-}
-.side-nav:hover .star-img{
-    display: block;
-}
-.side-nav:hover .user-img{
-   margin: 0; 
-}
-.side-nav:hover ul li p{
-    display: block;
-}
-.side-nav:hover ul li img{
-    margin-right: 10px;
-}
 
-.side-nav:hover ul li{
-    justify-content: flex-start;
+
+.botao {
+
+    background: rgba(57, 107, 153, 0.2);
+    backdrop-filter: blur(5px);
 }

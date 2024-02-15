@@ -1,0 +1,16 @@
+.elemento {
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+    color: white;
+    text-align: center;
+    line-height: 100px;
+    transition: background-color 0.3s;
+  }
+
+  
+  .mudar {
+    background-color: green;
+    color: black;
+  }
+  

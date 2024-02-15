@@ -5,85 +5,129 @@
     <!-- Meta/MediaQueries -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <!-- Jquery 3.6.4 -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" defer></script>
     <!-- FONTES -->
     <link href="https://fonts.googleapis.com/css?family=KoHo&display=swap" rel="stylesheet" />
     <!-- ICONES GOOGLE FONTS -->
-   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <!-- Link para a biblioteca Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.18.1/font/bootstrap-icons.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"
-        defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"
-        defer></script>
-    <!-- Jquery 3.6.4 -->
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js" defer></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+
     <!-- Para linkar os dados de HereMaps API -->
     <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
     <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
     <script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
     <script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
     <!-- FUNÇÕES -->
-    <script src="/Alerta_Cheias/frontend/pages/FAQ/FAQFunction.js" defer></script>
-    <script src="/Alerta_Cheias/frontend/pages/main/UserButton.js" defer></script>
+    <script src="/Alerta_Cheias/frontend/pages/main2/sidenav.JS"></script>
     <!-- JavaSript HereMaps API -->
-    <script src="/Alerta_Cheias/frontend/pages/main/HereMaps_Fixo2.js" defer></script>
-    <script src="/Alerta_Cheias/frontend/pages/main/HereMaps_Interativo2.js" defer></script>
+    <script src="/Alerta_Cheias/frontend/pages/main2/HereMaps_Fixo2.js" defer></script>
+    <script src="/Alerta_Cheias/frontend/pages/main2/HereMaps_Interativo2.js" defer></script>
     <!-- CSS MAIN2 -->
     <link rel="stylesheet" href="/Alerta_Cheias/frontend/pages/main2/main2.css">
     <title>ALERTA CHEIAS</title>
 </head>
 
 <body>
-    <div class="header">
-        <div class="side-nav">
-            <div class="user">
-                <img src="/Alerta_Cheias/frontend/assets/fotos_alunos/moldura_laercio.png" class="user-img">
-                <div>
-                    <h2>Laércio Benvenutti</h2>
-                    <p>laerciobenvenutti@gmail.com</p>
+
+    <div class="Background">
+
+        <!-- MapaZero -->
+        <div class="MapaZero" id="mapa0"></div>
+
+
+        <header>
+
+
+            <div class="side-nav" id="side-nav">
+                <!-- Botao -->
+
+                <button class="botao" id="abrir" onclick="mudarSideNav()">
+                    <img src="/Alerta_Cheias/frontend/assets/icones_main2/icon_SetaDireita.png">
+                </button>
+
+                <div class="user" id="user">
+                    <!-- FOTO DO USUARIO -->
+                    <img src="/Alerta_Cheias/frontend/assets/fotos_alunos/moldura_laercio.png" class="user-img"
+                        id="user-img">
+                    <div id="div">
+                        <!-- NOME DO USUARIO -->
+                        <h2>Laércio Benvenutti</h2>
+                        <!-- EMAIL DO USUARIO -->
+                        <p>laerciobenvenutti@gmail.com</p>
+                    </div>
+                    <!-- ESTRELA -->
+                    <img src="/Alerta_Cheias/frontend/assets/icones_main2/icon_Premium.png" class="Premium"
+                        id="Premium">
                 </div>
-                <!-- ESTRELA -->
-                <img src="" class="star-img">
+
+
+
+                <ul>
+
+                    <!-- MAPA 01 -->
+                    <li class="mapas">
+                        <div class="map-container" id="mapa1"></div>
+
+                    </li>
+
+                    <li class="Texto_mapas">
+                        <p>MAPA 01</p>
+                    </li>
+
+                    <!-- MAPA 03 -->
+                    <li class="mapas">
+                        <div class="map-container" id="mapa2"></div>
+
+                    </li>
+
+                    <li class="Texto_mapas">
+                        <p>MAPA 02</p>
+                    </li>
+
+                    <!-- MAPA 03 -->
+                    <li class="mapas">
+                        <div class="map-container" id="mapa3"></div>
+
+                    </li>
+
+                    <li class="Texto_mapas">
+                        <p>MAPA 03</p>
+                    </li>
+                </ul>
+
+                <ul>
+                    <!-- PERFIL -->
+                    <li><img src="/Alerta_Cheias/frontend/assets/icones_main2/icon_perfil.png">
+                        <p>Profile</p>
+                    </li>
+
+                    <!-- CONFIGURAÇÕES -->
+                    <li><img src="/Alerta_Cheias/frontend/assets/icones_main2/icon_configuracao.png">
+                        <p>Settings</p>
+                    </li>
+
+                    <!-- LOGOUT -->
+                    <li><img src="/Alerta_Cheias/frontend/assets/icones_main2/icon_logout.png">
+                        <p>Logout</p>
+                    </li>
+
+
+
+                </ul>
+
             </div>
-            <ul>
-                <li><img src="">
-                    <p>Dashboard</p>
-                </li>
-                <li><img src="">
-                    <p>Reports</p>
-                </li>
-                <li><img src="">
-                    <p>Rewards</p>
-                </li>
-                <li><img src="">
-                    <p>Messages</p>
-                </li>
-                <li><img src="">
-                    <p>Video Chat</p>
-                </li>
-                <li><img src="">
-                    <p>Our Projects</p>
-                </li>
-                <li><img src="">
-                    <p>Core Members</p>
-                </li>
-                <li><img src="">
-                    <p>Settings</p>
-                </li>
-            </ul>
-            <ul>
-                <li><img src="/Alerta_Cheias/frontend/assets/icones_main2/icon_logout.png">
-                    <p>Logout</p>
-                </li>
-            </ul>
-        </div>
+
+
+        </header>
+
+
+
+    </div>
+
+
+
 </body>
 
 </html>
-<!-- https://fonts.google.com/icons?selected=Material+Symbols+Outlined:logout:FILL@0;wght@400;GRAD@0;opsz@24 -->
-<!-- https://www.youtube.com/watch?v=P1RwfxvQKQM -->
