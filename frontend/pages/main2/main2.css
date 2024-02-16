@@ -26,6 +26,9 @@
     top: 0;
     left: 0;
     padding: 30px 15px;
+
+    
+ 
     background: rgba(57, 107, 153, 0.2);
     backdrop-filter: blur(5px);
     display: flex;
@@ -69,6 +72,10 @@
 }
 
 ul {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     list-style: none;
     padding: 0 15px;
 
@@ -85,15 +92,17 @@ ul {
     overflow: hidden;
     /* Garante que o conteúdo dentro do contêiner não ultrapasse as bordas arredondadas */
 
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
 
 }
 
+
 .mapas {
     margin: 5px 0px;
 }
+
 
 .Texto_mapas {
     margin: 5px 0px;
@@ -103,6 +112,7 @@ ul {
 
 ul li {
     margin: 30px 0;
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -122,7 +132,19 @@ ul li p {
 
 
 .botao {
+    background: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 0;
+    transition: all 0.3s;
+    
+}
 
+.botao:hover {
     background: rgba(57, 107, 153, 0.2);
-    backdrop-filter: blur(5px);
+}
+
+.botao.open {
+    transform: rotate(180deg);
 }

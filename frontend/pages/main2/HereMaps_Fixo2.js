@@ -24,6 +24,7 @@ function initMap(mapId, center, zoom) {
 
     var marker = new H.map.Marker(center);   // Adicionar um marcador ao mapa
     map.addObject(marker);
+    window.addEventListener('resize', () => map.getViewPort().resize());
 }
 
 // Chamadas para inicializar cada mapa

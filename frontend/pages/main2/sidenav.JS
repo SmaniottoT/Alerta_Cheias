@@ -1,6 +1,7 @@
 var sideNavAberta = false;
 
 function mudarSideNav() {
+  // ESSE É O QUE FECHA
   if (sideNavAberta) {
     // Tamanho da caixa side-nav
     var elemento0 = document.querySelector("#side-nav");
@@ -36,7 +37,26 @@ function mudarSideNav() {
       linha.style.justifyContent = "unset";
     });
 
+    // MAPAS
+    var elemento08 = document.querySelectorAll(".mapas .map-container");
+    elemento08.forEach(function (mapas) {
+      mapas.style.display = "none";
+    });
+
+
+    // ICONE MAPAS
+    var elemento09 = document.querySelectorAll(".icones");
+    elemento09.forEach(function (iconeMapas) {
+      iconeMapas.style.display = "block";
+      iconeMapas.style.margin = "65px 0px";
+    });
+
+   
+
     sideNavAberta = false; // Alterando o estado para fechado
+    document.getElementById('abrir').classList.remove('open')
+
+    // ESSE É O QUE ABRE
   } else {
     // Tamanho da caixa side-nav
     var elemento0 = document.querySelector("#side-nav");
@@ -72,6 +92,27 @@ function mudarSideNav() {
       linha.style.justifyContent = "flex-start";
     });
 
+    // MAPAS
+    var elemento08 = document.querySelectorAll(".mapas .map-container");
+    elemento08.forEach(function (mapas) {
+      mapas.style.display = "block";
+    });
+
+
+    // ICONE MAPAS
+    var elemento09 = document.querySelectorAll(".icones");
+    elemento09.forEach(function (iconeMapas) {
+      iconeMapas.style.display = "none";
+    });
+
+    // MAPA E ICONES CENTRALIZAR
+    var elemento10 = document.querySelectorAll("ul");
+    elemento10.forEach(function (mapas) {
+      mapas.style.display = "block";
+    });
+
+
     sideNavAberta = true; // Alterando o estado para aberto
+    document.getElementById('abrir').classList.add('open')
   }
 }
