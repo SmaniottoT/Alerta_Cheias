@@ -21,6 +21,7 @@
     <script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
     <!-- FUNÇÕES -->
     <script src="/Alerta_Cheias/frontend/pages/main2/sidenav.JS"></script>
+    <script src="/Alerta_Cheias/frontend/pages/main2/DropUp.js" defer></script>
     <!-- JavaSript HereMaps API -->
     <script src="/Alerta_Cheias/frontend/pages/main2/HereMaps_Fixo2.js" defer></script>
     <script src="/Alerta_Cheias/frontend/pages/main2/HereMaps_Interativo2.js" defer></script>
@@ -78,7 +79,7 @@
                     </li>
 
                     <li class="Texto_mapas">
-                        <p>MAPA 01</p>
+                        <p>NOME MAPA 01</p>
                     </li>
 
                     <!-- ICONE MAPA 02 -->
@@ -93,7 +94,7 @@
                     </li>
 
                     <li class="Texto_mapas">
-                        <p>MAPA 02</p>
+                        <p>NOME MAPA 02</p>
                     </li>
 
                     <!-- ICONE MAPA 03 -->
@@ -108,7 +109,7 @@
                     </li>
 
                     <li class="Texto_mapas">
-                        <p>MAPA 03</p>
+                        <p>NOME MAPA 03</p>
                     </li>
                 </ul>
 
@@ -124,8 +125,10 @@
                     </li>
 
                     <!-- LOGOUT -->
-                    <li><img src="/Alerta_Cheias/frontend/assets/icones_main2/icon_logout.png">
-                        <p>Logout</p>
+                    <li><a href="/Alerta_Cheias/frontend/pages/login/login.html ">
+                            <img src="/Alerta_Cheias/frontend/assets/icones_main2/icon_logout.png">
+                            <p>Logout</p>
+                        </a>
                     </li>
 
 
@@ -142,7 +145,105 @@
     </div>
 
 
+    <footer>
+
+        <div class="Box_Footer">
+            <!-- AQUI VAO OS BOTOES  -->
+
+            <!-- 01 BOTAO COTA DE ENCHENTE-->
+            <div class="Box_Botao_01">
+                <button class="Botao_DropUp_01" id="Botao_DropUp_01">COTAS</button>
+                <div class="DropUp_Conteudo_01" id="DropUp_Conteudo_01">
+                    <ul>
+                        <li>
+                            Info_01:
+                        </li>
+
+                        <li>
+                            Info_02:
+                        </li>
+
+                        <li>
+                            Info_03:
+                        </li>
+
+                        <li>
+                            Info_04:
+                        </li>
+
+                        <li>
+                            Info_05:
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 02 BOTAO INFO BARRAGEM -->
+            <div class="Box_Botao_02">
+                <button class="Botao_DropUp_02" id="Botao_DropUp_02">BARRAGENS</button>
+                <div class="DropUp_Conteudo_02" id="DropUp_Conteudo_02">
+
+                    <ul>
+                        <li>
+                            Info_01:
+                        </li>
+
+                        <li>
+                            Info_02:
+                        </li>
+
+                        <li>
+                            Info_03:
+                        </li>
+
+                        <li>
+                            Info_04:
+                        </li>
+
+                        <li>
+                            Info_05:
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+            <!-- 03 BOTAO PREVISÃO DO TEMPO -->
+            <div class="Box_Botao_03">
+                <button class="Botao_DropUp_03" id="Botao_DropUp_03">TEMPO</button>
+                <div class="DropUp_Conteudo_03" id="DropUp_Conteudo_03">
+
+                    <ul>
+                        <li>
+                            Info_01:
+                        </li>
+
+                        <li>
+                            Info_02:
+                        </li>
+
+                        <li>
+                            Info_03:
+                        </li>
+
+                        <li>
+                            Info_04:
+                        </li>
+
+                        <li>
+                            Info_05:
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+    </footer>
 
 </body>
 <script>mudarSideNav()</script>
+
 </html>
