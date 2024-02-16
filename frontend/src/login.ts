@@ -4,6 +4,8 @@ document
   .getElementById("form")
   ?.addEventListener("submit", async (event: SubmitEvent) => {
     event.preventDefault();
+    console.log('ok');
+    
     const credentials = await user.post("/login", {
       username: (document.getElementById("username") as HTMLInputElement).value,
       password: (document.getElementById("password") as HTMLInputElement).value,

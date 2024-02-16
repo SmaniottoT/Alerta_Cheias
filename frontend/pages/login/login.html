@@ -18,8 +18,11 @@
     <!-- DROPDOWN CSS -->
     <link rel="stylesheet" href="/Alerta_Cheias/frontend/pages/login/dropdown.css">
     <!-- FUNCTIONS -->
-    <script src="/Alerta_Cheias/frontend/dist/index.js" defer></script>
+    <!-- função de login -->
+
+    <!-- botão FAQ -->
     <script src="/Alerta_Cheias/frontend/pages/FAQ/FAQFunction.js" defer></script>
+    <!-- seletor cidade -->
     <script src="/Alerta_Cheias/frontend/pages/login/SelectorFunction.js" defer></script>
     <!-- LOGIN CSS -->
     <link href="/Alerta_Cheias/frontend/pages/login/login.css" rel="stylesheet" />
@@ -76,11 +79,11 @@
                 <div class="Painel_Direita_Titulo">SIGN IN</div>
                 <div class="User_Input_Titulo">USER</div>
                 <div class="Input">
-                    <input id="username" type="text" class="Input_Text" />
+                    <input id="username" type="text" class="Input_Text" placeholder="username" />
                 </div>
                 <div class="User_Password_Input_Titulo">PASSWORD</div>
                 <div class="Input">
-                    <input id="password" type="password" class="Input_Text" />
+                    <input id="password" type="password" class="Input_Text" placeholder="password" />
                 </div>
                 <button type="submit" class="Botão_Login" id="Login_Button">
                     <span class="Login_Text">LOGIN</span>
@@ -119,5 +122,6 @@
 
 </body>
 
+<script src="../../dist/login.js"></script>
 
 </html>

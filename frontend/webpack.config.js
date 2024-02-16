@@ -2,7 +2,8 @@ const path = require("path");
 
 module.exports = {
   entry: {
-    index: "./src/index.ts",
+    login: "./src/login.ts",
+    signUp: "./src/signUp.ts",
   },
   module: {
     rules: [
