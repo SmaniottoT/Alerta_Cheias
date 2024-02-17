@@ -11,7 +11,7 @@ async function submitForm(event: Event) {
     });
     console.log(newUser);
 
-    if (newUser.response.data.error) {
+    if (newUser.response?.data.error) {
       throw new Error(newUser.response.data.error);
     }
     window.location.replace("../../pages/login/login.html");
