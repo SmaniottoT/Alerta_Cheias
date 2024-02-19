@@ -1,0 +1,33 @@
+* {
+  font-family: KoHo;
+  color: rgba(255, 255, 255, 1);
+  font-weight: Bold;
+}
+
+.dropbtn {
+  width: 90%;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  background: rgba(75, 125, 176, 0.800000011920929);
+  opacity: 1;
+  overflow: visible;
+  box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.800000011920929);
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  font-size: 20px;
+  font-family: KoHo;
+  color: rgba(255, 255, 255, 1);
+  font-weight: Bold;
+  text-align: center;
+}
+
+.dropbtn option {
+  background: rgba(75, 125, 176, 0.8);
+  box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.8);
+  border-radius: 100px;
+  color: rgba(255, 255, 255, 1);
+  font-weight: bold;
+}
