@@ -110,6 +110,7 @@ server.use(
 AppDataSource.initialize()
   .then(async () => {
     console.log("Database initialized!");
+    // setInterval tempo e chama execução.
     server.listen(SERVER_PORT, () => {
       console.log(`Server listening in port: ${SERVER_PORT}`);
     });

@@ -81,8 +81,8 @@ async function addDomMarker(MapaZero) {
     response.forEach((element) => {
       const latitude = element.data.lat;
       const longitude = element.data.long;
-
-      var newBenchmark = new H.map.DomMarker(
+      console.log(`string ${latitude}, ${longitude}`);
+      const newBenchmark = new H.map.DomMarker(
         { lat: latitude, lng: longitude },
         {
           icon: DOM_Icon,
