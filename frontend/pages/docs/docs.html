@@ -3,41 +3,77 @@
 
 <head>
 
+    <!-- FONTES -->
     <link href="https://fonts.googleapis.com/css?family=KoHo&display=swap" rel="stylesheet" />
-    <link href="/Alerta_Cheias/frontend/pages/docs/docs.css" rel="stylesheet" />
+    <!-- Link para a biblioteca Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.18.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"
+        defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"
+        defer></script>
+    <!-- Jquery 3.6.4 -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" defer></script>
+    <!-- FUNÇÕES -->
     <script src="/Alerta_Cheias/frontend/pages/FAQ/FAQFunction.js" defer></script>
-
+    <!-- CSS MAIN -->
+    <link rel="stylesheet" href="/Alerta_Cheias/frontend/pages/docs/docs.css">
     <title>ALERTA CHEIAS</title>
+
 
 </head>
 
 <body>
-     <!-- Corpo -->
+    <!-- BACKGROUND -->
     <div class="DivBackground">
-        <div class="DivLogo">
+        <!-- NAVBAR -->
+        <nav class="navbar">
+            <!-- BOX DO LOGO -->
+            <div class="DivLogo">
+                <!-- LOGO -->
+                <img class="Logo" src="/Alerta_Cheias/frontend/assets/logo_icon/Logo_AlertaCheias.png" alt="Logo">
+            </div>
+        </nav>
+        <!-- DIV PRINCIPAL -->
+        <div class="DivPrincipal">
 
-            <img class="Logo" src="/Alerta_Cheias/assets/Logo_01_SemFundo.png" alt="LogoIcon_AlertaCheias" height="80px"
-                width="130">
+            <div class="Painel">
+                <div class="BoxTitulo">
+                    <h1 class="Painel_Titulo">DOCUMENTOS</h1>
+                </div>
+                <!-- BOX COM INFORMAÇÕES -->
+                <div class="Box_Conteudo">
 
-        </div>
-        <div class="DivBody">
-            <div class="Painel_Esquerda">
-                <div class="Painel_Esquerda_Titulo">Documentos</div>
+                    <p>ESPAÇO PARA INFORMAÇÃO</p>
+
+                    <p>ESPAÇO PARA INFORMAÇÃO</p>
+
+                    <p>ESPAÇO PARA INFORMAÇÃO</p>
+
+                    <p>ESPAÇO PARA INFORMAÇÃO</p>
+
+                    <p>ESPAÇO PARA INFORMAÇÃO</p>
+
+                    <p>ESPAÇO PARA INFORMAÇÃO</p>
+
+                    <p>ESPAÇO PARA INFORMAÇÃO</p>
+
+                </div>
             </div>
         </div>
     </div>
-
-
-
 
     <!-- Rodapé -->
     <footer>
         <div class="Background_Footer">
             <div class="Footer_Logo_Box">
-                <a href="/Alerta_Cheias/frontend/pages/login/login.html"> <img
-                        src="/Alerta_Cheias/assets/Logo_01_SemFundo.png" alt="Alerta Cheias" height="35px"></a>
+                <a href="/Alerta_Cheias/frontend/pages/main/main.html">
+                    <img src="/Alerta_Cheias/frontend/assets/logo_icon/Logo_AlertaCheias.png" alt="Alerta Cheias"
+                        height="35px">
+                </a>
             </div>
             <div class="Footer_Text_Box">
                 <a class="custom-no-underline">&copy; 2024 AlertaCheias</a>
@@ -48,19 +84,12 @@
             </div>
             <div class="Footer_FAQ_Box">
                 <button class="Botão_FAQ" id="FAQ_Button" onclick="buttonClick()">
-                    <a class="FAQ_Text" href="/Alerta_Cheias/frontend/pages/FAQ/">FAQ</a>
+                    <a class="FAQ_Text" href="/Alerta_Cheias/frontend/pages/FAQ/FAQ.html">FAQ</a>
                 </button>
             </div>
         </div>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    </div>
 
 </body>
 

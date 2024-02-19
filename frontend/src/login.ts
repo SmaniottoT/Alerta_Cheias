@@ -13,7 +13,7 @@ async function login(event: Event) {
     if (credentials.response?.data.error) {
       throw new Error(credentials.response.data.error);
     }
-    window.location.replace("../../pages/main/main.html");
+    window.location.replace("../../pages/main2/main2.html");
   } catch (error) {
     // alert(`Error: ${error.message}`);
     // transformar o alert em um document.elementHtml
