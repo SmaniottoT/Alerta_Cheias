@@ -30,6 +30,13 @@ export class FloodLevelController {
     return await benchmarkRepository.save(benchmark);
   }
 
+  
+  async getBenchmark() {
+    const benchmarkRepository = AppDataSource.getRepository(Benchmark);
+    const benchmarkList = await benchmarkRepository.find();
+    return benchmarkList;
+  }
+
   async fetchCurrentLevel() {
     try {
       const response = await axios.post(

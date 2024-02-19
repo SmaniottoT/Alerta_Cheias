@@ -24,12 +24,15 @@
     <!-- FUNÇÕES -->
     <script src="/Alerta_Cheias/frontend/pages/FAQ/FAQFunction.js" defer></script>
     <script src="/Alerta_Cheias/frontend/pages/login/SelectorFunction.js" defer></script>
+    <!-- BACKEND -->
+    <script src="../../dist/login.js" defer></script>
     <!-- INDEX.JS -->
     <script src="/Alerta_Cheias/frontend/dist/index.js" defer></script>
     <!-- LOGIN CSS -->
     <link href="/Alerta_Cheias/frontend/pages/login/login.css" rel="stylesheet" />
     <!-- DROPDOWN CSS -->
     <link rel="stylesheet" href="/Alerta_Cheias/frontend/pages/login/dropdown.css">
+
     <title>ALERTA CHEIAS</title>
 
 </head>
@@ -76,14 +79,15 @@
                 <div class="Painel_Esquerda_NivelDoRio">1,50m</div>
             </div>
             <div id="form" class="Painel_Direita">
+                <span id="error" style="display: none; text-decoration: underline;"></span>
                 <div class="Painel_Direita_Titulo">SIGN IN</div>
                 <div class="User_Input_Titulo">USER</div>
                 <div class="Input">
-                    <input id="username" type="text" class="Input_Text" />
+                    <input id="username" type="text" class="Input_Text" placeholder="username" />
                 </div>
                 <div class="User_Password_Input_Titulo">PASSWORD</div>
                 <div class="Input">
-                    <input id="password" type="password" class="Input_Text" />
+                    <input id="password" type="password" class="Input_Text" placeholder="password" />
                 </div>
                 <button type="submit" class="Botão_Login" id="Login_Button">
                     <span class="Login_Text">LOGIN</span>

@@ -22,6 +22,8 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <!-- FUNÇÕES -->
     <script src="/Alerta_Cheias/frontend/pages/FAQ/FAQFunction.js" defer></script>
+    <!-- BACKEND -->
+    <script src="../../dist/signUp.js" defer></script>
     <!-- SIGNUP CSS -->
     <link href="/Alerta_Cheias/frontend/pages/signUp/signUp.css" rel="stylesheet" />
 
@@ -39,7 +41,9 @@
         </div>
         <!-- main box -->
         <div class="main_box">
-            <div class="panel">
+
+            <div id="form" class="panel">
+                <span id="error" style="display: none; text-decoration: underline;"></span>
                 <h1 class="title">SIGN UP</h1>
                 <div class="input">
                     <h4>Username</h4>
@@ -55,16 +59,14 @@
                 </div>
                 <div class="input">
                     <h4>Password</h4>
-                    <input type="text" id="password" name="password" />
+                    <input type="password" id="password" type="password" name="password" />
                 </div>
                 <div>
-                    <button class="signUp_button" id="signUp_button" onclick="createUser()">SIGN UP</button>
+                    <button class="signUp_button" id="signUp_button">SIGN UP</button>
                 </div>
             </div>
         </div>
     </div>
-
-
 
     <!-- footer -->
     <footer>

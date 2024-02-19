@@ -2,6 +2,7 @@ import { AppDataSource } from "../data-source";
 import { User } from "../entity/User";
 import bcrypt from "bcrypt";
 import { UsernameTakenException } from "../exceptions/UsernameTakenException";
+import { EmptyInputException } from "../exceptions/EmptyInputException";
 
 export class UserController {
   async createUser(
@@ -14,6 +15,9 @@ export class UserController {
     const userExists = await userRepository.existsBy({
       username,
     });
+    if (!username || !name || !email || !password) {
+      throw new EmptyInputException();
+    }
     if (userExists) {
       throw new UsernameTakenException();
     }

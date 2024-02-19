@@ -10,7 +10,7 @@ user.interceptors.response.use(
   },
   (error) => {
     if (error.response.status == 401) {
-      window.location.replace("/pages/login/login.html");
+      window.location.replace("Alerta_Cheias/frontend/pages/login/login.html");
     }
     return error;
   }
@@ -20,7 +20,7 @@ export const validateAuth = () => {
   const token = localStorage.getItem("token");
 
   if (!token) {
-    window.location.replace("/pages/login/login.html");
+    window.location.replace("Alerta_Cheias/frontend/pages/login/login.html");
   } else {
     user.defaults.headers.common.Authorization = `Bearer ${token}`;
   }
