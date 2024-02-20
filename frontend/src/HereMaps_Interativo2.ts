@@ -112,19 +112,18 @@ async function addDomMarker(MapaZero: any) {
   //       '<div>Anfield<br />Capacity: 54,074</div>');
   //   }
 
-// GRUPO
+  // GRUPO
 
-var group = new H.map.Group();
+  var group = new H.map.Group();
 
   map.addObject(group);
-
 
   // MARCADORES
   group.addEventListener(
     "tap",
     function (evt: any) {
-        console.log(evt.target.getData());
-        
+      console.log(evt.target.getData());
+
       // event target is the marker itself, group is a parent event target
       // for all objects that it contains
       var bubble = new H.ui.InfoBubble(evt.target.getGeometry(), {
@@ -150,7 +149,19 @@ var group = new H.map.Group();
       } as any
     );
     newBenchmark.setData(
-     `<div style="width: 250px"><h2>Rua: ${street}</h2></br><h3>Cota de enchente: ${floodLevel}m</h3><p>Latitude: ${latitude}</p><p>Longitude: ${longitude}</p><div>COLOCAR BOTÕES AQUI</div></div>`
+      `<div style="width: 250px">
+      <button class="botao" id="adicionar" onclick="adicionarMapa()">
+      <img src="/Alerta_Cheias/frontend/assets/icones_main2/icon_add.png"> 
+     </button>
+     <h2>Rua: ${street}</h2>
+     </br>
+     <h3>Cota de enchente: ${floodLevel}m</h3>
+     <p>Latitude: ${latitude}</p>
+     <p>Longitude: ${longitude}</p>
+     <div>
+
+    </div>
+    </div>`
     );
     group.addObject(newBenchmark);
   });
