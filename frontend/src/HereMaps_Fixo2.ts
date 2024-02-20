@@ -1,4 +1,5 @@
 
+import "@here/maps-api-for-javascript";
 
 // ESTE DOCUMENTO FAZ ALTERAÇÕES NOS 4 MAPAS SUPERIORES 
 
@@ -7,11 +8,11 @@ var platform = new H.service.Platform({
     'apikey': 'OFV9bslywT8eoJN8RHd9n5sicXiLzMC-70-MY8BMXsM'  // Nossa API KEY do HereMaps
 });
 
-function initMap(mapId, center, zoom) {
+function initMap(mapId: any, center: any, zoom: any) {
     var defaultLayers = platform.createDefaultLayers({ // Cria camadas padrão usando a plataforma HERE Maps
         lg: 'POR',   // Define o idioma para Português
         static: true // Adicione a opção static para remover o termo de uso
-    });
+    } as any) as any;
 
     var map = new H.Map(
         document.getElementById(mapId),  // Obtém o elemento HTML para o mapa
