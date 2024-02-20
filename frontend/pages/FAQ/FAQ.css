@@ -97,7 +97,7 @@ padding:  0px 25%;
 .custom-no-underline {
   text-decoration: none;
   color: #ffffff;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: normal;
 }
 
@@ -136,7 +136,7 @@ width: 50%;
 }
 
 .FAQ_Text{
-  font-size: 15px;
+  font-size: 20px;
   text-decoration: none;
   color: #ffffff;
 }

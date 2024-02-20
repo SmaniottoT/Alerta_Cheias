@@ -70,7 +70,7 @@ a {
     width: 30px;
     display: none;
 }
-
+/* PARA AS DUAS LISTAS */
 ul {
     flex-direction: column;
     display: flex;

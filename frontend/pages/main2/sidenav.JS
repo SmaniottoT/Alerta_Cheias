@@ -3,7 +3,6 @@ var sideNavAberta = false;
 function mudarSideNav() {
   // ESSE É O QUE FECHA
   if (sideNavAberta) {
-
     // Tamanho da caixa side-nav (DIMINUI)
     var elemento0 = document.querySelector("#side-nav");
     elemento0.style.width = "110px";
@@ -50,7 +49,6 @@ function mudarSideNav() {
       mapas.style.display = "none";
     });
 
-
     // Mostra os icones do mapa quando fechar
     var elemento09 = document.querySelectorAll(".icones");
     elemento09.forEach(function (iconeMapas) {
@@ -60,8 +58,10 @@ function mudarSideNav() {
 
 
 
+    
+
     sideNavAberta = false; // Alterando o estado para fechado
-    document.getElementById('abrir').classList.remove('open')
+    document.getElementById("abrir").classList.remove("open");
 
     // ESSE É O QUE ABRE
   } else {
@@ -117,9 +117,6 @@ function mudarSideNav() {
       iconeMapas.style.display = "none";
     });
 
-
-
-    
     // UL MAPAS E CONFIGURAÇÕES
     var elemento10 = document.querySelectorAll("ul");
     elemento10.forEach(function (mapas) {
@@ -130,13 +127,17 @@ function mudarSideNav() {
     elemento11.forEach(function (config) {
       config.style.flexDirection = "row";
       config.style.display = "flex";
-
     });
 
-
-
+    // TENTAR ARRUMAR
+    //Esconde os icones do mapa quando abrir
+    // var elemento12 = document.querySelectorAll("#ListaMapas");
+    // elemento12.forEach(function (ListaMapas) {
+    //   ListaMapas.style.flexDirection = "column";
+    //   ListaMapas.style.display = "inline-flex";
+    // });
 
     sideNavAberta = true; // Alterando o estado para aberto
-    document.getElementById('abrir').classList.add('open')
+    document.getElementById("abrir").classList.add("open");
   }
 }
