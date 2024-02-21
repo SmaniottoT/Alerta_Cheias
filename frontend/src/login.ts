@@ -1,6 +1,5 @@
 import { user } from "./apiUser";
 
-
 async function login(event: Event) {
   event.preventDefault();
   try {
@@ -13,10 +12,9 @@ async function login(event: Event) {
     if (credentials.response?.data.error) {
       throw new Error(credentials.response.data.error);
     }
+    localStorage.setItem("token", credentials.data.token);
     window.location.replace("../../pages/main2/main2.html");
   } catch (error) {
-    // alert(`Error: ${error.message}`);
-    // transformar o alert em um document.elementHtml
     document.getElementById("error").innerText = error.message;
     document.getElementById("error").style.display = "block";
     document

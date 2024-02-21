@@ -4,9 +4,9 @@ module.exports = {
   entry: {
     login: "./src/login.ts",
     signUp: "./src/signUp.ts",
-    index: "./src/index.ts",
     HereMaps_Interativo2: "./src/HereMaps_Interativo2.ts",
-    HereMaps_Fixo2: "./src/HereMaps_Fixo2.ts"
+    HereMaps_Fixo2: "./src/HereMaps_Fixo2.ts",
+    Weather: "./src/Weather.ts"
   },
   module: {
     rules: [
@@ -24,13 +24,13 @@ module.exports = {
     filename: "[name].js",
     path: path.resolve(__dirname, "dist"),
   },
-  mode: 'production',
+  mode: "production",
   node: {
-      global: false,
-    },
+    global: false,
+  },
   performance: {
-      maxEntrypointSize: 2048000,
-      maxAssetSize: 2048000
+    maxEntrypointSize: 2048000,
+    maxAssetSize: 2048000,
   },
   devServer: {
     static: path.join(__dirname, "dist"),
