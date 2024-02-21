@@ -22,6 +22,7 @@
     <!-- CSS MAIN2 -->
     <link rel="stylesheet" href="/Alerta_Cheias/frontend/pages/main2/main2.css">
     <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
+    <link rel="stylesheet" href="/Alerta_Cheias/frontend/pages/main2/tempo.css">
     <title>ALERTA CHEIAS</title>
 </head>
 
@@ -60,7 +61,7 @@
 
 
 
-                <ul>
+                <ul id="ListaMapas">
 
                     <!-- ICONE MAPA 01 -->
                     <li class="icones">
@@ -108,14 +109,14 @@
                     </li>
                 </ul>
 
-                <ul>
+                <ul id="ListaConfiguracoes">
                     <!-- PERFIL -->
 
-                    <li class="Configuracoes">
+                    <li class="LiConfig">
 
-                        <a href="/Alerta_Cheias/frontend/pages/login/login.html ">
+                        <a class="Configuracoes" href="/Alerta_Cheias/frontend/pages/login/login.html ">
                             <img src="/Alerta_Cheias/frontend/assets/icones_main2/icon_perfil.png">
-                            <p>Profile</p>
+                            <p>PERFIL</p>
                         </a>
 
                     </li>
@@ -123,22 +124,22 @@
 
                     <!-- CONFIGURAÇÕES -->
 
-                    <li class="Configuracoes">
+                    <li class="LiConfig">
 
-                        <a href="/Alerta_Cheias/frontend/pages/login/login.html ">
+                        <a class="Configuracoes" href="/Alerta_Cheias/frontend/pages/login/login.html ">
                             <img src="/Alerta_Cheias/frontend/assets/icones_main2/icon_configuracao.png">
-                            <p>Settings</p>
+                            <p>CONFIGURAÇÕES</p>
                         </a>
 
                     </li>
 
                     <!-- LOGOUT -->
 
-                    <li class="Configuracoes">
+                    <li class="LiConfig">
 
-                        <a href="/Alerta_Cheias/frontend/pages/login/login.html ">
+                        <a class="Configuracoes" href="/Alerta_Cheias/frontend/pages/login/login.html ">
                             <img src="/Alerta_Cheias/frontend/assets/icones_main2/icon_logout.png">
-                            <p>Logout</p>
+                            <p>SAIR</p>
                         </a>
 
                     </li>
@@ -226,30 +227,14 @@
                 <button class="Botao_DropUp_03" id="Botao_DropUp_03">TEMPO</button>
                 <div class="DropUp_Conteudo_03" id="DropUp_Conteudo_03">
 
-                    <ul>
-                        <li>
+<div>
                             Info_01:
                             <button onclick="getCityCode()">código</button>
                             <button onclick="getWeather()">previsão</button>
-                        </li>
 
-                        <li>
-                            Info_02:
-                        </li>
+                  </div>
 
-                        <li>
-                            Info_03:
-                        </li>
 
-                        <li>
-                            Info_04:
-                        </li>
-
-                        <li>
-                            Info_05:
-                        </li>
-
-                    </ul>
 
                 </div>
             </div>

@@ -70,7 +70,7 @@ a {
     width: 30px;
     display: none;
 }
-
+/* PARA AS DUAS LISTAS */
 ul {
     flex-direction: column;
     display: flex;
@@ -200,6 +200,4 @@ ul li p {
     background: rgba(255, 255, 255, 0.2);
 }
 
-.Configuracoes {
-    flex-direction: row;
-}
+
