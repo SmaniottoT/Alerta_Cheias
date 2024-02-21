@@ -16,6 +16,8 @@ function mudarSideNav() {
     elemento02.style.width = "80px";
     elemento02.style.background = "none";
     elemento02.style.backdropFilter = "none";
+    elemento02.style.marginBottom = "155px";
+
 
     //Esconde o icone Premium quando fechar a SideNav
     var elemento03 = document.querySelector("#side-nav #Premium");
@@ -56,9 +58,27 @@ function mudarSideNav() {
       iconeMapas.style.margin = "65px 0px";
     });
 
+    //Diminuir margin dos icones ao fechar
+    var elemento10 = document.querySelectorAll(".icones");
+    elemento10.forEach(function (icone) {
+      icone.style.margin = "30px 0px";
+    });
+
+    //RECONFIGURAR PARA FECHANDO
 
 
-    
+
+    //Aumenta o tamanho do mapa quando aberto
+    var elemento13 = document.querySelectorAll(".mapas");
+    elemento13.forEach(function (ListaMapas) {
+      ListaMapas.style.width = "0px";
+      ListaMapas.style.height = "0px";
+    });
+
+
+
+
+
 
     sideNavAberta = false; // Alterando o estado para fechado
     document.getElementById("abrir").classList.remove("open");
@@ -78,6 +98,7 @@ function mudarSideNav() {
     elemento02.style.width = "100%";
     elemento02.style.background = "rgba(57, 107, 153, 0.2)";
     elemento02.style.backdropFilter = "blur(5px)";
+    elemento02.style.marginBottom = "0px";
 
     //Mostra o icone Premium quando abrir a SideNav
     var elemento03 = document.querySelector("#side-nav #Premium");
@@ -122,20 +143,48 @@ function mudarSideNav() {
     elemento10.forEach(function (mapas) {
       mapas.style.display = "block";
     });
-    // UL MAPAS E CONFIGURAÇÕES
+
+    //Alinhar itens da Lista Configurações
     var elemento11 = document.querySelectorAll(".Configuracoes");
     elemento11.forEach(function (config) {
-      config.style.flexDirection = "row";
+      config.style.width = "100%";
       config.style.display = "flex";
+      config.style.flexDirection = "row";
+
     });
 
-    // TENTAR ARRUMAR
-    //Esconde os icones do mapa quando abrir
-    // var elemento12 = document.querySelectorAll("#ListaMapas");
-    // elemento12.forEach(function (ListaMapas) {
-    //   ListaMapas.style.flexDirection = "column";
-    //   ListaMapas.style.display = "inline-flex";
-    // });
+
+    //Centralizar itens da #ListaMapas
+    var elemento12 = document.querySelectorAll("#ListaMapas");
+    elemento12.forEach(function (ListaMapas) {
+      ListaMapas.style.display = "flex";
+      ListaMapas.style.flexDirection = "column";
+    });
+
+    //Aumenta o tamanho do mapa quando aberto
+    var elemento13 = document.querySelectorAll(".mapas");
+    elemento13.forEach(function (ListaMapas) {
+      ListaMapas.style.width = "100%";
+      ListaMapas.style.height = "100%";
+    });
+
+    //Alinhar Itens  #ListaConfiguracoes
+    var elemento14 = document.querySelectorAll("#ListaConfiguracoes");
+    elemento14.forEach(function (ListaConfig) {
+      ListaConfig.style.display = "flex";
+      ListaConfig.style.flexDirection = "column";
+    });
+
+
+
+    //Alinhar itens da Lista Configurações
+    var elemento15 = document.querySelectorAll(".LiConfig");
+    elemento15.forEach(function (LiConfig) {
+      LiConfig.style.width = "100%";
+      LiConfig.style.margin = "10px 0px";
+    });
+
+  
 
     sideNavAberta = true; // Alterando o estado para aberto
     document.getElementById("abrir").classList.add("open");
