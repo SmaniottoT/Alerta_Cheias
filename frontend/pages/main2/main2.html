@@ -12,22 +12,17 @@
     <!-- ICONES GOOGLE FONTS -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-
-
-    <!-- Para linkar os dados de HereMaps API -->
-    <!-- <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
-    <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
-    <script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
-    <script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script> -->
     <!-- FUNÇÕES -->
     <script src="/Alerta_Cheias/frontend/pages/main2/sidenav.JS"></script>
     <script src="/Alerta_Cheias/frontend/dist/DropUp.js" defer></script>
+    <script src="/Alerta_Cheias/frontend/pages/main2/tempo.js" defer></script>
     <!-- JavaSript HereMaps API -->
     <script src="/Alerta_Cheias/frontend/dist/HereMaps_Fixo2.js" defer></script>
     <script src="/Alerta_Cheias/frontend/dist/HereMaps_Interativo2.js" defer></script>
     <!-- CSS MAIN2 -->
     <link rel="stylesheet" href="/Alerta_Cheias/frontend/pages/main2/main2.css">
     <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
+    <link rel="stylesheet" href="/Alerta_Cheias/frontend/pages/main2/tempo.css">
     <title>ALERTA CHEIAS</title>
 </head>
 
@@ -66,7 +61,7 @@
 
 
 
-                <ul>
+                <ul id="ListaMapas">
 
                     <!-- ICONE MAPA 01 -->
                     <li class="icones">
@@ -114,14 +109,14 @@
                     </li>
                 </ul>
 
-                <ul>
+                <ul id="ListaConfiguracoes">
                     <!-- PERFIL -->
 
-                    <li class="Configuracoes">
+                    <li class="LiConfig">
 
-                        <a href="/Alerta_Cheias/frontend/pages/login/login.html ">
+                        <a class="Configuracoes" href="/Alerta_Cheias/frontend/pages/login/login.html ">
                             <img src="/Alerta_Cheias/frontend/assets/icones_main2/icon_perfil.png">
-                            <p>Profile</p>
+                            <p>PERFIL</p>
                         </a>
 
                     </li>
@@ -129,22 +124,22 @@
 
                     <!-- CONFIGURAÇÕES -->
 
-                    <li class="Configuracoes">
+                    <li class="LiConfig">
 
-                        <a href="/Alerta_Cheias/frontend/pages/login/login.html ">
+                        <a class="Configuracoes" href="/Alerta_Cheias/frontend/pages/login/login.html ">
                             <img src="/Alerta_Cheias/frontend/assets/icones_main2/icon_configuracao.png">
-                            <p>Settings</p>
+                            <p>CONFIGURAÇÕES</p>
                         </a>
 
                     </li>
 
                     <!-- LOGOUT -->
 
-                    <li class="Configuracoes">
+                    <li class="LiConfig">
 
-                        <a href="/Alerta_Cheias/frontend/pages/login/login.html ">
+                        <a class="Configuracoes" href="/Alerta_Cheias/frontend/pages/login/login.html ">
                             <img src="/Alerta_Cheias/frontend/assets/icones_main2/icon_logout.png">
-                            <p>Logout</p>
+                            <p>SAIR</p>
                         </a>
 
                     </li>
@@ -231,29 +226,14 @@
             <div class="Box_Botao_03">
                 <button class="Botao_DropUp_03" id="Botao_DropUp_03">TEMPO</button>
                 <div class="DropUp_Conteudo_03" id="DropUp_Conteudo_03">
-
-                    <ul>
-                        <li>
-                            Info_01:
-                        </li>
-
-                        <li>
-                            Info_02:
-                        </li>
-
-                        <li>
-                            Info_03:
-                        </li>
-
-                        <li>
-                            Info_04:
-                        </li>
-
-                        <li>
-                            Info_05:
-                        </li>
-
-                    </ul>
+                    
+                    <div class="ww-wrapper">
+                        <div class="ww-row">
+                            <div class="weatherCard weatherCard1"></div>
+                            <div class="weatherCard weatherCard2"></div>
+                            <div class="weatherCard weatherCard3"></div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
