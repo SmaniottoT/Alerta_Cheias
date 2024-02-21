@@ -1,4 +1,10 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import {
+  Column,
+  Entity,
+  ManyToMany,
+  PrimaryGeneratedColumn,
+} from "typeorm";
+import { User } from "./User";
 
 @Entity()
 export class Benchmark {
@@ -16,4 +22,7 @@ export class Benchmark {
 
   @Column("decimal")
   long: number;
+
+  @ManyToMany(() => User)
+  user: User;
 }

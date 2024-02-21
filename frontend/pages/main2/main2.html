@@ -15,7 +15,7 @@
     <!-- FUNÇÕES -->
     <script src="/Alerta_Cheias/frontend/pages/main2/sidenav.JS"></script>
     <script src="/Alerta_Cheias/frontend/dist/DropUp.js" defer></script>
-    <script src="/Alerta_Cheias/frontend/pages/main2/tempo.js" defer></script>
+    <script src="/Alerta_Cheias/frontend/dist/Weather.js" defer></script>
     <!-- JavaSript HereMaps API -->
     <script src="/Alerta_Cheias/frontend/dist/HereMaps_Fixo2.js" defer></script>
     <script src="/Alerta_Cheias/frontend/dist/HereMaps_Interativo2.js" defer></script>
@@ -226,14 +226,15 @@
             <div class="Box_Botao_03">
                 <button class="Botao_DropUp_03" id="Botao_DropUp_03">TEMPO</button>
                 <div class="DropUp_Conteudo_03" id="DropUp_Conteudo_03">
-                    
-                    <div class="ww-wrapper">
-                        <div class="ww-row">
-                            <div class="weatherCard weatherCard1"></div>
-                            <div class="weatherCard weatherCard2"></div>
-                            <div class="weatherCard weatherCard3"></div>
-                        </div>
-                    </div>
+
+<div>
+                            Info_01:
+                            <button onclick="getCityCode()">código</button>
+                            <button onclick="getWeather()">previsão</button>
+
+                  </div>
+
+
 
                 </div>
             </div>

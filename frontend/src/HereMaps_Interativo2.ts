@@ -9,6 +9,32 @@ import "@here/maps-api-for-javascript";
  * @param  {H.Map} MapaZero      Uma instância do mapa HERE dentro da aplicação
  *
  */
+
+// execução dos mapas fixos
+
+function initMap(mapId: any, center: any, zoom: any) {
+  var defaultLayers = platform.createDefaultLayers({
+    // Cria camadas padrão usando a plataforma HERE Maps
+    lg: "POR", // Define o idioma para Português
+    static: true, // Adicione a opção static para remover o termo de uso
+  } as any) as any;
+
+  var map = new H.Map(
+    document.getElementById(mapId), // Obtém o elemento HTML para o mapa
+    defaultLayers.vector.normal.map, // Usa a camada normal do mapa
+    {
+      zoom: 16, // Define o nível de zoom inicial
+      center: center, // Define o centro do mapa com base nas coordenadas fornecidas
+    }
+  );
+
+  var marker = new H.map.Marker(center); // Adicionar um marcador ao mapa
+  map.addObject(marker);
+  window.addEventListener("resize", () => map.getViewPort().resize());
+}
+
+// Chamadas para inicializar mapa geral
+
 async function addDomMarker(MapaZero: any) {
   var outerElement = document.createElement("div");
 
@@ -74,69 +100,43 @@ async function addDomMarker(MapaZero: any) {
     },
   });
 
-  //   function addMarkerToGroup(group: any, coordinate: any, html: any) {
-  //     var marker = new H.map.Marker(coordinate);
-  //     // add custom data to the marker
-  //     marker.setData(html);
-  //     group.addObject(marker);
-  //   }
+  // GRUPO
 
-  //   /**
-  //    * Add two markers showing the position of Liverpool and Manchester City football clubs.
-  //    * Clicking on a marker opens an infobubble which holds HTML content related to the marker.
-  //    * @param {H.Map} map A HERE Map instance within the application
-  //    */
-  //   function addInfoBubble(map) {
-  //     var group = new H.map.Group();
-
-  //     map.addObject(group);
-
-  //     // add 'tap' event listener, that opens info bubble, to the group
-  //     group.addEventListener('tap', function (evt: any) {
-  //       // event target is the marker itself, group is a parent event target
-  //       // for all objects that it contains
-  //       var bubble = new H.ui.InfoBubble(evt.target.getGeometry(), {
-  //         // read custom data
-  //         content: evt.target.getData()
-  //       });
-  //       // show info bubble
-  //       ui.addBubble(bubble);
-  //     }, false);
-
-  //     addMarkerToGroup(group, {lat: 53.439, lng: -2.221},
-  //       '<div><a href="https://www.mcfc.co.uk" target="_blank">Manchester City</a></div>' +
-  //       '<div>City of Manchester Stadium<br />Capacity: 55,097</div>');
-
-  //     addMarkerToGroup(group, {lat: 53.430, lng: -2.961},
-  //       '<div><a href="https://www.liverpoolfc.tv" target="_blank">Liverpool</a></div>' +
-  //       '<div>Anfield<br />Capacity: 54,074</div>');
-  //   }
-
-// GRUPO
-
-var group = new H.map.Group();
+  var group = new H.map.Group();
 
   map.addObject(group);
-
 
   // MARCADORES
   group.addEventListener(
     "tap",
     function (evt: any) {
-        console.log(evt.target.getData());
-        
       // event target is the marker itself, group is a parent event target
       // for all objects that it contains
       var bubble = new H.ui.InfoBubble(evt.target.getGeometry(), {
         // read custom data
-        content: evt.target.getData(),
+        content: evt.target.getData().html,
       });
       // show info bubble
       ui.addBubble(bubble);
+
+      const verificadores = document.getElementById("adicionarMapa");
+
+      verificadores.addEventListener("click", () =>
+        initMap(
+          "mapa1",
+          {
+            lat: evt.target.getData().latitude,
+            lng: evt.target.getData().longitude,
+          },
+          12
+        )
+      );
     },
     false
   );
+
   const benchmarks = await benchmark.get("/benchmarks");
+
   benchmarks.data.forEach((benchmark: any) => {
     const street = benchmark.street;
     const floodLevel = benchmark.floodLevel;
@@ -149,27 +149,26 @@ var group = new H.map.Group();
         icon: DOM_Icon,
       } as any
     );
-    newBenchmark.setData(
-     `<div style="width: 250px"><h2>Rua: ${street}</h2></br><h3>Cota de enchente: ${floodLevel}m</h3><p>Latitude: ${latitude}</p><p>Longitude: ${longitude}</p><div>COLOCAR BOTÕES AQUI</div></div>`
-    );
+    newBenchmark.setData({
+      html: `<div style="width: 250px">
+      <button id="adicionarMapa">
+      <img src="/Alerta_Cheias/frontend/assets/icones_main2/icon_add.png"> 
+     </button>
+     <h2>Rua: ${street}</h2>
+     </br>
+     <h3>Cota de enchente: ${floodLevel}m</h3>
+     <p>Latitude: ${latitude}</p>
+     <p>Longitude: ${longitude}</p>
+     <div>
+
+    </div>
+    </div>`,
+      latitude,
+      longitude,
+    });
+
     group.addObject(newBenchmark);
   });
-
-  // var MarechalFlorianoPeixoto_1056 = new H.map.DomMarker(
-  //   { lat: -26.82806, lng: -49.28573 },
-  //   {
-  //     icon: DOM_Icon,
-  //   }
-  // );
-  // MapaZero.addObject(MarechalFlorianoPeixoto_1056);
-
-  // var Esquina_Haiti_BarãoDoRioBranco = new H.map.DomMarker(
-  //   { lat: -26.81929, lng: -49.26677 },
-  //   {
-  //     icon: DOM_Icon,
-  //   }
-  // );
-  // MapaZero.addObject(Esquina_Haiti_BarãoDoRioBranco);
 }
 
 /**
@@ -206,5 +205,3 @@ var ui = H.ui.UI.createDefault(map, defaultLayers);
 
 // Agora use o mapa conforme necessário...
 addDomMarker(map);
-
-// initMap('mapa0', { lat: -26.834362812206653, lng: -49.284916286293544 }, 12);
