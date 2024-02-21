@@ -4,6 +4,7 @@ import bcrypt from "bcrypt";
 import jwt, { JwtPayload } from "jsonwebtoken";
 import { UserNotFoundException } from "../exceptions/UserNotFoundException";
 import { UnauthorizedUserException } from "../exceptions/UnauthUserException";
+import { EmptyInputException } from "../exceptions/EmptyInputException";
 
 const SECRET_KEY = "senha_secreta_que_NÃO_deve_ficar_salva_aqui";
 
@@ -17,6 +18,10 @@ export class SessionController {
   async login(username: string, password: string) {
     const userRepository = AppDataSource.getRepository(User);
     const user = await userRepository.findOneBy({ username });
+
+    if (!username || !password) {
+      throw new EmptyInputException();
+    }
 
     if (!user) {
       throw new UserNotFoundException();

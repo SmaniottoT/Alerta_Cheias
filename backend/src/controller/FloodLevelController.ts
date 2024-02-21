@@ -37,29 +37,4 @@ export class FloodLevelController {
     return benchmarkList;
   }
 
-  async fetchCurrentLevel() {
-    try {
-      const response = await axios.post(
-        "https://monitoramento.defesacivil.sc.gov.br/graphql",
-        {
-          operationName: "ListaEstacoes",
-          variables: {},
-          query: `query ListaEstacoes {\n  estacoes {\n    nome\n    nivel_rio\n       }\n}`,
-        }
-      );
-      console.log(response);
-    } catch (error) {
-      throw new Error(`Failed to fetch current River Level: ${error}`);
-    }
-  }
-
-  //   PRECISO DE UMA FUNÇÃO QUE A PARTIR DO POST ACIMA CONSIGA DISTINGUIR A ESTAÇÃO POR NOME, CONFORME OS PRESETS (if no html Timbó, buscar nome = "DCSC Timbó 1")
-
-  async compareRiverLevel(benchmark: number, currentRiverLevel: number) {
-    if (currentRiverLevel < benchmark) {
-      console.log("Not flooding");
-    } else {
-      console.log("Flooding");
-    }
-  }
 }
