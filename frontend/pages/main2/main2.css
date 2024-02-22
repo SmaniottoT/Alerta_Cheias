@@ -37,6 +37,8 @@ a {
     transition: width 0.5s;
 }
 
+
+
 .user {
     display: flex;
     align-items: center;
@@ -70,6 +72,7 @@ a {
     width: 30px;
     display: none;
 }
+
 /* PARA AS DUAS LISTAS */
 ul {
     flex-direction: column;
@@ -200,4 +203,56 @@ ul li p {
     background: rgba(255, 255, 255, 0.2);
 }
 
+.Box_BotoesMapas {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: end;
+    padding: 10px;
+}
 
+/* BOTAO REMOVER */
+.Botao_Remover {
+    background: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 0;
+    transition: all 0.3s;
+
+}
+
+
+.Botao_Remover:hover {
+    background: rgba(57, 107, 153, 0.2);
+}
+
+.Icone_Remover {
+    height: 30px;
+    width: 30px;
+    margin-top: 2.5px;
+    margin-left: 2.5px;
+}
+
+/* BOTAO ALARME */
+.Botao_Alarme {
+    background: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 0;
+    transition: all 0.3s;
+}
+
+.Botao_Alarme:hover {
+    background: rgba(57, 107, 153, 0.2);
+}
+
+.Icone_Alarme {
+    margin-top: 2.5px;
+    margin-left: 2.5px;
+    height: 30px;
+    width: 30px;
+}

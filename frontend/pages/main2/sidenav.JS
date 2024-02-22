@@ -64,9 +64,13 @@ function mudarSideNav() {
       icone.style.margin = "30px 0px";
     });
 
-    //RECONFIGURAR PARA FECHANDO
-
-
+    //Remove a visualização do icone Logo
+    var elemento11 = document.querySelectorAll("#Logo");
+    elemento11.forEach(function (LogoIcone) {
+      LogoIcone.style.display = "none";
+      LogoIcone.style.width = "0px";
+      LogoIcone.style.height = "0px";
+    });
 
     //Aumenta o tamanho do mapa quando aberto
     var elemento13 = document.querySelectorAll(".mapas");
@@ -184,7 +188,26 @@ function mudarSideNav() {
       LiConfig.style.margin = "10px 0px";
     });
 
-  
+
+
+    //Adiciona a visualização do icone Logo
+    var elemento16 = document.querySelectorAll("#Logo");
+    elemento16.forEach(function (LogoIcone) {
+      LogoIcone.style.display = "block";
+      LogoIcone.style.width = "110px";
+      LogoIcone.style.height = "65px";
+    });
+
+    //Adiciona a visualização do icone Logo
+    var elemento17 = document.querySelectorAll("#Div_Botao");
+    elemento17.forEach(function (LogoIcone) {
+      LogoIcone.style.display = "flex";
+      LogoIcone.style.flexDirection = "row";
+      LogoIcone.style.justifyContent = "space-evenly";
+      LogoIcone.style.alignItems  = "center";
+    });
+
+
 
     sideNavAberta = true; // Alterando o estado para aberto
     document.getElementById("abrir").classList.add("open");
