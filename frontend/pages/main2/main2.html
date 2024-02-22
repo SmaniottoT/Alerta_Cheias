@@ -41,10 +41,17 @@
 
             <div class="side-nav" id="side-nav">
                 <!-- Botao -->
+                <div class="Div_Botao" id="Div_Botao">
 
-                <button class="botao" id="abrir" onclick="mudarSideNav()">
-                    <img src="/Alerta_Cheias/frontend/assets/icones_main2/icon_SetaDireita.png">
-                </button>
+                    <img class="Logo" id="Logo" src="/Alerta_Cheias/frontend/assets/logo_icon/Logo_AlertaCheias.png"
+                        alt="LogoIcon_AlertaCheias">
+
+                    <button class="botao" id="abrir" onclick="mudarSideNav()">
+                        <img src="/Alerta_Cheias/frontend/assets/icones_main2/icon_SetaDireita.png">
+                    </button>
+
+
+                </div>
 
                 <div class="user" id="user">
                     <!-- FOTO DO USUARIO -->
@@ -72,7 +79,11 @@
 
                     <!-- MAPA 01 -->
                     <li class="mapas">
-                        <div class="map-container" id="mapa1"></div>
+                        <div class="map-container" id="mapa1">
+
+                        
+                        </div>
+                     
 
                     </li>
 
@@ -186,8 +197,10 @@
             <div class="Box_Botao_03" id="climaTempo">
                 <button class="Botao_DropUp_03" id="Botao_DropUp_03">TEMPO</button>
                 <div class="DropUp_Conteudo_03" id="DropUp_Conteudo_03">
+
                     <div id="previsaoTempo">
                     </div>
+
                 </div>
             </div>
             
@@ -199,3 +212,20 @@
 <script>mudarSideNav()</script>
 
 </html>
+
+
+<!--   
+     <div class="Box_BotoesMapas">
+                            <button class="Botao_Remover" id="Botao_Remover" onclick="RemoverMapa()">
+                                <img class="Icone_Remover"
+                                    src="/Alerta_Cheias/frontend/assets/icones_main2/icon_remover.png">
+                            </button>
+
+                            <button class="Botao_Alarme" id="Botao_Alarme" onclick="AdicionarAlarme()">
+                                <img class="Icone_Alarme"
+                                    src="/Alerta_Cheias/frontend/assets/icones_main2/icon_alarme.png">
+                            </button>
+                        </div>
+                    
+                    
+                    -->
