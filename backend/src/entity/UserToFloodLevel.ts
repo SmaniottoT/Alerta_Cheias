@@ -1,11 +1,4 @@
-import {
-  Column,
-  Entity,
-  ManyToMany,
-  ManyToOne,
-  OneToMany,
-  PrimaryGeneratedColumn,
-} from "typeorm";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { User } from "./User";
 import { Benchmark } from "./FloodLevel";
 
@@ -13,12 +6,6 @@ import { Benchmark } from "./FloodLevel";
 export class UserToBenchmark {
   @PrimaryGeneratedColumn()
   public UserToBenchmarkId: number;
-
-  @Column()
-  public userId: number;
-
-  @Column()
-  public benchmarkId: number;
 
   @Column()
   public alert: number;

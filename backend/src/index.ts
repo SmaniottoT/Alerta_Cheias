@@ -104,8 +104,8 @@ server.post(
       async (request: AuthenticatedRequest, response: Response) => {
         const userController = new UserController();
         const associatedBenchmark = await userController.associateUserBenchmark(
-          request.body.userId,
-          request.body.benchmarkId
+          request.userId,
+          request.body.benchmark
         );
         return response.status(201).json(associatedBenchmark);
       }
@@ -124,11 +124,10 @@ server.get(
 );
 
 server.delete(
-  "/user/benchmarks",
+  "/user/benchmarks/:id",
   async (request: AuthenticatedRequest, response: Response) => {
     const userId = request.userId;
-    const benchmarkId = 1; // isso aqui tá errado!!!!
-    // ver com ivens como fazer aqui, pq preciso dentro do usuário identificar qual o benchmark que quero deletar. deve ser leitura tipo body?
+    const benchmarkId = Number(request.params.id); //PARA VINCULAR NO FRONT html atribute data-id event.target.data.id
     const userController = new UserController();
     const associatedBenchmarkList =
       await userController.disassociateUserToBenchmark(userId, benchmarkId);

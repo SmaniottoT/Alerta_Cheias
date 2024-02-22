@@ -44,28 +44,28 @@ export class UserController {
     const userRepository = AppDataSource.getRepository(User);
     const benchmarkRepository = AppDataSource.getRepository(Benchmark);
 
-    const user = await userRepository.find({
+    const foundUser = await userRepository.findOne({
       where: { id: userId },
     });
-    const benchmark = await benchmarkRepository.find({
+
+    const foundBenchmark = await benchmarkRepository.findOne({
       where: { id: benchmarkId },
     });
 
-    if (!user || !benchmark) {
+    if (!foundUser || !foundBenchmark) {
       throw new Error("User or Benchmark not found.");
     }
     const associatedBenchmarkExists =
-      await associatedBenchmarkRepository.existsBy({
-        userId,
-        benchmarkId,
+      await associatedBenchmarkRepository.findOne({
+        where: { user: { id: userId }, benchmark: { id: benchmarkId } },
       });
 
     if (associatedBenchmarkExists) {
       throw new Error("Benchmark is already associated with the User.");
     }
     const associatedUserBenchmark = new UserToBenchmark();
-    associatedUserBenchmark.userId = userId;
-    associatedUserBenchmark.benchmarkId = benchmarkId;
+    associatedUserBenchmark.user = foundUser;
+    associatedUserBenchmark.benchmark = foundBenchmark;
     associatedUserBenchmark.alert = 1;
     return await associatedBenchmarkRepository.save(associatedUserBenchmark);
   }
@@ -73,9 +73,20 @@ export class UserController {
   async getAssociatedBenchmarks(userId: number) {
     const associatedBenchmarkRepository =
       AppDataSource.getRepository(UserToBenchmark);
+    const userRepository = AppDataSource.getRepository(User);
+
+    const foundUser = await userRepository.findOne({
+      where: { id: userId },
+    });
+
+    if (!foundUser) {
+      throw new Error("User or Benchmark not found.");
+    }
+
     const associatedList = await associatedBenchmarkRepository.find({
-      where: { userId: userId },
+      where: { user: foundUser },
       order: {},
+      relations: { user: true, benchmark: true },
     });
     return associatedList;
   }
@@ -83,11 +94,24 @@ export class UserController {
   async disassociateUserToBenchmark(userId: number, benchmarkId: number) {
     const associatedBenchmarkRepository =
       AppDataSource.getRepository(UserToBenchmark);
+    const userRepository = AppDataSource.getRepository(User);
+    const benchmarkRepository = AppDataSource.getRepository(Benchmark);
+
+    const foundUser = await userRepository.findOne({
+      where: { id: userId },
+    });
+    const foundBenchmark = await benchmarkRepository.findOne({
+      where: { id: benchmarkId },
+    });
+
+    if (!foundUser || !foundBenchmark) {
+      throw new Error("User or Benchmark not found.");
+    }
     const benchmarkToDisassociate = await associatedBenchmarkRepository.findOne(
       {
         where: {
-          userId: userId,
-          benchmarkId: benchmarkId,
+          user: foundUser,
+          benchmark: foundBenchmark,
         },
       }
     );

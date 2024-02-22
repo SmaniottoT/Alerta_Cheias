@@ -1,12 +1,4 @@
-import {
-  Entity,
-  PrimaryGeneratedColumn,
-  Column,
-  ManyToMany,
-  JoinTable,
-  OneToMany,
-} from "typeorm";
-import { Benchmark } from "./FloodLevel";
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm";
 import { UserToBenchmark } from "./UserToFloodLevel";
 
 @Entity()
@@ -25,10 +17,6 @@ export class User {
 
   @Column()
   password: string;
-
-  @ManyToMany(() => Benchmark, (Benchmark) => Benchmark.id)
-  @JoinTable()
-  benchmark: Benchmark[];
 
   @OneToMany(() => UserToBenchmark, (userToBenchmark) => userToBenchmark.user)
   userToBenchmark: UserToBenchmark[];

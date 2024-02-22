@@ -1,11 +1,4 @@
-import {
-  Column,
-  Entity,
-  ManyToMany,
-  OneToMany,
-  PrimaryGeneratedColumn,
-} from "typeorm";
-import { User } from "./User";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { UserToBenchmark } from "./UserToFloodLevel";
 
 @Entity()
@@ -24,9 +17,6 @@ export class Benchmark {
 
   @Column("decimal")
   long: number;
-
-  @ManyToMany(() => User, (User) => User.id)
-  user: User[];
 
   @OneToMany(
     () => UserToBenchmark,

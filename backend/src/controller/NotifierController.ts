@@ -5,6 +5,7 @@
 // se a cota da DC for >= que cota do ponto -> enviar e-mail -> salvar ID da cota na nova tabela criada
 // se a cota da DC for > porém a cota do ponto já está cadastrada -> não faz nada
 // se a cota da DC for < exclui da tabela nova.
+// SET INTERVAL
 
 // verificar funcionalidade no ~futuro~ para 'alertar sempre'
 
