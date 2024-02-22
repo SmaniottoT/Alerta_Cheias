@@ -5,6 +5,7 @@ import { Benchmark } from "./entity/FloodLevel";
 import { UserToBenchmark } from "./entity/UserToFloodLevel";
 
 export const AppDataSource = new DataSource({
+
   type: "postgres",
   host: "localhost",
   port: 5432,
