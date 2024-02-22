@@ -79,7 +79,17 @@ function mudarSideNav() {
       ListaMapas.style.height = "0px";
     });
 
+     //Remover visualização dos icones de Alerta
+     var elemento14 = document.querySelectorAll("#Box_BotoesMapas");
+     elemento14.forEach(function (BoxBotoes) {
+      BoxBotoes.style.display = "none";
+     });
 
+      //Ajustar #abrir
+      var elemento14 = document.querySelectorAll("#abrir");
+      elemento14.forEach(function (AbrirSideNav) {
+        AbrirSideNav.style.marginLeft = "24px";
+      });
 
 
 
@@ -196,18 +206,23 @@ function mudarSideNav() {
       LogoIcone.style.display = "block";
       LogoIcone.style.width = "110px";
       LogoIcone.style.height = "65px";
+      LogoIcone.style.marginLeft = "95px";
     });
 
-    //Adiciona a visualização do icone Logo
+    //Alinha Div Botao
     var elemento17 = document.querySelectorAll("#Div_Botao");
     elemento17.forEach(function (LogoIcone) {
       LogoIcone.style.display = "flex";
       LogoIcone.style.flexDirection = "row";
-      LogoIcone.style.justifyContent = "space-evenly";
+      LogoIcone.style.justifyContent = "space-between";
       LogoIcone.style.alignItems  = "center";
     });
 
-
+     //Adiciona visualização dos icones de Alerta
+     var elemento18 = document.querySelectorAll("#Box_BotoesMapas");
+     elemento18.forEach(function (BoxBotoes) {
+      BoxBotoes.style.display = "flex";
+     });
 
     sideNavAberta = true; // Alterando o estado para aberto
     document.getElementById("abrir").classList.add("open");
