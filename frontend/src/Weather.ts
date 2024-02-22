@@ -8,13 +8,24 @@ async function getCityCode(city: any) {
 }
 
 async function getWeather(cityCode: any) {
-  const weather = await axios.get(
-    `https://brasilapi.com.br/api/cptec/v1/clima/previsao/${cityCode}`
+  const response = await axios.get(
+    // `https://brasilapi.com.br/api/cptec/v1/clima/previsao/${cityCode}`  ESSE É O CÓDIGO CERTO. 5400 É TIMBÓ.
+    `https://brasilapi.com.br/api/cptec/v1/clima/previsao/5400`
   );
-  console.log(weather);
 
-  return weather;
+  console.log(response);
+  const previsao = response?.data.clima[0].condicao_desc;
+
+  document.getElementById("previsaoTempo").innerText = `${previsao}`;
+
+  return previsao;
 }
 
-getCityCode("Timbó");
-getWeather(5400);
+const city = "Timbó";
+// aqui ao invés de texto fixo "Timbó", vincular a um getElement do HTML da seleção de cidade (que nem no login).
+
+const citycode = getCityCode(city);
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("climaTempo")?.addEventListener("click", getWeather);
+});

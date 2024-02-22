@@ -3,6 +3,8 @@ import { User } from "../entity/User";
 import bcrypt from "bcrypt";
 import { UsernameTakenException } from "../exceptions/UsernameTakenException";
 import { EmptyInputException } from "../exceptions/EmptyInputException";
+import { Benchmark } from "../entity/FloodLevel";
+import { UserToBenchmark } from "../entity/UserToFloodLevel";
 
 export class UserController {
   async createUser(
@@ -34,5 +36,91 @@ export class UserController {
     const userRepository = AppDataSource.getRepository(User);
     const userList = await userRepository.find();
     return userList;
+  }
+
+  async associateUserBenchmark(userId: number, benchmarkId: number) {
+    const associatedBenchmarkRepository =
+      AppDataSource.getRepository(UserToBenchmark);
+    const userRepository = AppDataSource.getRepository(User);
+    const benchmarkRepository = AppDataSource.getRepository(Benchmark);
+
+    const foundUser = await userRepository.findOne({
+      where: { id: userId },
+    });
+
+    const foundBenchmark = await benchmarkRepository.findOne({
+      where: { id: benchmarkId },
+    });
+
+    if (!foundUser || !foundBenchmark) {
+      throw new Error("User or Benchmark not found.");
+    }
+    const associatedBenchmarkExists =
+      await associatedBenchmarkRepository.findOne({
+        where: { user: { id: userId }, benchmark: { id: benchmarkId } },
+      });
+
+    if (associatedBenchmarkExists) {
+      throw new Error("Benchmark is already associated with the User.");
+    }
+    const associatedUserBenchmark = new UserToBenchmark();
+    associatedUserBenchmark.user = foundUser;
+    associatedUserBenchmark.benchmark = foundBenchmark;
+    associatedUserBenchmark.alert = 1;
+    return await associatedBenchmarkRepository.save(associatedUserBenchmark);
+  }
+
+  async getAssociatedBenchmarks(userId: number) {
+    const associatedBenchmarkRepository =
+      AppDataSource.getRepository(UserToBenchmark);
+    const userRepository = AppDataSource.getRepository(User);
+
+    const foundUser = await userRepository.findOne({
+      where: { id: userId },
+    });
+
+    if (!foundUser) {
+      throw new Error("User or Benchmark not found.");
+    }
+
+    const associatedList = await associatedBenchmarkRepository.find({
+      where: { user: foundUser },
+      order: {},
+      relations: { user: true, benchmark: true },
+    });
+    return associatedList;
+  }
+
+  async disassociateUserToBenchmark(userId: number, benchmarkId: number) {
+    const associatedBenchmarkRepository =
+      AppDataSource.getRepository(UserToBenchmark);
+    const userRepository = AppDataSource.getRepository(User);
+    const benchmarkRepository = AppDataSource.getRepository(Benchmark);
+
+    const foundUser = await userRepository.findOne({
+      where: { id: userId },
+    });
+    const foundBenchmark = await benchmarkRepository.findOne({
+      where: { id: benchmarkId },
+    });
+
+    if (!foundUser || !foundBenchmark) {
+      throw new Error("User or Benchmark not found.");
+    }
+    const benchmarkToDisassociate = await associatedBenchmarkRepository.findOne(
+      {
+        where: {
+          user: foundUser,
+          benchmark: foundBenchmark,
+        },
+      }
+    );
+    if (!benchmarkToDisassociate) {
+      throw new Error("Unable to find User or Benchmark to disassociate.");
+    }
+    const disassociatedBenchmark = associatedBenchmarkRepository.delete(
+      benchmarkToDisassociate
+    );
+    return disassociatedBenchmark;
   }
 }

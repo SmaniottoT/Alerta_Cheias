@@ -206,6 +206,7 @@ function mudarSideNav() {
       LogoIcone.style.display = "block";
       LogoIcone.style.width = "110px";
       LogoIcone.style.height = "65px";
+
       LogoIcone.style.marginLeft = "95px";
     });
 
@@ -223,6 +224,7 @@ function mudarSideNav() {
      elemento18.forEach(function (BoxBotoes) {
       BoxBotoes.style.display = "flex";
      });
+
 
     sideNavAberta = true; // Alterando o estado para aberto
     document.getElementById("abrir").classList.add("open");

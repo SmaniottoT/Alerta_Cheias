@@ -16,13 +16,15 @@
     <script src="/Alerta_Cheias/frontend/pages/main2/sidenav.JS"></script>
     <script src="/Alerta_Cheias/frontend/dist/DropUp.js" defer></script>
     <script src="/Alerta_Cheias/frontend/dist/Weather.js" defer></script>
+    <script src="/Alerta_Cheias/frontend/dist/logout.js" defer></script>
+    <script src="/Alerta_Cheias/frontend/dist/currentRiverLevel.js" defer></script>
     <!-- JavaSript HereMaps API -->
     <script src="/Alerta_Cheias/frontend/dist/HereMaps_Fixo2.js" defer></script>
     <script src="/Alerta_Cheias/frontend/dist/HereMaps_Interativo2.js" defer></script>
     <!-- CSS MAIN2 -->
     <link rel="stylesheet" href="/Alerta_Cheias/frontend/pages/main2/main2.css">
     <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
-    <link rel="stylesheet" href="/Alerta_Cheias/frontend/pages/main2/tempo.css">
+
     <title>ALERTA CHEIAS</title>
 </head>
 
@@ -40,6 +42,7 @@
             <div class="side-nav" id="side-nav">
                 <!-- Botao -->
                 <div class="Div_Botao" id="Div_Botao">
+
 
                     <img class="Logo" id="Logo" src="/Alerta_Cheias/frontend/assets/logo_icon/Logo_AlertaCheias.png"
                         alt="LogoIcon_AlertaCheias">
@@ -77,7 +80,11 @@
 
                     <!-- MAPA 01 -->
                     <li class="mapas">
-                        <div class="map-container" id="mapa1"></div>
+                        <div class="map-container" id="mapa1">
+
+                        
+                        </div>
+                     
 
 
                     </li>
@@ -195,7 +202,7 @@
 
                     <li class="LiConfig">
 
-                        <a class="Configuracoes" href="/Alerta_Cheias/frontend/pages/login/login.html ">
+                        <a class="Configuracoes" href="/Alerta_Cheias/frontend/pages/main2/main2.html ">
                             <img src="/Alerta_Cheias/frontend/assets/icones_main2/icon_perfil.png">
                             <p>PERFIL</p>
                         </a>
@@ -207,7 +214,7 @@
 
                     <li class="LiConfig">
 
-                        <a class="Configuracoes" href="/Alerta_Cheias/frontend/pages/login/login.html ">
+                        <a class="Configuracoes" href="/Alerta_Cheias/frontend/pages/main2/main2.html ">
                             <img src="/Alerta_Cheias/frontend/assets/icones_main2/icon_configuracao.png">
                             <p>CONFIGURAÇÕES</p>
                         </a>
@@ -218,7 +225,7 @@
 
                     <li class="LiConfig">
 
-                        <a class="Configuracoes" href="/Alerta_Cheias/frontend/pages/login/login.html ">
+                        <a class="Configuracoes" id="logout" href="/Alerta_Cheias/frontend/pages/login/login.html ">
                             <img src="/Alerta_Cheias/frontend/assets/icones_main2/icon_logout.png">
                             <p>SAIR</p>
                         </a>
@@ -239,31 +246,11 @@
             <!-- AQUI VAO OS BOTOES  -->
 
             <!-- 01 BOTAO COTA DE ENCHENTE-->
-            <div class="Box_Botao_01">
+            <div class="Box_Botao_01" id="riverLevel">
                 <button class="Botao_DropUp_01" id="Botao_DropUp_01">COTAS</button>
                 <div class="DropUp_Conteudo_01" id="DropUp_Conteudo_01">
-                    <ul>
-                        <li>
-                            Info_01:
-                        </li>
-
-                        <li>
-                            Info_02:
-                        </li>
-
-                        <li>
-                            Info_03:
-                        </li>
-
-                        <li>
-                            Info_04:
-                        </li>
-
-                        <li>
-                            Info_05:
-                        </li>
-
-                    </ul>
+                    <div>A cota do nível atual do Rio em Timbó/SC é:</div>
+                    <div id="cotaRio"></div>
                 </div>
             </div>
 
@@ -272,47 +259,20 @@
                 <button class="Botao_DropUp_02" id="Botao_DropUp_02">BARRAGENS</button>
                 <div class="DropUp_Conteudo_02" id="DropUp_Conteudo_02">
 
-                    <ul>
-                        <li>
-                            Info_01:
-                        </li>
-
-                        <li>
-                            Info_02:
-                        </li>
-
-                        <li>
-                            Info_03:
-                        </li>
-
-                        <li>
-                            Info_04:
-                        </li>
-
-                        <li>
-                            Info_05:
-                        </li>
-
-                    </ul>
 
                 </div>
             </div>
             <!-- 03 BOTAO PREVISÃO DO TEMPO -->
-            <div class="Box_Botao_03">
+            <div class="Box_Botao_03" id="climaTempo">
                 <button class="Botao_DropUp_03" id="Botao_DropUp_03">TEMPO</button>
                 <div class="DropUp_Conteudo_03" id="DropUp_Conteudo_03">
 
-                    <div>
-                        Info_01:
-                        <button onclick="getCityCode()">código</button>
-                        <button onclick="getWeather()">previsão</button>
-
+                    <div id="previsaoTempo">
                     </div>
-
-
 
                 </div>
             </div>
+            
         </div>
 
     </div>
@@ -351,3 +311,20 @@
 <script>mudarSideNav()</script>
 
 </html>
+
+
+<!--   
+     <div class="Box_BotoesMapas">
+                            <button class="Botao_Remover" id="Botao_Remover" onclick="RemoverMapa()">
+                                <img class="Icone_Remover"
+                                    src="/Alerta_Cheias/frontend/assets/icones_main2/icon_remover.png">
+                            </button>
+
+                            <button class="Botao_Alarme" id="Botao_Alarme" onclick="AdicionarAlarme()">
+                                <img class="Icone_Alarme"
+                                    src="/Alerta_Cheias/frontend/assets/icones_main2/icon_alarme.png">
+                            </button>
+                        </div>
+                    
+                    
+                    -->
