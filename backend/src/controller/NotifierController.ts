@@ -8,8 +8,18 @@
 
 // verificar funcionalidade no ~futuro~ para 'alertar sempre'
 
+// COMO INSERIR REGISTRO MANY TO MANY
+// COMO ESPECIFICAR QUAL ENTIDADE USAR PARA MANY TO MANY
+
 import axios from "axios";
+import { AppDataSource } from "../data-source";
+import { Benchmark } from "../entity/FloodLevel";
+import { User } from "../entity/User";
+import { Notifier } from "../entity/Notifier";
+
 export class NotifierController {
+  
+
   async fetchCurrentLevel() {
     try {
       const response = await axios.post(
@@ -17,7 +27,7 @@ export class NotifierController {
         {
           operationName: "ListaEstacoes",
           variables: {},
-          query: `query ListaEstacoes {\n  estacoes {\n    ${"DCSC Timbó 1"}\n    nivel_rio\n       }\n}`,
+          query: `query ListaEstacoes {\n  estacoes {\n    nome\n    nivel_rio\n       }\n}`,
         }
       );
       console.log(response);

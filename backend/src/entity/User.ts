@@ -3,6 +3,7 @@ import {
   PrimaryGeneratedColumn,
   Column,
   ManyToMany,
+  JoinTable,
 } from "typeorm";
 import { Benchmark } from "./FloodLevel";
 
@@ -11,7 +12,7 @@ export class User {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({unique: true})
   username: string;
 
   @Column()
@@ -23,6 +24,7 @@ export class User {
   @Column()
   password: string;
 
-  @ManyToMany(() => Benchmark)
+  @ManyToMany(() => Benchmark, (Benchmark) => Benchmark.id)
+  @JoinTable
   benchmark: Benchmark[];
 }

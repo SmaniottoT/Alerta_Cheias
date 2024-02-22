@@ -23,6 +23,6 @@ export class Benchmark {
   @Column("decimal")
   long: number;
 
-  @ManyToMany(() => User)
-  user: User;
+  @ManyToMany(() => User, (User) => User.id)
+  user: User[];
 }

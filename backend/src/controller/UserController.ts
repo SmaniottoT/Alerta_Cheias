@@ -35,4 +35,44 @@ export class UserController {
     const userList = await userRepository.find();
     return userList;
   }
+
+  async associateUserBenchmark(userId: number, benchmarkId: number) {
+    const associatedBenchmarkRepository = AppDataSource.getRepository(Notifier);
+    const userRepository = AppDataSource.getRepository(User);
+    const benchmarkRepository = AppDataSource.getRepository(Benchmark);
+
+    const user = await userRepository.find({
+      where: { id: userId },
+    });
+    const benchmark = await benchmarkRepository.find({
+      where: { id: benchmarkId },
+    });
+
+    if (!user || !benchmark) {
+      throw new Error("User or Benchmark not found.");
+    }
+    const associatedBenchmarkExists =
+      await associatedBenchmarkRepository.existsBy({
+        userId,
+        benchmarkId,
+      });
+
+    if (associatedBenchmarkExists) {
+      throw new Error("Benchmark is already associated with the User.");
+    }
+    // const associatedUserBenchmark = new Notifier(); isso aqui tem que ser a nova entidade many to many UserBenchmark
+    associatedUserBenchmark.userId = userId;
+    associatedUserBenchmark.benchmarkId = benchmarkId;
+    return await associatedBenchmarkRepository.save(associatedUserBenchmark);
+  }
+
+  async getAssociatedBenchmarks(userId: number) {
+    const associatedBenchmarkRepository =
+      AppDataSource.getMongoRepository(Notifier);
+    const associatedList = await associatedBenchmarkRepository.find({
+      where: { id: userId },
+      order: {},
+    });
+    return associatedList;
+  }
 }
