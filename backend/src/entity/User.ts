@@ -4,15 +4,17 @@ import {
   Column,
   ManyToMany,
   JoinTable,
+  OneToMany,
 } from "typeorm";
 import { Benchmark } from "./FloodLevel";
+import { UserToBenchmark } from "./UserToFloodLevel";
 
 @Entity()
 export class User {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({unique: true})
+  @Column({ unique: true })
   username: string;
 
   @Column()
@@ -25,6 +27,9 @@ export class User {
   password: string;
 
   @ManyToMany(() => Benchmark, (Benchmark) => Benchmark.id)
-  @JoinTable
+  @JoinTable()
   benchmark: Benchmark[];
+
+  @OneToMany(() => UserToBenchmark, (userToBenchmark) => userToBenchmark.user)
+  userToBenchmark: UserToBenchmark[];
 }

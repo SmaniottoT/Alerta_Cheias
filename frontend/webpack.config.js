@@ -6,7 +6,8 @@ module.exports = {
     signUp: "./src/signUp.ts",
     HereMaps_Interativo2: "./src/HereMaps_Interativo2.ts",
     HereMaps_Fixo2: "./src/HereMaps_Fixo2.ts",
-    Weather: "./src/Weather.ts"
+    Weather: "./src/Weather.ts",
+    Logout: "./src/logout.ts"
   },
   module: {
     rules: [

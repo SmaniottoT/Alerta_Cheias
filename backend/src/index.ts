@@ -3,11 +3,16 @@ import express, { NextFunction, Request, Response, json } from "express";
 import { AppDataSource } from "./data-source";
 import { SessionController } from "./controller/SessionController";
 import { UserController } from "./controller/UserController";
-import { AuthenticationMiddleware } from "./middleware/AuthenticationMiddleware";
+import {
+  AuthenticatedRequest,
+  AuthenticationMiddleware,
+} from "./middleware/AuthenticationMiddleware";
 import cors from "cors";
 import RouteExecutor from "./routes/RouteExecutor";
 import { BaseHttpException } from "./exceptions/BaseHttpException";
 import { FloodLevelController } from "./controller/FloodLevelController";
+import { request } from "http";
+import { UserToBenchmark } from "./entity/UserToFloodLevel";
 
 const SERVER_PORT = 3000;
 const server = express();
@@ -89,7 +94,47 @@ server.get("/benchmarks", async (request: Request, response: Response) => {
 // ABAIXO DAQUI SOMENTE FUNÇÕES QUE SEJAM EXECUTADAS MEDIANTE AUTENTICAÇÃO (ALTERAR USUÁRIO, VINCULAR IMÓVEL, ETC)
 server.use(new AuthenticationMiddleware().validateAuthentication);
 
-// aqui precisa de uma função que adicione um ponto a um usuário
+server.post(
+  "/user/benchmarks",
+  (request: Request, response: Response, next: NextFunction) =>
+    RouteExecutor(
+      request,
+      response,
+      next,
+      async (request: AuthenticatedRequest, response: Response) => {
+        const userController = new UserController();
+        const associatedBenchmark = await userController.associateUserBenchmark(
+          request.body.userId,
+          request.body.benchmarkId
+        );
+        return response.status(201).json(associatedBenchmark);
+      }
+    )
+);
+
+server.get(
+  "/user/benchmarks",
+  async (request: AuthenticatedRequest, response: Response) => {
+    const userId = request.userId;
+    const userController = new UserController();
+    const associatedBenchmarkList =
+      await userController.getAssociatedBenchmarks(userId);
+    return response.status(200).json(associatedBenchmarkList);
+  }
+);
+
+server.delete(
+  "/user/benchmarks",
+  async (request: AuthenticatedRequest, response: Response) => {
+    const userId = request.userId;
+    const benchmarkId = 1; // isso aqui tá errado!!!!
+    // ver com ivens como fazer aqui, pq preciso dentro do usuário identificar qual o benchmark que quero deletar. deve ser leitura tipo body?
+    const userController = new UserController();
+    const associatedBenchmarkList =
+      await userController.disassociateUserToBenchmark(userId, benchmarkId);
+    return response.status(200).json(associatedBenchmarkList);
+  }
+);
 
 server.use(
   (err: Error, request: Request, response: Response, next: NextFunction) => {

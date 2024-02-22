@@ -3,6 +3,8 @@ import { User } from "../entity/User";
 import bcrypt from "bcrypt";
 import { UsernameTakenException } from "../exceptions/UsernameTakenException";
 import { EmptyInputException } from "../exceptions/EmptyInputException";
+import { Benchmark } from "../entity/FloodLevel";
+import { UserToBenchmark } from "../entity/UserToFloodLevel";
 
 export class UserController {
   async createUser(
@@ -37,7 +39,8 @@ export class UserController {
   }
 
   async associateUserBenchmark(userId: number, benchmarkId: number) {
-    const associatedBenchmarkRepository = AppDataSource.getRepository(Notifier);
+    const associatedBenchmarkRepository =
+      AppDataSource.getRepository(UserToBenchmark);
     const userRepository = AppDataSource.getRepository(User);
     const benchmarkRepository = AppDataSource.getRepository(Benchmark);
 
@@ -60,19 +63,40 @@ export class UserController {
     if (associatedBenchmarkExists) {
       throw new Error("Benchmark is already associated with the User.");
     }
-    // const associatedUserBenchmark = new Notifier(); isso aqui tem que ser a nova entidade many to many UserBenchmark
+    const associatedUserBenchmark = new UserToBenchmark();
     associatedUserBenchmark.userId = userId;
     associatedUserBenchmark.benchmarkId = benchmarkId;
+    associatedUserBenchmark.alert = 1;
     return await associatedBenchmarkRepository.save(associatedUserBenchmark);
   }
 
   async getAssociatedBenchmarks(userId: number) {
     const associatedBenchmarkRepository =
-      AppDataSource.getMongoRepository(Notifier);
+      AppDataSource.getRepository(UserToBenchmark);
     const associatedList = await associatedBenchmarkRepository.find({
-      where: { id: userId },
+      where: { userId: userId },
       order: {},
     });
     return associatedList;
+  }
+
+  async disassociateUserToBenchmark(userId: number, benchmarkId: number) {
+    const associatedBenchmarkRepository =
+      AppDataSource.getRepository(UserToBenchmark);
+    const benchmarkToDisassociate = await associatedBenchmarkRepository.findOne(
+      {
+        where: {
+          userId: userId,
+          benchmarkId: benchmarkId,
+        },
+      }
+    );
+    if (!benchmarkToDisassociate) {
+      throw new Error("Unable to find User or Benchmark to disassociate.");
+    }
+    const disassociateBenchmark = associatedBenchmarkRepository.delete(
+      benchmarkToDisassociate
+    );
+    return disassociateBenchmark;
   }
 }
