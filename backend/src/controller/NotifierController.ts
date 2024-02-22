@@ -13,6 +13,11 @@
 
 import axios from "axios";
 
+interface Estacao {
+  nome: string;
+  nivel_rio: number | null;
+}
+
 export class NotifierController {
   async fetchCurrentLevel() {
     try {
@@ -24,7 +29,20 @@ export class NotifierController {
           query: `query ListaEstacoes {\n  estacoes {\n    nome\n    nivel_rio\n       }\n}`,
         }
       );
-      console.log(response);
+
+      const estacoes: Estacao[] = response.data.estacoes;
+
+      const estacao = estacoes.find(
+        (estacao) => estacao.nome === "DCSC Timbó 1"
+      );
+      if (!estacao) {
+        throw new Error("Não foi possível buscar a estação");
+      }
+      const nivelRio = estacao.nivel_rio;
+
+      console.log(nivelRio);
+
+      return nivelRio;
     } catch (error) {
       throw new Error(`Failed to fetch current River Level: ${error}`);
     }

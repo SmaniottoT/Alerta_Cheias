@@ -17,6 +17,7 @@
     <script src="/Alerta_Cheias/frontend/dist/DropUp.js" defer></script>
     <script src="/Alerta_Cheias/frontend/dist/Weather.js" defer></script>
     <script src="/Alerta_Cheias/frontend/dist/logout.js" defer></script>
+    <script src="/Alerta_Cheias/frontend/dist/currentRiverLevel.js" defer></script>
     <!-- JavaSript HereMaps API -->
     <script src="/Alerta_Cheias/frontend/dist/HereMaps_Fixo2.js" defer></script>
     <script src="/Alerta_Cheias/frontend/dist/HereMaps_Interativo2.js" defer></script>
@@ -115,7 +116,7 @@
 
                     <li class="LiConfig">
 
-                        <a class="Configuracoes" href="/Alerta_Cheias/frontend/pages/login/login.html ">
+                        <a class="Configuracoes" href="/Alerta_Cheias/frontend/pages/main2/main2.html ">
                             <img src="/Alerta_Cheias/frontend/assets/icones_main2/icon_perfil.png">
                             <p>PERFIL</p>
                         </a>
@@ -127,7 +128,7 @@
 
                     <li class="LiConfig">
 
-                        <a class="Configuracoes" href="/Alerta_Cheias/frontend/pages/login/login.html ">
+                        <a class="Configuracoes" href="/Alerta_Cheias/frontend/pages/main2/main2.html ">
                             <img src="/Alerta_Cheias/frontend/assets/icones_main2/icon_configuracao.png">
                             <p>CONFIGURAÇÕES</p>
                         </a>
@@ -165,31 +166,11 @@
             <!-- AQUI VAO OS BOTOES  -->
 
             <!-- 01 BOTAO COTA DE ENCHENTE-->
-            <div class="Box_Botao_01">
+            <div class="Box_Botao_01" id="riverLevel">
                 <button class="Botao_DropUp_01" id="Botao_DropUp_01">COTAS</button>
                 <div class="DropUp_Conteudo_01" id="DropUp_Conteudo_01">
-                    <ul>
-                        <li>
-                            Info_01:
-                        </li>
-
-                        <li>
-                            Info_02:
-                        </li>
-
-                        <li>
-                            Info_03:
-                        </li>
-
-                        <li>
-                            Info_04:
-                        </li>
-
-                        <li>
-                            Info_05:
-                        </li>
-
-                    </ul>
+                    <div>A cota do nível atual do Rio em Timbó/SC é:</div>
+                    <div id="cotaRio"></div>
                 </div>
             </div>
 
@@ -198,47 +179,18 @@
                 <button class="Botao_DropUp_02" id="Botao_DropUp_02">BARRAGENS</button>
                 <div class="DropUp_Conteudo_02" id="DropUp_Conteudo_02">
 
-                    <ul>
-                        <li>
-                            Info_01:
-                        </li>
-
-                        <li>
-                            Info_02:
-                        </li>
-
-                        <li>
-                            Info_03:
-                        </li>
-
-                        <li>
-                            Info_04:
-                        </li>
-
-                        <li>
-                            Info_05:
-                        </li>
-
-                    </ul>
 
                 </div>
             </div>
             <!-- 03 BOTAO PREVISÃO DO TEMPO -->
-            <div class="Box_Botao_03">
+            <div class="Box_Botao_03" id="climaTempo">
                 <button class="Botao_DropUp_03" id="Botao_DropUp_03">TEMPO</button>
                 <div class="DropUp_Conteudo_03" id="DropUp_Conteudo_03">
-
-<div>
-                            Info_01:
-                            <button onclick="getCityCode()">código</button>
-                            <button onclick="getWeather()">previsão</button>
-
-                  </div>
-
-
-
+                    <div id="previsaoTempo">
+                    </div>
                 </div>
             </div>
+            
         </div>
 
     </footer>

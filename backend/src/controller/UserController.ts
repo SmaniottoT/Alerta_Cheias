@@ -94,9 +94,9 @@ export class UserController {
     if (!benchmarkToDisassociate) {
       throw new Error("Unable to find User or Benchmark to disassociate.");
     }
-    const disassociateBenchmark = associatedBenchmarkRepository.delete(
+    const disassociatedBenchmark = associatedBenchmarkRepository.delete(
       benchmarkToDisassociate
     );
-    return disassociateBenchmark;
+    return disassociatedBenchmark;
   }
 }
