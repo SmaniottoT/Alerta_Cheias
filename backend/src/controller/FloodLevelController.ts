@@ -14,7 +14,7 @@ export class FloodLevelController {
       floodLevel,
       street,
       lat,
-      long
+      long,
     });
 
     if (benchmarkExists) {
@@ -30,11 +30,9 @@ export class FloodLevelController {
     return await benchmarkRepository.save(benchmark);
   }
 
-  
   async getBenchmark() {
     const benchmarkRepository = AppDataSource.getRepository(Benchmark);
     const benchmarkList = await benchmarkRepository.find();
     return benchmarkList;
   }
-
 }

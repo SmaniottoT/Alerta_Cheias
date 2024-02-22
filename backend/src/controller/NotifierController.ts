@@ -5,10 +5,20 @@
 // se a cota da DC for >= que cota do ponto -> enviar e-mail -> salvar ID da cota na nova tabela criada
 // se a cota da DC for > porém a cota do ponto já está cadastrada -> não faz nada
 // se a cota da DC for < exclui da tabela nova.
+// SET INTERVAL
 
 // verificar funcionalidade no ~futuro~ para 'alertar sempre'
 
+// COMO INSERIR REGISTRO MANY TO MANY
+// COMO ESPECIFICAR QUAL ENTIDADE USAR PARA MANY TO MANY
+
 import axios from "axios";
+
+interface Estacao {
+  nome: string;
+  nivel_rio: number | null;
+}
+
 export class NotifierController {
   async fetchCurrentLevel() {
     try {
@@ -17,10 +27,23 @@ export class NotifierController {
         {
           operationName: "ListaEstacoes",
           variables: {},
-          query: `query ListaEstacoes {\n  estacoes {\n    ${"DCSC Timbó 1"}\n    nivel_rio\n       }\n}`,
+          query: `query ListaEstacoes {\n  estacoes {\n    nome\n    nivel_rio\n       }\n}`,
         }
       );
-      console.log(response);
+
+      const estacoes: Estacao[] = response.data.estacoes;
+
+      const estacao = estacoes.find(
+        (estacao) => estacao.nome === "DCSC Timbó 1"
+      );
+      if (!estacao) {
+        throw new Error("Não foi possível buscar a estação");
+      }
+      const nivelRio = estacao.nivel_rio;
+
+      console.log(nivelRio);
+
+      return nivelRio;
     } catch (error) {
       throw new Error(`Failed to fetch current River Level: ${error}`);
     }
