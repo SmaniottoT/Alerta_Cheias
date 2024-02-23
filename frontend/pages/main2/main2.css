@@ -158,10 +158,10 @@ ul li p {
 /* FOOTER */
 
 .Box_Footer {
-    width: 500px;
+    width: 700px;
     height: 4vh;
-    bottom: 0;
-    right: 250px;
+    bottom: 47px;
+    right: 450px;
     position: fixed;
     display: flex;
     justify-content: space-evenly;
@@ -170,16 +170,52 @@ ul li p {
     background-color: rgba(57, 107, 153, 1);
     border-top-left-radius: 100px;
     border-top-right-radius: 100px;
+
+}
+
+
+.Box_Footer::before {
+    content: "";
+    /* Necessário para o pseudo-elemento ser exibido */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/Alerta_Cheias/frontend/assets/Background.jpg");
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    opacity: 0.65;
+    /* Opacidade da imagem de fundo */
+    z-index: -1;
+    /* Coloca o pseudo-elemento atrás do conteúdo do elemento */
 }
 
 .Box_Botao_01,
 .Box_Botao_02,
 .Box_Botao_03 {
-    margin: 0px 30px;
+    margin: 0px 60px;
     position: relative;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.Botao_DropUp_01,
+.Botao_DropUp_02,
+.Botao_DropUp_03 {
+    background: none;
+    border: 0;
+    transition: all 0.3s;
+    border-radius: 20%;
+    color: #fff;
+    font-size: 20px;
+}
+
+.Botao_DropUp_01:hover,
+.Botao_DropUp_02:hover,
+.Botao_DropUp_03:hover {
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .DropUp_Conteudo_01,
@@ -203,22 +239,10 @@ ul li p {
     border-bottom-right-radius: 20px;
 }
 
-.Botao_DropUp_01,
-.Botao_DropUp_02,
-.Botao_DropUp_03 {
-    background: none;
-    border: 0;
-    transition: all 0.3s;
-    border-radius: 20%;
-    color: #fff;
-    font-size: 20px;
-}
 
-.Botao_DropUp_01:hover,
-.Botao_DropUp_02:hover,
-.Botao_DropUp_03:hover {
-    background: rgba(255, 255, 255, 0.2);
-}
+
+
+
 
 .Box_BotoesMapas {
     height: 100%;
@@ -307,39 +331,37 @@ ul li p {
     display: flex;
     align-items: center;
     flex-direction: row;
-  }
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    padding-left: 300px;
+}
 
-  .Footer_Logo_Box {
-    width: 10vw;
-    height: 90%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
 
-  .Footer_Text_Box {
+.Footer_Text_Box {
+
     width: 80vw;
     height: 90%;
     display: flex;
     align-items: center;
     justify-content: space-around;
     padding: 0px 25%;
-  }
+
 
   .custom-no-underline {
     text-decoration: none;
     color: #ffffff;
     font-size: 16px;
     font-weight: normal;
-  }
+}
 
-  .Footer_FAQ_Box {
+.Footer_FAQ_Box {
     width: 10vw;
     height: 90%;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+}
 
   .Botão_FAQ {
     width: 50%;
@@ -364,9 +386,224 @@ ul li p {
   }
 
   .FAQ_Text {
+
     text-decoration: none;
     color: #ffffff;
     font-weight: Bold;
     font-size: 20px;
-  }
+}
 
+
+.DropUp_Cotas_Titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 20%;
+    color: rgba(255, 255, 255, 1);
+    font-weight: Bold;
+    font-size: 16px;
+    opacity: 1;
+    margin: 10px;
+}
+
+.DropUp_Select_Estado_Titulo {
+    width: 90%;
+    color: rgba(255, 255, 255, 1);
+    font-weight: Bold;
+    font-size: 16px;
+    opacity: 1;
+    text-align: left;
+    margin: 5px;
+
+}
+
+.DropUp_Select_Cidade_Titulo {
+    width: 90%;
+    color: rgba(255, 255, 255, 1);
+    font-weight: Bold;
+    font-size: 16px;
+    opacity: 1;
+    text-align: left;
+    margin: 5px;
+}
+
+.DropUp_NivelDoRio {
+    width: 90%;
+    color: rgba(255, 255, 255, 1);
+    font-weight: Bold;
+    font-size: 16px;
+    opacity: 1;
+    text-align: center;
+    margin: 10px;
+}
+
+.Div_Svg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.DropBtn {
+    width: 200px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    background: rgba(75, 125, 176, 0.800000011920929);
+    opacity: 1;
+    overflow: visible;
+    box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.800000011920929);
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    font-size: 16px;
+    font-family: KoHo;
+    color: rgba(255, 255, 255, 1);
+    font-weight: Bold;
+    text-align: center;
+}
+
+.DropBtn option {
+    background: rgba(75, 125, 176, 0.8);
+    box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.8);
+    border-radius: 100px;
+    color: rgba(255, 255, 255, 1);
+    font-weight: bold;
+}
+
+.DropUp_Barragens_Titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 20%;
+    color: rgba(255, 255, 255, 1);
+    font-weight: Bold;
+    font-size: 16px;
+    opacity: 1;
+    margin: 10px;
+}
+
+/* MODAL BACKGROUND */
+.Modal_Background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* MODAL CONTEUDO */
+.Modal_Conteudo {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 2.5px;
+    border: 1px solid #888;
+    width: 400px;
+    height: 250px;
+    color: rgba(255, 255, 255, 1);
+    background: rgba(75, 125, 176, 0.800000011920929);
+    box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.800000011920929);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.Box_Modal_Titulo {
+    padding-top: 20px;
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+}
+
+.Modal_Titulo {
+    font-size: 20px;
+}
+
+.Modal_Subtitulo {
+    font-size: 16px;
+}
+
+.Modal_Seletor {
+    width: 90px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    background: rgba(75, 125, 176, 0.800000011920929);
+    opacity: 1;
+    overflow: visible;
+    box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.800000011920929);
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    font-size: 16px;
+    font-family: KoHo;
+    color: rgba(255, 255, 255, 1);
+    font-weight: Bold;
+    text-align: center;
+}
+
+/* FORMULARIO */
+.Modal_Formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+}
+
+/* X FECHA MODAL */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+    padding-right: 10px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.Modal_Botao_Agendar {
+    width: 50%;
+    height: 10%;
+    color: rgba(255, 255, 255, 1);
+    background: rgba(75, 125, 176, 0.8);
+    opacity: 1;
+    border-radius: 100px;
+    box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.8);
+    overflow: visible;
+    font-weight: Bold;
+    font-size: 25px;
+    opacity: 1;
+    margin: 10px;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Modal_Botao_Agendar:hover {
+    background: rgba(20, 61, 99, 0.5);
+}
+
+.Modal_Botao_Agendar:active {
+    background: rgba(20, 61, 99, 0.8);
+}

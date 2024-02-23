@@ -187,6 +187,7 @@ function mudarSideNav() {
     elemento14.forEach(function (ListaConfig) {
       ListaConfig.style.display = "flex";
       ListaConfig.style.flexDirection = "column";
+      ListaConfig.style.paddingBottom  = "15px";
     });
 
 
@@ -195,7 +196,7 @@ function mudarSideNav() {
     var elemento15 = document.querySelectorAll(".LiConfig");
     elemento15.forEach(function (LiConfig) {
       LiConfig.style.width = "100%";
-      LiConfig.style.margin = "10px 0px";
+      LiConfig.style.margin = "5px 0px";
     });
 
 

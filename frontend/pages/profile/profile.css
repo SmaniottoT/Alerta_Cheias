@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   font-family: KoHo;
+  box-sizing: border-box;
 }
 
 body {
@@ -20,6 +21,7 @@ body {
   width: 100vw;
   height: 10vh;
 }
+
 .logo_image {
   width: 130px;
   height: 80px;
@@ -33,16 +35,19 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  margin: 0;
+  margin-top: px;
+  /* Adicionando margem superior de 20px */
 }
 
-.panel {
+.painel {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: auto;
-  height: auto;
+  width: 800px;
+  /* Definindo uma largura máxima de 400px */
+  height: 90%;
+  /* Altura automática para ajustar ao conteúdo */
   background: rgba(47, 60, 92, 0.8);
   opacity: 1;
   position: relative;
@@ -55,10 +60,6 @@ body {
 .input {
   margin: 5px;
   padding-bottom: 10px;
-
-}
-.input_button{
-  border: 0;
 }
 
 .title {
@@ -67,21 +68,24 @@ body {
   align-items: center;
   justify-content: center;
   width: 90%;
-  height: 20%;
+  height: 10%;
   color: rgba(255, 255, 255, 1);
   font-weight: Bold;
-  font-size: 40px;
+  font-size: 24px;
+  /* Diminuindo o tamanho do título */
   opacity: 1;
   margin: 10px;
 }
 
 h4 {
   color: rgba(255, 255, 255, 1);
+  font-size: 14px;
+  /* Diminuindo o tamanho do subtítulo */
 }
 
 input {
-  width: 40vw;
-  height: 7vh;
+  width: 50vh;
+  height: 5vh;
   background: rgba(75, 125, 176, 0.800000011920929);
   opacity: 1;
   overflow: visible;
@@ -93,7 +97,8 @@ input {
   justify-content: center;
   padding: 15px;
   color: rgba(255, 255, 255, 1);
-  font-size: 20px !important;
+  font-size: 20px;
+  border: 0;
 }
 
 .signUp_button {
@@ -107,7 +112,7 @@ input {
   box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.8);
   overflow: visible;
   font-weight: Bold;
-  font-size: 30px;
+  font-size: 20px;
   opacity: 1;
   margin: 10px;
   border: 0;
@@ -115,7 +120,6 @@ input {
   align-items: center;
   justify-content: center;
 }
-
 
 /* FOOTER */
 .Background_Footer {
@@ -186,4 +190,19 @@ input {
   color: #ffffff;
   font-weight: Bold;
   font-size: 20px;
+}
+
+#IconeFoto {
+  border-color: black;
+  border-style: solid;
+  border-radius: 50%;
+  border-width: 5px;
+  width: 100px;
+  height: 100px;
+}
+
+.confirmar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
