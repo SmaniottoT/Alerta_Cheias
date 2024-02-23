@@ -345,9 +345,10 @@ ul li p {
     align-items: center;
     justify-content: space-around;
     padding: 0px 25%;
-}
 
-.custom-no-underline {
+
+
+  .custom-no-underline {
     text-decoration: none;
     color: #ffffff;
     font-size: 16px;
@@ -362,7 +363,8 @@ ul li p {
     justify-content: center;
 }
 
-.Botão_FAQ {
+
+  .Botão_FAQ {
     width: 50%;
     height: 90%;
     background: rgba(75, 125, 176, 0.8);
@@ -374,17 +376,18 @@ ul li p {
     align-items: center;
     justify-content: center;
     border: 0;
-}
 
-.Botão_FAQ:hover {
+  }
+
+  .Botão_FAQ:hover {
     background-color: rgba(75, 125, 176);
-}
+  }
 
-.Botão_FAQ:active {
+  .Botão_FAQ:active {
     background-color: rgba(75, 125, 176, 0.2);
-}
+  }
 
-.FAQ_Text {
+  .FAQ_Text {
     text-decoration: none;
     color: #ffffff;
     font-weight: Bold;
@@ -602,4 +605,4 @@ ul li p {
 
 .Modal_Botao_Agendar:active {
     background: rgba(20, 61, 99, 0.8);
-}
+  }

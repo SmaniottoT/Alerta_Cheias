@@ -93,7 +93,6 @@ function mudarSideNav() {
 
 
 
-
     sideNavAberta = false; // Alterando o estado para fechado
     document.getElementById("abrir").classList.remove("open");
 
@@ -187,7 +186,7 @@ function mudarSideNav() {
     elemento14.forEach(function (ListaConfig) {
       ListaConfig.style.display = "flex";
       ListaConfig.style.flexDirection = "column";
-      ListaConfig.style.paddingBottom = "15px";
+      ListaConfig.style.paddingBottom  = "15px";
     });
 
 
@@ -231,6 +230,7 @@ function mudarSideNav() {
     elemento19.forEach(function (alerta) {
       alerta.style.display = "none";
     });
+
 
 
     sideNavAberta = true; // Alterando o estado para aberto
