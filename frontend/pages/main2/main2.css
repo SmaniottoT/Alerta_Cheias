@@ -487,9 +487,7 @@ ul li p {
 
 /* MODAL BACKGROUND */
 .Modal_Background {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: none;
     position: fixed;
     z-index: 1;
     left: 0;

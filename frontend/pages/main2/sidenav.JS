@@ -79,17 +79,17 @@ function mudarSideNav() {
       ListaMapas.style.height = "0px";
     });
 
-     //Remover visualização dos icones de Alerta
-     var elemento14 = document.querySelectorAll("#Box_BotoesMapas");
-     elemento14.forEach(function (BoxBotoes) {
+    //Remover visualização dos icones de Alerta
+    var elemento14 = document.querySelectorAll("#Box_BotoesMapas");
+    elemento14.forEach(function (BoxBotoes) {
       BoxBotoes.style.display = "none";
-     });
+    });
 
-      //Ajustar #abrir
-      var elemento14 = document.querySelectorAll("#abrir");
-      elemento14.forEach(function (AbrirSideNav) {
-        AbrirSideNav.style.marginLeft = "24px";
-      });
+    //Ajustar #abrir
+    var elemento14 = document.querySelectorAll("#abrir");
+    elemento14.forEach(function (AbrirSideNav) {
+      AbrirSideNav.style.marginLeft = "24px";
+    });
 
 
 
@@ -187,7 +187,7 @@ function mudarSideNav() {
     elemento14.forEach(function (ListaConfig) {
       ListaConfig.style.display = "flex";
       ListaConfig.style.flexDirection = "column";
-      ListaConfig.style.paddingBottom  = "15px";
+      ListaConfig.style.paddingBottom = "15px";
     });
 
 
@@ -217,14 +217,20 @@ function mudarSideNav() {
       LogoIcone.style.display = "flex";
       LogoIcone.style.flexDirection = "row";
       LogoIcone.style.justifyContent = "space-between";
-      LogoIcone.style.alignItems  = "center";
+      LogoIcone.style.alignItems = "center";
     });
 
-     //Adiciona visualização dos icones de Alerta
-     var elemento18 = document.querySelectorAll("#Box_BotoesMapas");
-     elemento18.forEach(function (BoxBotoes) {
+    //Adiciona visualização dos icones de Alerta
+    var elemento18 = document.querySelectorAll("#Box_BotoesMapas");
+    elemento18.forEach(function (BoxBotoes) {
       BoxBotoes.style.display = "flex";
-     });
+    });
+
+    //Mantem inativo a visualização dos icones de Alerta
+    var elemento19 = document.querySelectorAll(".Div_Alerta");
+    elemento19.forEach(function (alerta) {
+      alerta.style.display = "none";
+    });
 
 
     sideNavAberta = true; // Alterando o estado para aberto
