@@ -94,6 +94,25 @@ server.get("/benchmarks", async (request: Request, response: Response) => {
 // ABAIXO DAQUI SOMENTE FUNÇÕES QUE SEJAM EXECUTADAS MEDIANTE AUTENTICAÇÃO (ALTERAR USUÁRIO, VINCULAR IMÓVEL, ETC)
 server.use(new AuthenticationMiddleware().validateAuthentication);
 
+server.patch(
+  "/users",
+  (request: Request, response: Response, next: NextFunction) =>
+    RouteExecutor(
+      request,
+      response,
+      next,
+      async (request: AuthenticatedRequest, response: Response) => {
+        const userController = new UserController();
+        const userId = request.userId;
+        const photoUpdate = await userController.savePhoto(
+          userId,
+          request.body.photo
+        );
+        return response.status(200).json(photoUpdate);
+      }
+    )
+);
+
 server.post(
   "/user/benchmarks",
   (request: Request, response: Response, next: NextFunction) =>
