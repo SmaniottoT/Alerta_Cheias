@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta/MediaQueries -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- FONTES -->
+    <link href="https://fonts.googleapis.com/css?family=KoHo&display=swap" rel="stylesheet" />
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.18.1/font/bootstrap-icons.css">
+    <!-- SIGNUP CSS -->
+    <link href="/Alerta_Cheias/frontend/pages/profile/profile.css" rel="stylesheet" />
+    <script src="profile.js"></script>
+    <title>ALERTA CHEIAS</title>
+</head>
+
+<body>
+    <!-- main content -->
+    <div class="background">
+        <!-- logo -->
+        <div class="logo">
+            <img class="logo_image" src="/Alerta_Cheias/frontend/assets/logo_icon/Logo_AlertaCheias.png"
+                alt="LogoIcon_AlertaCheias">
+        </div>
+        <!-- main box -->
+        <div class="main_box">
+
+            <div class="painel">
+                <div class="FotoUsuario" id="FotoUsuario">
+                    <input type="file" id="InputFoto" accept="image/*" onchange="handleFileSelect(event)"
+                        style="display: none;">
+                    <label for="InputFoto" id="IconeLabel">
+                        <img id="IconeFoto" src="/Alerta_Cheias/frontend/assets/logo_icon/user-icon.png" alt="">
+                    </label>
+                    <img id="PerfilFoto" src="/Alerta_Cheias/frontend/assets/PerfilFoto2.svg" alt=""
+                        style="display: none;">
+                </div>
+                <div id="form" class="panel">
+                    <span id="error" style="display: none; text-decoration: underline;"></span>
+                    <div class="input">
+                        <h4>USUÁRIO :</h4>
+                        <input type="text" id="username" name="username" disabled />
+                    </div>
+                    <div class="input">
+                        <h4>NOME :</h4>
+                        <input type="text" id="name" name="name" disabled />
+                    </div>
+                    <div class="input">
+                        <h4>E-MAIL ATUAL :</h4>
+                        <input type="text" id="email" name="email" placeholder="Email atual" />
+                    </div>
+                    <div class="input">
+                        <h4>E-MAIL NOVO :</h4>
+                        <input type="text" id="newEmail" name="emailNovo" placeholder="Email novo" />
+                    </div>
+                    <div class="input">
+                        <h4>SENHA ATUAL:</h4>
+                        <input type="password" id="password" name="password" placeholder="Digite a sua senha atual" />
+                    </div>
+                    <div class="input">
+                        <h4>SENHA NOVA:</h4>
+                        <input type="password" id="newPassword" name="passwordNovo"
+                            placeholder="Digite a sua senha nova" />
+                    </div>
+                    <div class="confirmar">
+                        <button class="signUp_button" id="signUp_button">CONFIRMAR</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <footer>
+        <div class="Background_Footer">
+            <div class="Footer_Logo_Box">
+                <a href="/Alerta_Cheias/frontend/pages/main/main.html">
+                    <img src="/Alerta_Cheias/frontend/assets/logo_icon/Logo_AlertaCheias.png" alt="Alerta Cheias"
+                        height="35px">
+                </a>
+            </div>
+            <div class="Footer_Text_Box">
+                <a class="custom-no-underline">&copy; 2024 AlertaCheias</a>
+                <a class="custom-no-underline" href="/Alerta_Cheias/frontend/pages/terms/terms.html">Termos</a>
+                <a class="custom-no-underline" href="/Alerta_Cheias/frontend/pages/privacy/privacy.html">Privacidade</a>
+                <a class="custom-no-underline" href="/Alerta_Cheias/frontend/pages/docs/docs.html">Documentos</a>
+                <a class="custom-no-underline" href="/Alerta_Cheias/frontend/pages/contact/contact.html">Contatos</a>
+            </div>
+            <div class="Footer_FAQ_Box">
+                <button class="Botão_FAQ" id="FAQ_Button" onclick="buttonClick()">
+                    <a class="FAQ_Text" href="/Alerta_Cheia/frontend/pages/footer_pages/FAQ.html">FAQ</a>
+                </button>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
