@@ -109,6 +109,7 @@ function mudarSideNav() {
     // Mostra Box do usuario e tira efeitos
     var elemento02 = document.querySelector("#side-nav #user");
     elemento02.style.width = "100%";
+    elemento02.style.height = "100px";
     elemento02.style.background = "rgba(57, 107, 153, 0.2)";
     elemento02.style.backdropFilter = "blur(5px)";
     elemento02.style.marginBottom = "0px";

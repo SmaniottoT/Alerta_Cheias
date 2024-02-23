@@ -15,10 +15,18 @@ async function getWeather(cityCode: any) {
 
   console.log(response);
   const previsao = response?.data.clima[0].condicao_desc;
+  const previsao2 = response?.data.clima[0].data;
+  const previsao3 = response?.data.clima[0].indice_uv;
+  const previsao4 = response?.data.clima[0].min;
+  const previsao5 = response?.data.clima[0].max;
 
   document.getElementById("previsaoTempo").innerText = `${previsao}`;
+  document.getElementById("previsaoTempo2").innerText = `${previsao2}`;
+  document.getElementById("previsaoTempo3").innerText = `${previsao3}`;
+  document.getElementById("previsaoTempo4").innerText = `${previsao4}`;
+  document.getElementById("previsaoTempo5").innerText = `${previsao5}`;
 
-  return previsao;
+  return response;
 }
 
 const city = "Timbó";
