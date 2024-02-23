@@ -38,6 +38,19 @@ export class UserController {
     return userList;
   }
 
+  async savePhoto(userId: number, photo: string) {
+    const userRepository = AppDataSource.getRepository(User);
+    const userToUpdate = await userRepository.findOne({
+      where: { id: userId },
+    });
+    if (!userToUpdate) {
+      throw new Error("User not found.");
+    }
+    userToUpdate.photo = photo;
+
+    return await userRepository.save(userToUpdate);
+  }
+
   async associateUserBenchmark(userId: number, benchmarkId: number) {
     const associatedBenchmarkRepository =
       AppDataSource.getRepository(UserToBenchmark);

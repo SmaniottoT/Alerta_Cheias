@@ -17,6 +17,9 @@ export class User {
 
   @Column()
   password: string;
+  
+  @Column({nullable: true})
+  photo: string;
 
   @OneToMany(() => UserToBenchmark, (userToBenchmark) => userToBenchmark.user)
   userToBenchmark: UserToBenchmark[];
