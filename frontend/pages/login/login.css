@@ -74,7 +74,7 @@ body {
   margin-left: 40px;
 }
 
-.Painel_Esquerda_Input {
+/* .Painel_Esquerda_Input {
   width: 90%;
   height: 10%;
   background: rgba(75, 125, 176, 0.800000011920929);
@@ -86,7 +86,7 @@ body {
   border-top-right-radius: 100px;
   border-bottom-left-radius: 100px;
   border-bottom-right-radius: 100px;
-}
+} */
 
 .Painel_Esquerda_NivelDoRio {
   width: 90%;
@@ -313,7 +313,7 @@ input:focus {
 }
 
 /* RESPONSIVIDADE PARA OUTROS DISPOSITIVOS */
-
+/* 
 @media screen and (max-width: 430px) {
   body {
     font-size: 14px;
@@ -405,7 +405,7 @@ input:focus {
     border-bottom-right-radius: 100px;
   }
 
-  /* Imagem da agua SVG */
+
   .bi.bi-water {
     height: 60px;
     width: 60px;
@@ -579,7 +579,7 @@ input:focus {
     font-size: 12.5px;
   }
 
-  /* FOOTER */
+
   .Background_Footer {
     width: 100vw;
     height: 5vh;
@@ -649,4 +649,4 @@ input:focus {
     font-weight: Bold;
     font-size: 20px;
   }
-}
+} */

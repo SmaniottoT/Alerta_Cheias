@@ -35,7 +35,8 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  margin-top: px; /* Adicionando margem superior de 20px */
+  margin-top: px;
+  /* Adicionando margem superior de 20px */
 }
 
 .painel {
@@ -43,8 +44,10 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 800px; /* Definindo uma largura máxima de 400px */
-  height: 90%; /* Altura automática para ajustar ao conteúdo */
+  width: 800px;
+  /* Definindo uma largura máxima de 400px */
+  height: 90%;
+  /* Altura automática para ajustar ao conteúdo */
   background: rgba(47, 60, 92, 0.8);
   opacity: 1;
   position: relative;
@@ -68,14 +71,16 @@ body {
   height: 10%;
   color: rgba(255, 255, 255, 1);
   font-weight: Bold;
-  font-size: 24px; /* Diminuindo o tamanho do título */
+  font-size: 24px;
+  /* Diminuindo o tamanho do título */
   opacity: 1;
   margin: 10px;
 }
 
 h4 {
   color: rgba(255, 255, 255, 1);
-  font-size: 14px; /* Diminuindo o tamanho do subtítulo */
+  font-size: 14px;
+  /* Diminuindo o tamanho do subtítulo */
 }
 
 input {
@@ -188,12 +193,15 @@ input {
 }
 
 #IconeFoto {
-  border-radius: 50%; /* Define a borda redonda com 50% do tamanho da imagem */
-  width: 100px; /* Defina o tamanho desejado para a imagem */
-  height: 100px; /* Defina o tamanho desejado para a imagem */
+  border-color: black;
+  border-style: solid;
+  border-radius: 50%;
+  border-width: 5px;
+  width: 100px;
+  height: 100px;
 }
 
-.confirmar{
+.confirmar {
   display: flex;
   justify-content: center;
   align-items: center;

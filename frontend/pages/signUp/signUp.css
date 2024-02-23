@@ -55,6 +55,10 @@ body {
 .input {
   margin: 5px;
   padding-bottom: 10px;
+
+}
+.input_button{
+  border: 0;
 }
 
 .title {
