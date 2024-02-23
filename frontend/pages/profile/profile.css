@@ -193,12 +193,17 @@ input {
 }
 
 #IconeFoto {
-  border-color: black;
-  border-style: solid;
-  border-radius: 50%;
-  border-width: 5px;
   width: 100px;
   height: 100px;
+}
+
+
+/* PARA FAZER HOVER NA IMAGEM USER */
+#IconeFoto:hover {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border-radius: 50%;
 }
 
 .confirmar {

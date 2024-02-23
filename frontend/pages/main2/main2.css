@@ -339,13 +339,13 @@ ul li p {
 
 
 .Footer_Text_Box {
-
     width: 80vw;
     height: 90%;
     display: flex;
     align-items: center;
     justify-content: space-around;
     padding: 0px 25%;
+
 
 
   .custom-no-underline {
@@ -363,6 +363,7 @@ ul li p {
     justify-content: center;
 }
 
+
   .Botão_FAQ {
     width: 50%;
     height: 90%;
@@ -375,6 +376,7 @@ ul li p {
     align-items: center;
     justify-content: center;
     border: 0;
+
   }
 
   .Botão_FAQ:hover {
@@ -386,7 +388,6 @@ ul li p {
   }
 
   .FAQ_Text {
-
     text-decoration: none;
     color: #ffffff;
     font-weight: Bold;
@@ -489,9 +490,7 @@ ul li p {
 
 /* MODAL BACKGROUND */
 .Modal_Background {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: none;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -606,4 +605,4 @@ ul li p {
 
 .Modal_Botao_Agendar:active {
     background: rgba(20, 61, 99, 0.8);
-}
+  }
