@@ -13,17 +13,56 @@ async function fetchCurrentLevel(event: Event) {
       {
         operationName: "ListaEstacoes",
         variables: {},
-        query: `query ListaEstacoes {\n  estacoes {\n    nome\n    nivel_rio\n      nivel_montante\n    nivel_jusante\n    porc_reservatorio\n    comp_abertas\n    comp_fechadas\n }\n}`,
+        query: `query ListaEstacoes {\n  estacoes {\n    nome\n    nivel_rio\n }\n}`,
       }
     );
-    console.log(response);
-    
+
+    const cityElement = document.getElementById(
+      "CityCota"
+    ) as HTMLSelectElement;
+
+    var cityName = cityElement.value;
+
+    if (cityName == "Timbó") {
+      cityName = "DCSC Timbó 1";
+    }
+    if (cityName == "Indaial") {
+      cityName = "DCSC Indaial";
+    }
+    if (cityName == "Rio dos Cedros") {
+      cityName = "DCSC Rio dos Cedros 1";
+    }
+    if (cityName == "Benedito Novo") {
+      cityName = "DCSC Benedito Novo";
+    }
+    if (cityName == "Pomerode") {
+      cityName = "DCSC Pomerode";
+    }
+    if (cityName == "Doutor Pedrinho") {
+      cityName = "DCSC Doutor Pedrinho";
+    }
+    if (cityName == "Ibirama") {
+      cityName = "DCSC Ibirama";
+    }
+    if (cityName == "Ilhota") {
+      cityName = "DCSC Ilhota";
+    }
+    if (cityName == "José Boiteux") {
+      cityName = "DCSC José Boiteux";
+    }
+    if (cityName == "Taió") {
+      cityName = "DCSC Taió";
+    }
+    if (cityName == "Ituporanga") {
+      cityName = "DCSC Ituporanga";
+    }
 
     const estacoes: Estacao[] = response?.data?.data?.estacoes;
-    // precisa ajustar aqui pra que busque a partir de um getElement html, e não "DCSC Timbó 1"
-    const estacao = estacoes.find((estacao) => estacao.nome === "DCSC Timbó 1");
+
+    const estacao = estacoes.find((estacao) => estacao.nome === cityName);
+
     if (!estacao) {
-      throw new Error("Não foi possível buscar a estação");
+      document.getElementById("cotaRio").innerText = `0.00m`;
     }
     const nivelRio = estacao.nivel_rio.toFixed(2);
 
@@ -36,6 +75,6 @@ async function fetchCurrentLevel(event: Event) {
 
 document.addEventListener("DOMContentLoaded", () => {
   document
-    .getElementById("riverLevel")
+    .getElementById("boxCota")
     ?.addEventListener("click", fetchCurrentLevel);
 });

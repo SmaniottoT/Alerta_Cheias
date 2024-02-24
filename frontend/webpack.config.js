@@ -8,7 +8,8 @@ module.exports = {
     HereMaps_Fixo2: "./src/HereMaps_Fixo2.ts",
     Weather: "./src/Weather.ts",
     Logout: "./src/logout.ts",
-    currentRiverLevel: "./src/currentRiverLevel.ts"
+    currentRiverLevel: "./src/currentRiverLevel.ts",
+    Dams: "./src/Dams.ts"
   },
   module: {
     rules: [
