@@ -9,7 +9,8 @@ module.exports = {
     Weather: "./src/Weather.ts",
     Logout: "./src/logout.ts",
     currentRiverLevel: "./src/currentRiverLevel.ts",
-    Dams: "./src/Dams.ts"
+    Dams: "./src/Dams.ts",
+    profile: "./src/profile.ts"
   },
   module: {
     rules: [
