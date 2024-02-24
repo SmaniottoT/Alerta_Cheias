@@ -1,15 +1,11 @@
 import { user } from "./apiUser";
 
 async function loadUserInfo(event: Event) {
-
-
+  event.preventDefault();
   try {
-    // Retrieve token from local storage
     const token = localStorage.getItem("token");
 
-    // Check if token is available
     if (token) {
-      // Make a request to your server to fetch user details using Axios
       const response = await user.get("/user", {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -17,11 +13,7 @@ async function loadUserInfo(event: Event) {
         },
       });
 
-      // Check if the response is successful
       if (response.status === 200) {
-        // Parse the JSON response
-        console.log(response.data);
-        
         const userData = response.data;
 
         if (!userData.photo) {

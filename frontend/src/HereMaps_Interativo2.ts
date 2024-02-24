@@ -121,7 +121,7 @@ async function addDomMarker(MapaZero: any) {
 
       const verificadores = document.getElementById("adicionarMapa");
 
-      
+
 
       verificadores.addEventListener("click", () =>
         initMap(
@@ -167,6 +167,7 @@ async function addDomMarker(MapaZero: any) {
     </div>`,
       latitude,
       longitude,
+      benchmarkId: benchmark.id
     });
 
     group.addObject(newBenchmark);
