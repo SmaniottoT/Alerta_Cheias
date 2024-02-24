@@ -6,10 +6,4 @@ export const benchmark = axios.create({
 
 benchmark.interceptors.response.use((response: AxiosResponse) => {
   return response;
-  // },
-  // (error) => {
-  //   if (error.response.status == 401) {
-  //     window.location.replace("Alerta_Cheias/frontend/pages/login/login.html");
-  //   }
-  //   return error;
 });

@@ -5,6 +5,7 @@ import { UsernameTakenException } from "../exceptions/UsernameTakenException";
 import { EmptyInputException } from "../exceptions/EmptyInputException";
 import { Benchmark } from "../entity/FloodLevel";
 import { UserToBenchmark } from "../entity/UserToFloodLevel";
+import { Url } from "url";
 
 export class UserController {
   async createUser(
