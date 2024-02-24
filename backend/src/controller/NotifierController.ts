@@ -53,7 +53,6 @@ export class NotifierController {
     }
   }
 
-
   async getAssociatedBenchmarks(userId: number) {
     const associatedBenchmarkRepository =
       AppDataSource.getRepository(UserToBenchmark);
@@ -75,16 +74,11 @@ export class NotifierController {
     return associatedList;
   }
 
-  
-  async verifyFlood(userId: number) {
-    const associatedBenchmarks = this.getAssociatedBenchmarks(userId);
-    console.log(associatedBenchmarks);
-    (await associatedBenchmarks).forEach((benchmark) => benchmark., {})
+  // async verifyFlood(userId: number) {
+  //   const associatedBenchmarks = this.getAssociatedBenchmarks(userId);
+  //   console.log(associatedBenchmarks);
+  //   (await associatedBenchmarks).forEach((benchmark) => benchmark. {})
 
-    //  (await associatedBenchmarks).forEach()
-  }
-
-
-
-
+  //   //  (await associatedBenchmarks).forEach()
+  // }
 }

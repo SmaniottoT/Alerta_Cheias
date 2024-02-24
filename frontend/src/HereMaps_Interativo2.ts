@@ -121,6 +121,8 @@ async function addDomMarker(MapaZero: any) {
 
       const verificadores = document.getElementById("adicionarMapa");
 
+      
+
       verificadores.addEventListener("click", () =>
         initMap(
           "mapa1",

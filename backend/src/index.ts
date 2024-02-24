@@ -13,6 +13,7 @@ import { BaseHttpException } from "./exceptions/BaseHttpException";
 import { FloodLevelController } from "./controller/FloodLevelController";
 import { request } from "http";
 import { UserToBenchmark } from "./entity/UserToFloodLevel";
+import { error } from "console";
 
 const SERVER_PORT = 3000;
 const server = express();
@@ -61,7 +62,7 @@ server.post(
 
 server.get("/users", async (request: Request, response: Response) => {
   const userController = new UserController();
-  const userList = await userController.getUser();
+  const userList = await userController.getUsers();
   return response.status(200).json(userList);
 });
 
@@ -93,6 +94,26 @@ server.get("/benchmarks", async (request: Request, response: Response) => {
 
 // ABAIXO DAQUI SOMENTE FUNÇÕES QUE SEJAM EXECUTADAS MEDIANTE AUTENTICAÇÃO (ALTERAR USUÁRIO, VINCULAR IMÓVEL, ETC)
 server.use(new AuthenticationMiddleware().validateAuthentication);
+
+server.get(
+  "/user",
+  async (request: AuthenticatedRequest, response: Response) => {
+      try{
+      const token = request.headers.authorization?.split(' ')[1];
+      if (!token) {
+        return response.status(401).json({ error: 'Unauthorized: Token not provided' });
+      }
+      const userController = new UserController();
+      const userId = request.userId;
+      const loggedUser = await userController.getUser(userId)
+
+      return response.status(200).json(loggedUser);
+    } catch (error){
+      throw new Error(error.message)
+    };
+   }
+ 
+);
 
 server.patch(
   "/users",

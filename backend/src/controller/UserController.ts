@@ -5,7 +5,7 @@ import { UsernameTakenException } from "../exceptions/UsernameTakenException";
 import { EmptyInputException } from "../exceptions/EmptyInputException";
 import { Benchmark } from "../entity/FloodLevel";
 import { UserToBenchmark } from "../entity/UserToFloodLevel";
-import { Url } from "url";
+
 
 export class UserController {
   async createUser(
@@ -33,17 +33,23 @@ export class UserController {
     return await userRepository.save(user);
   }
 
-  async getUser() {
+  async getUsers() {
     const userRepository = AppDataSource.getRepository(User);
     const userList = await userRepository.find();
     return userList;
   }
 
-  async savePhoto(userId: number, photo: string) {
+  async getUser(userId: number) {
     const userRepository = AppDataSource.getRepository(User);
-    const userToUpdate = await userRepository.findOne({
+    const foundUser = await userRepository.findOne({
       where: { id: userId },
     });
+    return foundUser;
+  }
+
+  async savePhoto(userId: number, photo: string) {
+    const userRepository = AppDataSource.getRepository(User);
+    const userToUpdate = await this.getUser(userId);
     if (!userToUpdate) {
       throw new Error("User not found.");
     }
@@ -55,12 +61,9 @@ export class UserController {
   async associateUserBenchmark(userId: number, benchmarkId: number) {
     const associatedBenchmarkRepository =
       AppDataSource.getRepository(UserToBenchmark);
-    const userRepository = AppDataSource.getRepository(User);
     const benchmarkRepository = AppDataSource.getRepository(Benchmark);
 
-    const foundUser = await userRepository.findOne({
-      where: { id: userId },
-    });
+    const foundUser = await this.getUser(userId)
 
     const foundBenchmark = await benchmarkRepository.findOne({
       where: { id: benchmarkId },

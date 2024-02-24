@@ -1,7 +1,7 @@
 import { user } from "./apiUser";
 
 async function loadUserInfo(event: Event) {
-  event.preventDefault();
+
 
   try {
     // Retrieve token from local storage
@@ -10,7 +10,7 @@ async function loadUserInfo(event: Event) {
     // Check if token is available
     if (token) {
       // Make a request to your server to fetch user details using Axios
-      const response = await user.get("/users", {
+      const response = await user.get("/user", {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
@@ -20,7 +20,9 @@ async function loadUserInfo(event: Event) {
       // Check if the response is successful
       if (response.status === 200) {
         // Parse the JSON response
-        const userData = response.data[0];
+        console.log(response.data);
+        
+        const userData = response.data;
 
         if (!userData.photo) {
           userData.photo = "/Alerta_Cheias/frontend/assets/icon_profile.png";
