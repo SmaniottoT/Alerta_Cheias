@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Icone da aba -->
-    <link rel="icon" href="/Alerta_Cheias/frontend/assets/gif_alerta.gif" type="image/x-icon" >
+    <link rel="icon" href="/Alerta_Cheias/frontend/assets/gif_alerta.gif" type="image/x-icon">
     <!-- Jquery 3.6.4 -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" defer></script>
     <!-- FONTES -->
@@ -21,7 +21,9 @@
     <script src="/Alerta_Cheias/frontend/dist/Weather.js" defer></script>
     <script src="/Alerta_Cheias/frontend/dist/logout.js" defer></script>
     <script src="/Alerta_Cheias/frontend/dist/currentRiverLevel.js" defer></script>
-    <script src="/Alerta_Cheias/frontend/pages/main2/BarraInfo_SelectorFunction.js" defer></script>
+    <script src="/Alerta_Cheias/frontend/dist/Dams.js" defer></script>
+    <script src="/Alerta_Cheias/frontend/pages/main2/Cota_SelectorFunction.js" defer></script>
+    <script src="/Alerta_Cheias/frontend/pages/main2/Barragem_SelectorFunction.js" defer></script>
     <script src="/Alerta_Cheias/frontend/pages/main2/AgendarAlarme.js" defer></script>
 
     <!-- JavaSript HereMaps API -->
@@ -247,7 +249,7 @@
 
                     <li class="LiConfig">
 
-                        <a class="Configuracoes" href="/Alerta_Cheias/frontend/pages/main2/main2.html ">
+                        <a class="Configuracoes" href="/Alerta_Cheias/frontend/pages/profile/profile.html ">
                             <img src="/Alerta_Cheias/frontend/assets/icones_main2/icon_perfil.png">
                             <p>PERFIL</p>
                         </a>
@@ -290,7 +292,7 @@
         <div class="Box_Footer">
 
             <!-- 01 BOX BOTAO COTA DE ENCHENTE-->
-            <div class="Box_Botao_01" id="riverLevel">
+            <div class="Box_Botao_01" id="boxCota">
                 <!-- 01 BOTAO COTA DE ENCHENTE-->
                 <button class="Botao_DropUp_01" id="Botao_DropUp_01">COTAS</button>
                 <!-- 01 CONTEUDO DROPUP BOX BOTAO COTA DE ENCHENTE-->
@@ -300,7 +302,7 @@
                     <!-- 01 TITULO DROPUP ESTADO-->
                     <div class="DropUp_Select_Estado_Titulo">ESTADO</div>
                     <!-- 01 SELETOR ESTADO -->
-                    <select id="State" class="DropBtn">
+                    <select id="StateCota" class="DropBtn">
                         <option selected>Selecione o estado </option>
                         <option value="SC">Santa Catarina</option>
                         <option value="SP">São Paulo</option>
@@ -309,7 +311,7 @@
                     <!-- 01 TITULO DROPUP CIDADE-->
                     <div class="DropUp_Select_Cidade_Titulo">CIDADE</div>
                     <!-- 01 SELETOR CIDADE -->
-                    <select id="City" class="DropBtn">
+                    <select id="CityCota" class="DropBtn">
                         <option selected>Selecione a cidade </option>
                         <!-- As cidades devem ser acrescidas em BarraInfo_SelectorFunction.js -->
                     </select>
@@ -327,7 +329,7 @@
             </div>
 
             <!-- 02 BOX BOTAO BARRAGEM-->
-            <div class="Box_Botao_02">
+            <div class="Box_Botao_02" id="boxBarragem">
                 <button class="Botao_DropUp_02" id="Botao_DropUp_02">BARRAGENS</button>
                 <div class="DropUp_Conteudo_02" id="DropUp_Conteudo_02">
 
@@ -339,7 +341,7 @@
                     <!-- 01 TITULO DROPUP ESTADO-->
                     <div class="DropUp_Select_Estado_Titulo">ESTADO</div>
                     <!-- 01 SELETOR ESTADO -->
-                    <select id="State" class="DropBtn">
+                    <select id="StateBarragem" class="DropBtn">
                         <option selected>Selecione o estado </option>
                         <option value="SC">Santa Catarina</option>
                         <option value="SP">São Paulo</option>
@@ -348,7 +350,7 @@
                     <!-- 01 TITULO DROPUP CIDADE-->
                     <div class="DropUp_Select_Cidade_Titulo">CIDADE</div>
                     <!-- 01 SELETOR CIDADE -->
-                    <select id="City" class="DropBtn">
+                    <select id="CityBarragem" class="DropBtn">
                         <option selected>Selecione a cidade </option>
                         <!-- As cidades devem ser acrescidas em BarraInfo_SelectorFunction.js -->
                     </select>
@@ -361,9 +363,11 @@
                         </svg>
                     </div>
                     <!-- INFO BARRAGEM -->
-                    <div class="DropUp_NivelDoRio" id="cotaRio"></div>
-
-                    <!-- PARAR DE ARRUMAR APARTIR DAQUI -->
+                    <div class="DropUp_NivelDoRio" id="capacidadeBarragem"></div>
+                    <div class="DropUp_NivelDoRio" id="nivelJusante"></div>
+                    <div class="DropUp_NivelDoRio" id="nivelMontante"></div>
+                    <div class="DropUp_NivelDoRio" id="comportasAbertas"></div>
+                    <div class="DropUp_NivelDoRio" id="comportasFechadas"></div>
 
 
                 </div>

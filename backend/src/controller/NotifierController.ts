@@ -13,6 +13,10 @@
 // COMO ESPECIFICAR QUAL ENTIDADE USAR PARA MANY TO MANY
 
 import axios from "axios";
+import { AppDataSource } from "../data-source";
+import { UserToBenchmark } from "../entity/UserToFloodLevel";
+import { User } from "../entity/User";
+import { NamedTupleMember } from "typescript";
 
 interface Estacao {
   nome: string;
@@ -48,4 +52,39 @@ export class NotifierController {
       throw new Error(`Failed to fetch current River Level: ${error}`);
     }
   }
+
+
+  async getAssociatedBenchmarks(userId: number) {
+    const associatedBenchmarkRepository =
+      AppDataSource.getRepository(UserToBenchmark);
+    const userRepository = AppDataSource.getRepository(User);
+
+    const foundUser = await userRepository.findOne({
+      where: { id: userId },
+    });
+
+    if (!foundUser) {
+      throw new Error("User or Benchmark not found.");
+    }
+
+    const associatedList = await associatedBenchmarkRepository.find({
+      where: { user: foundUser },
+      order: {},
+      relations: { user: true, benchmark: true },
+    });
+    return associatedList;
+  }
+
+  
+  async verifyFlood(userId: number) {
+    const associatedBenchmarks = this.getAssociatedBenchmarks(userId);
+    console.log(associatedBenchmarks);
+    (await associatedBenchmarks).forEach((benchmark) => benchmark., {})
+
+    //  (await associatedBenchmarks).forEach()
+  }
+
+
+
+
 }
