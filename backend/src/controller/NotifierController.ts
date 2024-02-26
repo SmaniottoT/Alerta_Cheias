@@ -16,7 +16,7 @@ import axios from "axios";
 import { AppDataSource } from "../data-source";
 import { UserToBenchmark } from "../entity/UserToFloodLevel";
 import { User } from "../entity/User";
-import { NamedTupleMember } from "typescript";
+import nodemailer from "nodemailer";
 
 interface Estacao {
   nome: string;
@@ -74,11 +74,40 @@ export class NotifierController {
     return associatedList;
   }
 
-  // async verifyFlood(userId: number) {
-  //   const associatedBenchmarks = this.getAssociatedBenchmarks(userId);
-  //   console.log(associatedBenchmarks);
-  //   (await associatedBenchmarks).forEach((benchmark) => benchmark. {})
+  async verifyFlood(userId: number) {
+    const currentFloodLevel = await this.fetchCurrentLevel();
+    const associatedBenchmarks = await this.getAssociatedBenchmarks(userId);
+    console.log(associatedBenchmarks);
+    console.log(currentFloodLevel);
 
-  //   //  (await associatedBenchmarks).forEach()
-  // }
+    associatedBenchmarks.forEach((benchmark) => {
+      if (currentFloodLevel >= benchmark.benchmark.floodLevel) {
+        const transporter = nodemailer.createTransport({
+          service: "Gmail", // Use your email service
+          auth: {
+            user: "alertacheias@gmail.com", // Your email address
+            pass: "AlertaCheias@Entra21", // Your password
+          },
+        });
+
+        const mailOptions = {
+          from: "alertacheias@gmail.com", // Sender
+          to: benchmark.user.email, // Recipient
+          subject: "ALERTA CHEIAS", // Email subject
+          html: `<h1>ALERTA CHEIAS - AVISO</h1><p>Atenção!</p><p>O nível do Rio atual é de: ${currentFloodLevel}.</p><p>Você selecionou o alerta para a Rua ${benchmark.benchmark.street} faltando ${benchmark.alert}m. </p>`,
+        };
+
+        // Send the email
+        transporter.sendMail(mailOptions, (error, info) => {
+          if (error) {
+            console.error("Email sending failed:", error);
+          } else {
+            console.log("Email sent: " + info.response);
+          }
+        });
+      } else {
+        throw new Error("Socorro?");
+      }
+    });
+  }
 }

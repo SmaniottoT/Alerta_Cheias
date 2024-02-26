@@ -6,7 +6,6 @@ import { EmptyInputException } from "../exceptions/EmptyInputException";
 import { Benchmark } from "../entity/FloodLevel";
 import { UserToBenchmark } from "../entity/UserToFloodLevel";
 
-
 export class UserController {
   async createUser(
     username: string,
@@ -47,13 +46,20 @@ export class UserController {
     return foundUser;
   }
 
-  async savePhoto(userId: number, photo: string) {
+  async updateUser(
+    userId: number,
+    email: string,
+    photo: string,
+    password: string
+  ) {
     const userRepository = AppDataSource.getRepository(User);
     const userToUpdate = await this.getUser(userId);
     if (!userToUpdate) {
       throw new Error("User not found.");
     }
+    userToUpdate.email = email;
     userToUpdate.photo = photo;
+    userToUpdate.password = await bcrypt.hash(password, 10);
 
     return await userRepository.save(userToUpdate);
   }
@@ -63,7 +69,7 @@ export class UserController {
       AppDataSource.getRepository(UserToBenchmark);
     const benchmarkRepository = AppDataSource.getRepository(Benchmark);
 
-    const foundUser = await this.getUser(userId)
+    const foundUser = await this.getUser(userId);
 
     const foundBenchmark = await benchmarkRepository.findOne({
       where: { id: benchmarkId },

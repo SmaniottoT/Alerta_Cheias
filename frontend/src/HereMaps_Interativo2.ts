@@ -2,6 +2,7 @@
 
 import { benchmark } from "./apiBenchmark";
 import "@here/maps-api-for-javascript";
+import { user } from "./apiUser";
 
 /**
  * Cria um marcador capaz de receber eventos DOM e adiciona-o ao mapa.
@@ -12,12 +13,24 @@ import "@here/maps-api-for-javascript";
 
 // execução dos mapas fixos
 
-function initMap(mapId: any, center: any, zoom: any) {
+function initMap(center: any, zoom: any) {
   var defaultLayers = platform.createDefaultLayers({
     // Cria camadas padrão usando a plataforma HERE Maps
     lg: "POR", // Define o idioma para Português
     static: true, // Adicione a opção static para remover o termo de uso
   } as any) as any;
+  var mapa1 = document.getElementById("mapa1").firstElementChild
+  var mapa2 = document.getElementById("mapa2").firstElementChild
+  var mapa3 = document.getElementById("mapa3").firstElementChild
+  var mapId = "mapa1"
+  if (mapa1 && mapa2 && mapa3) {
+    console.log("erro"); 
+    // colocar aqui um window alert para que a pessoa delete primeiro para depois add
+  } else if (mapa1 && mapa2) {
+    mapId = "mapa3"
+  } else if (mapa1) {
+    mapId = "mapa2"
+  } 
 
   var map = new H.Map(
     document.getElementById(mapId), // Obtém o elemento HTML para o mapa
@@ -31,6 +44,7 @@ function initMap(mapId: any, center: any, zoom: any) {
   var marker = new H.map.Marker(center); // Adicionar um marcador ao mapa
   map.addObject(marker);
   window.addEventListener("resize", () => map.getViewPort().resize());
+  
 }
 
 // Chamadas para inicializar mapa geral
@@ -119,20 +133,32 @@ async function addDomMarker(MapaZero: any) {
       // show info bubble
       ui.addBubble(bubble);
 
-      const verificadores = document.getElementById("adicionarMapa");
+      const verificadores = document.getElementsByClassName("adicionarMapa");
 
+      async function adicionarMapaClickHandler() {
+        console.log("botão clicado",evt.target.getData().latitude, evt.target.getData().longitude);
 
-
-      verificadores.addEventListener("click", () =>
         initMap(
-          "mapa1",
           {
             lat: evt.target.getData().latitude,
             lng: evt.target.getData().longitude,
           },
           12
-        )
-      );
+        );
+      }
+
+      if (verificadores instanceof HTMLCollection) {
+        for (let i = 0; i < verificadores.length; i++) {
+          // Remove any existing click event listeners
+          verificadores[i].removeEventListener(
+            "click",
+            adicionarMapaClickHandler
+          );
+
+          // Add a new click event listener with a unique identifier
+          verificadores[i].addEventListener("click", adicionarMapaClickHandler);
+        }
+      }
     },
     false
   );
@@ -153,7 +179,7 @@ async function addDomMarker(MapaZero: any) {
     );
     newBenchmark.setData({
       html: `<div style="width: 250px">
-      <button id="adicionarMapa">
+      <button class="adicionarMapa">
       <img src="/Alerta_Cheias/frontend/assets/icones_main2/icon_add.png"> 
      </button>
      <h2>Rua: ${street}</h2>
@@ -167,7 +193,7 @@ async function addDomMarker(MapaZero: any) {
     </div>`,
       latitude,
       longitude,
-      benchmarkId: benchmark.id
+      benchmarkId: benchmark.id,
     });
 
     group.addObject(newBenchmark);
