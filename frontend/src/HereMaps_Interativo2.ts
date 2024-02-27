@@ -14,7 +14,7 @@ import axios from "axios";
 
 // execução dos mapas fixos
 
-function initMap(center: any, zoom: any, id: any) {
+function initMap(center: any, zoom: any, id: any, street: string) {
   var defaultLayers = platform.createDefaultLayers({
     // Cria camadas padrão usando a plataforma HERE Maps
     lg: "POR", // Define o idioma para Português
@@ -24,18 +24,21 @@ function initMap(center: any, zoom: any, id: any) {
   var mapa2 = document.getElementById("mapa2").firstElementChild;
   var mapa3 = document.getElementById("mapa3").firstElementChild;
   var mapId = "mapa1";
+  var mapTitleId = "nomeMapa1"
   if (mapa1 && mapa2 && mapa3) {
     window.alert(
       "Os três mapas estão selecionados. Exclua um mapa antes de adicionar seu próximo ponto de interesse. Ou assine nosso plano Premium para adicionar pontos de interesse ilimitados."
     );
-    // colocar aqui um window alert para que a pessoa delete primeiro para depois add
   } else if (mapa1 && mapa2) {
     mapId = "mapa3";
+    mapTitleId = "nomeMapa3"
   } else if (mapa1) {
     mapId = "mapa2";
+    mapTitleId = "nomeMapa2"
   }
 
   document.getElementById(mapId).dataset.id = id;
+  document.getElementById(mapTitleId).innerText = `Rua ${street}`;
 
   var map = new H.Map(
     document.getElementById(mapId), // Obtém o elemento HTML para o mapa
@@ -151,7 +154,7 @@ async function addDomMarker(MapaZero: any) {
           );
           return;
           // colocar aqui um window alert para que a pessoa delete primeiro para depois add
-        } 
+        }
         const response = await axios.post(
           "http://localhost:3000/user/benchmarks",
           {
@@ -163,14 +166,15 @@ async function addDomMarker(MapaZero: any) {
             },
           }
         );
-      
+
         initMap(
           {
             lat: evt.target.getData().latitude,
             lng: evt.target.getData().longitude,
           },
           12,
-          evt.target.getData().benchmarkId
+          evt.target.getData().benchmarkId,
+          evt.target.getData().street
         );
       }
 
@@ -276,25 +280,35 @@ async function loadUserMaps() {
         lng: userBenchmark.benchmark.long,
       },
       12,
-      userBenchmark.benchmark.id
+      userBenchmark.benchmark.id,
+      userBenchmark.benchmark.street
     );
   });
 }
 
 loadUserMaps();
 
-async function removerMapa(id:any) {
+async function removerMapa(id: any) {
   console.log(id);
   const mapa = document.getElementById(`mapa${id}`);
   const token = localStorage.getItem("token");
-  const response = await axios.delete(`http://localhost:3000/user/benchmarks/${mapa.dataset.id}`, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
+  const response = await axios.delete(
+    `http://localhost:3000/user/benchmarks/${mapa.dataset.id}`,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
   window.location.reload();
 }
 
-document.getElementById("Botao_Remover1").addEventListener("click", () => removerMapa(1));
-document.getElementById("Botao_Remover2").addEventListener("click", () => removerMapa(2));
-document.getElementById("Botao_Remover3").addEventListener("click", () => removerMapa(3));
+document
+  .getElementById("Botao_Remover1")
+  .addEventListener("click", () => removerMapa(1));
+document
+  .getElementById("Botao_Remover2")
+  .addEventListener("click", () => removerMapa(2));
+document
+  .getElementById("Botao_Remover3")
+  .addEventListener("click", () => removerMapa(3));

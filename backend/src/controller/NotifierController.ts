@@ -35,8 +35,7 @@ export class NotifierController {
         }
       );
 
-      const estacoes: Estacao[] = response.data.estacoes;
-
+      const estacoes: Estacao[] = response?.data?.data?.estacoes;
       const estacao = estacoes.find(
         (estacao) => estacao.nome === "DCSC Timbó 1"
       );
@@ -44,8 +43,6 @@ export class NotifierController {
         throw new Error("Não foi possível buscar a estação");
       }
       const nivelRio = estacao.nivel_rio;
-
-      console.log(nivelRio);
 
       return nivelRio;
     } catch (error) {
@@ -83,12 +80,11 @@ export class NotifierController {
   }
 
   async verifyFlood(userId: number) {
-    const currentFloodLevel = await this.fetchCurrentLevel();
+    const currentFloodLevel = (await this.fetchCurrentLevel()) as number;
     const associatedBenchmarks = await this.getAssociatedBenchmarks(userId);
 
-
     associatedBenchmarks.forEach((benchmark) => {
-      if (currentFloodLevel >= benchmark.benchmark.floodLevel) {
+      if (currentFloodLevel >= (benchmark.benchmark.floodLevel as number)) {
         const transporter = nodemailer.createTransport({
           service: "Gmail", // Use your email service
           auth: {
@@ -104,7 +100,9 @@ export class NotifierController {
           from: "alertacheias@gmail.com", // Sender
           to: benchmark.user.email, // Recipient
           subject: "ALERTA CHEIAS", // Email subject
-          html: `<h1>ALERTA CHEIAS - AVISO</h1><h3>Atenção!</h3><p>O nível do Rio atual é de: ${currentFloodLevel}m.</p><p>Você selecionou o alerta para a Rua ${
+          html: `<h1>ALERTA CHEIAS - AVISO</h1><h3>Atenção!</h3><p>O nível do Rio atual é de: ${currentFloodLevel.toFixed(
+            2
+          )}m.</p><p>Você selecionou o alerta para a Rua ${
             benchmark.benchmark.street
           } faltando ${benchmark.alert}m. </p>`,
         };
@@ -117,9 +115,8 @@ export class NotifierController {
             console.log("Email sent: " + info.response);
           }
         });
-      } else {
-        throw new Error("Socorro?");
-      }
+      } return // cota do rio atual não é superior a cota dos pontos.
+      
     });
   }
 }
