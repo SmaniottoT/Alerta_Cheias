@@ -28,11 +28,6 @@ async function getWeather(cityCode: any) {
 
   );
 
-
-
-
-
-  console.log(response);
   const previsao = response?.data.clima[0].condicao_desc;
   const previsao2 = response?.data.clima[0].data;
   const previsao3 = response?.data.clima[0].indice_uv;
@@ -44,6 +39,7 @@ async function getWeather(cityCode: any) {
   document.getElementById("Indice_UV").innerText = `${previsao3}`;
   document.getElementById("Temperatura_Min").innerText = `${previsao4}`;
   document.getElementById("Temperatura_Max").innerText = `${previsao5}`;
+
 
   return response;
 }

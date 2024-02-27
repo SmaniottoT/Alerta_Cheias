@@ -24,7 +24,7 @@ function mudarSideNav() {
     elemento03.style.display = "none";
 
     //Ajusta  a margin quando fechado
-    var elemento04 = document.querySelector("#side-nav #user-img");
+    var elemento04 = document.querySelector("#side-nav #userPhoto");
     elemento04.style.margin = "auto";
 
     //Esconde Textos dos mapas
@@ -119,7 +119,7 @@ function mudarSideNav() {
     elemento03.style.display = "block";
 
     //Ajusta  a margin quando abrir
-    var elemento04 = document.querySelector("#side-nav #user-img");
+    var elemento04 = document.querySelector("#side-nav #userPhoto");
     elemento04.style.margin = "0";
 
     //Mostra Textos dos mapas

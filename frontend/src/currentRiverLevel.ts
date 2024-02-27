@@ -81,3 +81,10 @@ document.addEventListener("DOMContentLoaded", () => {
     .getElementById("boxCota")
     ?.addEventListener("click", fetchCurrentLevel);
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  document
+    .getElementById("boxCota")
+    ?.addEventListener("click", fetchCurrentLevel);
+});

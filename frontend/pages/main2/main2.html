@@ -22,12 +22,14 @@
     <script src="/Alerta_Cheias/frontend/dist/logout.js" defer></script>
     <script src="/Alerta_Cheias/frontend/dist/currentRiverLevel.js" defer></script>
     <script src="/Alerta_Cheias/frontend/dist/Dams.js" defer></script>
+    <script src="/Alerta_Cheias/frontend/dist/profile.js" defer></script>
+
     <script src="/Alerta_Cheias/frontend/pages/main2/Cota_SelectorFunction.js" defer></script>
     <script src="/Alerta_Cheias/frontend/pages/main2/Barragem_SelectorFunction.js" defer></script>
     <script src="/Alerta_Cheias/frontend/pages/main2/AgendarAlarme.js" defer></script>
 
+
     <!-- JavaSript HereMaps API -->
-    <script src="/Alerta_Cheias/frontend/dist/HereMaps_Fixo2.js" defer></script>
     <script src="/Alerta_Cheias/frontend/dist/HereMaps_Interativo2.js" defer></script>
     <!-- CSS MAIN2 -->
     <link rel="stylesheet" href="/Alerta_Cheias/frontend/pages/main2/main2.css">
@@ -64,13 +66,14 @@
 
                 <div class="user" id="user">
                     <!-- FOTO DO USUARIO -->
-                    <img src="/Alerta_Cheias/frontend/assets/fotos_alunos/moldura_laercio.png" class="user-img"
-                        id="user-img">
+                    <img src="/Alerta_Cheias/frontend/assets/icon_profile.png" class="user-img" id="userPhoto">
                     <div id="div">
+                        <!-- USERNAME DO USUARIO -->
+                        <p id="username">@username</p>
                         <!-- NOME DO USUARIO -->
-                        <h2>Laércio Benvenutti</h2>
+                        <h2 id="userName">Nome</h2>
                         <!-- EMAIL DO USUARIO -->
-                        <p>laerciobenvenutti@gmail.com</p>
+                        <p id="userEmail">e-mail</p>
                     </div>
                     <!-- ESTRELA -->
                     <img src="/Alerta_Cheias/frontend/assets/icones_main2/icon_Premium.png" class="Premium"
@@ -99,7 +102,7 @@
 
                     <li class="Texto_mapas">
 
-                        <p>NOME MAPA 01</p>
+                        <p id="nomeMapa1">NOME MAPA 01</p>
 
 
                         <div class="Box_BotoesMapas" id="Box_BotoesMapas">
@@ -118,8 +121,9 @@
                             </button>
 
                             <!-- ICONE REMOVER -->
-                            <button class="Botao_Remover" id="Botao_Remover" title="Remover Mapa_01"
-                                onclick="RemoverMapa()">
+
+                            <button class="Botao_Remover" id="Botao_Remover1" title="Remover Mapa_01">
+
                                 <img class="Icone_Remover"
                                     src="/Alerta_Cheias/frontend/assets/icones_main2/icon_remover.png">
                             </button>
@@ -141,7 +145,7 @@
 
                     <li class="Texto_mapas">
 
-                        <p>NOME MAPA 02</p>
+                        <p id="nomeMapa2">NOME MAPA 02</p>
 
                         <div class="Box_BotoesMapas" id="Box_BotoesMapas">
 
@@ -178,17 +182,9 @@
                                         <br>
                                         <!-- SELETOR DE NIVEL EM METROS -->
                                         <select id="Modal_Seletor" class="Modal_Seletor" name="Modal_Seletor" required>
-                                            <option value="0.00">0,00m</option>
-                                            <option value="0.50">0,50m</option>
+
                                             <option value="1.00">1.00m</option>
-                                            <option value="1.50">1,50m</option>
-                                            <option value="2.00">2.00m</option>
-                                            <option value="2.50">2,50m</option>
-                                            <option value="3.00">3.00m</option>
-                                            <option value="3.50">3.50m</option>
-                                            <option value="4.00">4.00m</option>
-                                            <option value="4.50">4.50m</option>
-                                            <option value="5.00">5.00m</option>
+
                                         </select><br>
                                         <!-- BOTAO DE AGENDAMENTO -->
                                         <button class="Modal_Botao_Agendar" type="submit">AGENDAR</button>
@@ -198,8 +194,9 @@
 
 
                             <!-- ICONE REMOVER -->
-                            <button class="Botao_Remover" id="Botao_Remover" title="Remover Mapa_02"
-                                onclick="RemoverMapa()">
+
+                            <button class="Botao_Remover" id="Botao_Remover2" title="Remover Mapa_02">
+
                                 <img class="Icone_Remover"
                                     src="/Alerta_Cheias/frontend/assets/icones_main2/icon_remover.png">
                             </button>
@@ -222,7 +219,7 @@
 
                     <li class="Texto_mapas">
 
-                        <p>NOME MAPA 03</p>
+                        <p id="nomeMapa3">NOME MAPA 03</p>
 
                         <div class="Box_BotoesMapas" id="Box_BotoesMapas">
 
@@ -240,8 +237,9 @@
                             </button>
 
                             <!-- ICONE REMOVER -->
-                            <button class="Botao_Remover" id="Botao_Remover" title="Remover Mapa_03"
-                                onclick="RemoverMapa()">
+
+                            <button class="Botao_Remover" id="Botao_Remover3" title="Remover Mapa_03">
+
                                 <img class="Icone_Remover"
                                     src="/Alerta_Cheias/frontend/assets/icones_main2/icon_remover.png">
                             </button>
