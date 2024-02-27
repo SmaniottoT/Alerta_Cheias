@@ -24,17 +24,17 @@ function initMap(center: any, zoom: any, id: any, street: string) {
   var mapa2 = document.getElementById("mapa2").firstElementChild;
   var mapa3 = document.getElementById("mapa3").firstElementChild;
   var mapId = "mapa1";
-  var mapTitleId = "nomeMapa1"
+  var mapTitleId = "nomeMapa1";
   if (mapa1 && mapa2 && mapa3) {
     window.alert(
       "Os três mapas estão selecionados. Exclua um mapa antes de adicionar seu próximo ponto de interesse. Ou assine nosso plano Premium para adicionar pontos de interesse ilimitados."
     );
   } else if (mapa1 && mapa2) {
     mapId = "mapa3";
-    mapTitleId = "nomeMapa3"
+    mapTitleId = "nomeMapa3";
   } else if (mapa1) {
     mapId = "mapa2";
-    mapTitleId = "nomeMapa2"
+    mapTitleId = "nomeMapa2";
   }
 
   document.getElementById(mapId).dataset.id = id;
@@ -155,17 +155,23 @@ async function addDomMarker(MapaZero: any) {
           return;
           // colocar aqui um window alert para que a pessoa delete primeiro para depois add
         }
-        const response = await axios.post(
-          "http://localhost:3000/user/benchmarks",
-          {
-            benchmarkId: evt.target.getData().benchmarkId,
-          },
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
+        try {
+          const response = await axios.post(
+            "http://localhost:3000/user/benchmarks",
+            {
+              benchmarkId: evt.target.getData().benchmarkId,
             },
-          }
-        );
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          );
+          console.log(evt.target.getData());
+        } catch (error) {
+          window.alert("Mapa já adicionado. Selecione outro ponto.");
+          return;
+        }
 
         initMap(
           {
@@ -225,6 +231,7 @@ async function addDomMarker(MapaZero: any) {
       latitude,
       longitude,
       benchmarkId: benchmark.id,
+      street: benchmark.street,
     });
 
     group.addObject(newBenchmark);
