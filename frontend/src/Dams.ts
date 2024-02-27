@@ -47,10 +47,9 @@ async function fetchCurrentDam(event: Event) {
       document.getElementById("capacidadeBarragem").innerText = null;
       document.getElementById("nivelJusante").innerText = null;
       document.getElementById("nivelMontante").innerText = null;
-      document.getElementById(
-        "comportasAbertas"
-      ).innerText = `Não há barragem neste município.`;
+      document.getElementById("comportasAbertas").innerText = null; 
       document.getElementById("comportasFechadas").innerText = null;
+      document.getElementById("Informe_Est_Cid").innerText = `Informe o estado e a cidade!`;
     }
 
     const capacBarragem = estacao.porc_reservatorio.toFixed(2);
@@ -59,13 +58,12 @@ async function fetchCurrentDam(event: Event) {
     const comp_abertas = estacao.comp_abertas;
     const comp_fechadas = estacao.comp_fechadas;
 
-    document.getElementById(
-      "capacidadeBarragem"
-    ).innerText = `Capacidade do Reservatório: ${capacBarragem}%`;
-    document.getElementById("nivelJusante").innerText = `Nível a Jusante: ${nivel_jusante}m`;
-    document.getElementById("nivelMontante").innerText = `Nível a Montante: ${nivel_montante}m`;
-    document.getElementById("comportasAbertas").innerText = `Comportas abertas: ${comp_abertas}`;
-    document.getElementById("comportasFechadas").innerText = `Comportas fechadas: ${comp_fechadas}`;
+    document.getElementById("capacidadeBarragem").innerText = `${capacBarragem}%`;
+    document.getElementById("nivelJusante").innerText = `${nivel_jusante}m`;
+    document.getElementById("nivelMontante").innerText = `${nivel_montante}m`;
+    document.getElementById("comportasAbertas").innerText = `${comp_abertas}`;
+    document.getElementById("comportasFechadas").innerText = `${comp_fechadas}`;
+    document.getElementById("Informe_Est_Cid").innerText = null;
     return estacao;
   } catch (error) {
     throw new Error(`Failed to fetch current River Level: ${error}`);

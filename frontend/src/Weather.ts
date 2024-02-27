@@ -7,10 +7,25 @@ async function getCityCode(city: any) {
   return cityCode;
 }
 
+// Exemplo de uso:
+const cityCode: string = "5400"; // Timbó
+getWeather(cityCode)
+  .then((response) => {
+    console.log("Dados climáticos obtidos com sucesso:", response.data);
+  })
+  .catch((error) => {
+    console.error("Erro ao obter dados climáticos:", error);
+  });
+
+
+
+
+
 async function getWeather(cityCode: any) {
   const response = await axios.get(
     // `https://brasilapi.com.br/api/cptec/v1/clima/previsao/${cityCode}`  ESSE É O CÓDIGO CERTO. 5400 É TIMBÓ.
     `https://brasilapi.com.br/api/cptec/v1/clima/previsao/5400`
+
   );
 
   const previsao = response?.data.clima[0].condicao_desc;
@@ -19,11 +34,11 @@ async function getWeather(cityCode: any) {
   const previsao4 = response?.data.clima[0].min;
   const previsao5 = response?.data.clima[0].max;
 
-  document.getElementById("previsaoTempo").innerText = `${previsao}`;
-  document.getElementById("previsaoTempo2").innerText = `${previsao2}`;
-  document.getElementById("previsaoTempo3").innerText = `${previsao3}`;
-  document.getElementById("previsaoTempo4").innerText = `${previsao4}`;
-  document.getElementById("previsaoTempo5").innerText = `${previsao5}`;
+  document.getElementById("Condicao_Descricao").innerText = `${previsao}`;
+  document.getElementById("Data").innerText = `${previsao2}`;
+  document.getElementById("Indice_UV").innerText = `${previsao3}`;
+  document.getElementById("Temperatura_Min").innerText = `${previsao4}`;
+  document.getElementById("Temperatura_Max").innerText = `${previsao5}`;
 
 
   return response;

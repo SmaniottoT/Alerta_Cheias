@@ -427,21 +427,39 @@ ul li p {
     margin: 5px;
 }
 
-.DropUp_NivelDoRio {
-    width: 90%;
+/* INFO COTA  */
+.DropUp_NivelDoRio_01 {
+    width: 30%;
     color: rgba(255, 255, 255, 1);
     font-weight: Bold;
     font-size: 16px;
     opacity: 1;
     text-align: center;
-    margin: 10px;
+    margin: 0px;
 }
 
-.Div_Svg {
+.Div_Infos_Barragem {
     display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+/* INFOS BARRAGENS */
+.DropUp_NivelDoRio_02 {
+    width: 100%;
+    color: rgba(255, 255, 255, 1);
+    font-weight: Bold;
+    font-size: 16px;
+    opacity: 1;
+    text-align: start;
     justify-content: center;
     align-items: center;
+    margin: 0px;
 }
+
+
 
 .DropBtn {
     width: 200px;
@@ -483,6 +501,7 @@ ul li p {
     font-size: 16px;
     opacity: 1;
     margin: 10px;
+    white-space: nowrap;
 }
 
 /* MODAL BACKGROUND */
@@ -602,4 +621,198 @@ ul li p {
 
 .Modal_Botao_Agendar:active {
     background: rgba(20, 61, 99, 0.8);
+}
+
+.Div_CapacidadeBarragem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.Div_NivelMontante {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.Div_NivelJusante {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.Div_ComportasAbertas {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.Div_ComportasFechadas {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.Informe_Est_Cid {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #ff0000;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.Infos_Barragem {
+    white-space: nowrap;
+}
+
+.DropUp_Clima_Titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 20%;
+    color: rgba(255, 255, 255, 1);
+    font-weight: Bold;
+    font-size: 16px;
+    opacity: 1;
+    margin: 10px;
+    white-space: nowrap;
+}
+
+.Div_Data {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    white-space: nowrap;
+}
+
+
+/* CLIMA */
+.Icones_Clima {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.element {
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+}
+
+/* .container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 80vh;
+    background: linear-gradient(to bottom, #57c1eb 0%, #246fa8 100%);
+} */
+
+.elements {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+.white {
+    fill: #FFFFFF
+}
+
+.gray {
+    fill: #E0E0E0
+}
+
+.yellow {
+    fill: #FFEB3B
+}
+
+/* FIM DO CLIMA */
+
+
+
+
+.Div_CondicoesDescricao {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    white-space: nowrap;
+}
+
+.Div_Max_Min {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    white-space: nowrap;
+}
+
+.Div_IndiceUv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    white-space: nowrap;
+}
+
+.Info_Est_Cid {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #ff0000;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.Infos_Cotas{
+    white-space: nowrap;
+}
+.Div_Svg{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

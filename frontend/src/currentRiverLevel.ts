@@ -63,10 +63,13 @@ async function fetchCurrentLevel(event: Event) {
 
     if (!estacao) {
       document.getElementById("cotaRio").innerText = `0.00m`;
+      document.getElementById("Info_Est_Cid").innerText = `Informe o estado e a cidade!`;
     }
     const nivelRio = estacao.nivel_rio.toFixed(2);
+    
 
     document.getElementById("cotaRio").innerText = `${nivelRio}m`;
+    document.getElementById("Info_Est_Cid").innerText = null;
     return nivelRio;
   } catch (error) {
     throw new Error(`Failed to fetch current River Level: ${error}`);
