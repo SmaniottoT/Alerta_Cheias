@@ -84,7 +84,7 @@ export class NotifierController {
     const associatedBenchmarks = await this.getAssociatedBenchmarks(userId);
 
     associatedBenchmarks.forEach((benchmark) => {
-      if (currentFloodLevel >= (benchmark.benchmark.floodLevel as number)) {
+      if (currentFloodLevel >= (benchmark.benchmark.floodLevel as number) - 1) {
         const transporter = nodemailer.createTransport({
           service: "Gmail", // Use your email service
           auth: {
@@ -115,8 +115,8 @@ export class NotifierController {
             console.log("Email sent: " + info.response);
           }
         });
-      } return // cota do rio atual não é superior a cota dos pontos.
-      
+      }
+      return; // cota do rio atual não é superior a cota dos pontos.
     });
   }
 }
