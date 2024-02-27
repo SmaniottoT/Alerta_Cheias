@@ -459,13 +459,7 @@ ul li p {
     margin: 0px;
 }
 
-.Div_Svg {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 10px;
-}
+
 
 .DropBtn {
     width: 200px;
@@ -698,7 +692,7 @@ ul li p {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 90%;
+    width: 180px;
     height: 20%;
     color: rgba(255, 255, 255, 1);
     font-weight: Bold;
@@ -734,14 +728,14 @@ ul li p {
     margin: 10px;
 }
 
-.container {
+/* .container {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    height: 80vh;
     background: linear-gradient(to bottom, #57c1eb 0%, #246fa8 100%);
-}
+} */
 
 .elements {
     display: flex;
@@ -798,4 +792,27 @@ ul li p {
     margin-top: 10px;
     margin-bottom: 10px;
     white-space: nowrap;
+}
+
+.Info_Est_Cid {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #ff0000;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.Infos_Cotas{
+    white-space: nowrap;
+}
+.Div_Svg{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

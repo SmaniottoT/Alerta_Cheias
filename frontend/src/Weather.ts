@@ -7,11 +7,30 @@ async function getCityCode(city: any) {
   return cityCode;
 }
 
+// Exemplo de uso:
+const cityCode: string = "5400"; // Timbó
+getWeather(cityCode)
+  .then((response) => {
+    console.log("Dados climáticos obtidos com sucesso:", response.data);
+  })
+  .catch((error) => {
+    console.error("Erro ao obter dados climáticos:", error);
+  });
+
+
+
+
+
 async function getWeather(cityCode: any) {
   const response = await axios.get(
     // `https://brasilapi.com.br/api/cptec/v1/clima/previsao/${cityCode}`  ESSE É O CÓDIGO CERTO. 5400 É TIMBÓ.
     `https://brasilapi.com.br/api/cptec/v1/clima/previsao/5400`
+
   );
+
+
+
+
 
   console.log(response);
   const previsao = response?.data.clima[0].condicao_desc;

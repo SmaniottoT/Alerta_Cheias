@@ -19,8 +19,12 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" defer></script>
     <!-- FUNÇÕES -->
     <script src="/Alerta_Cheias/frontend/pages/FAQ/FAQFunction.js" defer></script>
+    <script src="carrossel.js" defer></script>
     <!-- CSS MAIN -->
     <link rel="stylesheet" href="/Alerta_Cheias/frontend/pages/docs/docs.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+
     <title>ALERTA CHEIAS</title>
 
 
@@ -41,25 +45,95 @@
         <div class="DivPrincipal">
 
             <div class="Painel">
-                <div class="BoxTitulo">
-                    <h1 class="Painel_Titulo">DOCUMENTOS</h1>
-                </div>
+            
                 <!-- BOX COM INFORMAÇÕES -->
                 <div class="Box_Conteudo">
 
-                    <p>ESPAÇO PARA INFORMAÇÃO</p>
+                    <div class="slider">
 
-                    <p>ESPAÇO PARA INFORMAÇÃO</p>
+                        <div class="slides">
+                            <!-- Radio buttons -->
+                            <input type="radio" name="radio-btn" id="radio1">
+                            <input type="radio" name="radio-btn" id="radio2">
+                            <input type="radio" name="radio-btn" id="radio3">
+                            <input type="radio" name="radio-btn" id="radio4">
+                            <input type="radio" name="radio-btn" id="radio5">
+                            <input type="radio" name="radio-btn" id="radio6">
+                            <input type="radio" name="radio-btn" id="radio7">
+                            <input type="radio" name="radio-btn" id="radio8">
+                            <input type="radio" name="radio-btn" id="radio9">
+                            <input type="radio" name="radio-btn" id="radio10">
+                            <input type="radio" name="radio-btn" id="radio11">
 
-                    <p>ESPAÇO PARA INFORMAÇÃO</p>
+                            <!-- Slide images -->
 
-                    <p>ESPAÇO PARA INFORMAÇÃO</p>
+                            <div class="slide first">
+                                <img src="/Alerta_Cheias/frontend/assets/Slides/PROJETO INTEGRADOR1.png" alt="Image 1">
+                            </div>
+                            <div class="slide">
+                                <img src="/Alerta_Cheias/frontend/assets/Slides/PROJETO INTEGRADOR2.png" alt="Image 2">
+                            </div>
+                            <div class="slide">
+                                <img src="/Alerta_Cheias/frontend/assets/Slides/PROJETO INTEGRADOR3.png" alt="Image 3">
+                            </div>
+                            <div class="slide">
+                                <img src="/Alerta_Cheias/frontend/assets/Slides/PROJETO INTEGRADOR4.png" alt="Image 4">
+                            </div>
+                            <div class="slide">
+                                <img src="/Alerta_Cheias/frontend/assets/Slides/PROJETO INTEGRADOR5.png" alt="Image 5">
+                            </div>
+                            <div class="slide">
+                                <img src="/Alerta_Cheias/frontend/assets/Slides/PROJETO INTEGRADOR6.png" alt="Image 6">
+                            </div>
+                            <div class="slide">
+                                <img src="/Alerta_Cheias/frontend/assets/Slides/PROJETO INTEGRADOR7.png" alt="Image 7">
+                            </div>
+                            <div class="slide">
+                                <img src="/Alerta_Cheias/frontend/assets/Slides/PROJETO INTEGRADOR8.png" alt="Image 8">
+                            </div>
+                            <div class="slide">
+                                <img src="/Alerta_Cheias/frontend/assets/Slides/PROJETO INTEGRADOR9.png" alt="Image 9">
+                            </div>
+                            <div class="slide">
+                                <img src="/Alerta_Cheias/frontend/assets/Slides/PROJETO INTEGRADOR10.png" alt="Image 10">
+                            </div>
+                            <div class="slide">
+                                <img src="/Alerta_Cheias/frontend/assets/Slides/PROJETO INTEGRADOR11.png" alt="Image 11">
+                            </div>
 
-                    <p>ESPAÇO PARA INFORMAÇÃO</p>
+                            <!-- Navigation auto -->
+                            <div class="navigation-auto">
+                                <div class="auto-btn1"></div>
+                                <div class="auto-btn2"></div>
+                                <div class="auto-btn3"></div>
+                                <div class="auto-btn4"></div>
+                                <div class="auto-btn5"></div>
+                                <div class="auto-btn6"></div>
+                                <div class="auto-btn7"></div>
+                                <div class="auto-btn8"></div>
+                                <div class="auto-btn9"></div>
+                                <div class="auto-btn10"></div>
+                                <div class="auto-btn11"></div>
+                            </div>
+                         </div>
 
-                    <p>ESPAÇO PARA INFORMAÇÃO</p>
+                        <div class="manual-navigation">
+                            <label for="radio1" class="manual-btn"></label>
+                            <label for="radio2" class="manual-btn"></label>
+                            <label for="radio3" class="manual-btn"></label>
+                            <label for="radio4" class="manual-btn"></label>
+                            <label for="radio5" class="manual-btn"></label>
+                            <label for="radio6" class="manual-btn"></label>
+                            <label for="radio7" class="manual-btn"></label>
+                            <label for="radio8" class="manual-btn"></label>
+                            <label for="radio9" class="manual-btn"></label>
+                            <label for="radio10" class="manual-btn"></label>
+                            <label for="radio11" class="manual-btn"></label>
+                            
+                        </div>
 
-                    <p>ESPAÇO PARA INFORMAÇÃO</p>
+                        
+                    </div>
 
                 </div>
             </div>
@@ -91,6 +165,7 @@
     </footer>
     </div>
 
+  
 </body>
 
 </html>
