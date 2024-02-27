@@ -13,7 +13,6 @@ async function getWeather(cityCode: any) {
     `https://brasilapi.com.br/api/cptec/v1/clima/previsao/5400`
   );
 
-  console.log(response);
   const previsao = response?.data.clima[0].condicao_desc;
   const previsao2 = response?.data.clima[0].data;
   const previsao3 = response?.data.clima[0].indice_uv;
@@ -25,6 +24,7 @@ async function getWeather(cityCode: any) {
   document.getElementById("previsaoTempo3").innerText = `${previsao3}`;
   document.getElementById("previsaoTempo4").innerText = `${previsao4}`;
   document.getElementById("previsaoTempo5").innerText = `${previsao5}`;
+
 
   return response;
 }

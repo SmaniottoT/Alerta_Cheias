@@ -212,7 +212,9 @@ AppDataSource.initialize()
     setInterval(() => {
       const notifierController = new NotifierController();
       notifierController.verifyAllUsers();
-    }, 100000000)
+      console.log('ok');
+      
+    }, 100000)
     server.listen(SERVER_PORT, () => {
       console.log(`Server listening in port: ${SERVER_PORT}`);
     });

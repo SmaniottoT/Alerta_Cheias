@@ -163,7 +163,7 @@ async function addDomMarker(MapaZero: any) {
             },
           }
         );
-        console.log(response);
+      
         initMap(
           {
             lat: evt.target.getData().latitude,

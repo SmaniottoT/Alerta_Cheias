@@ -77,14 +77,15 @@ export class NotifierController {
   async verifyAllUsers() {
     const userRepository = AppDataSource.getRepository(User);
     const allUsers = await userRepository.find();
-    await Promise.all(allUsers.map(async (user) => await this.verifyFlood(user.id)));
+    await Promise.all(
+      allUsers.map(async (user) => await this.verifyFlood(user.id))
+    );
   }
 
   async verifyFlood(userId: number) {
     const currentFloodLevel = await this.fetchCurrentLevel();
     const associatedBenchmarks = await this.getAssociatedBenchmarks(userId);
-    console.log(associatedBenchmarks);
-    console.log(currentFloodLevel);
+
 
     associatedBenchmarks.forEach((benchmark) => {
       if (currentFloodLevel >= benchmark.benchmark.floodLevel) {
@@ -92,7 +93,10 @@ export class NotifierController {
           service: "Gmail", // Use your email service
           auth: {
             user: "alertacheias@gmail.com", // Your email address
-            pass: "AlertaCheias@Entra21", // Your password
+            pass: "vqfg oegj pjde qbjw", // Your password
+          },
+          tls: {
+            rejectUnauthorized: false,
           },
         });
 
@@ -100,7 +104,9 @@ export class NotifierController {
           from: "alertacheias@gmail.com", // Sender
           to: benchmark.user.email, // Recipient
           subject: "ALERTA CHEIAS", // Email subject
-          html: `<h1>ALERTA CHEIAS - AVISO</h1><p>Atenção!</p><p>O nível do Rio atual é de: ${currentFloodLevel}.</p><p>Você selecionou o alerta para a Rua ${benchmark.benchmark.street} faltando ${benchmark.alert}m. </p>`,
+          html: `<h1>ALERTA CHEIAS - AVISO</h1><p>Atenção!</p><p>O nível do Rio atual é de: ${currentFloodLevel}.</p><p>Você selecionou o alerta para a Rua ${
+            benchmark.benchmark.street
+          } faltando ${benchmark.alert}m. </p>`,
         };
 
         // Send the email
