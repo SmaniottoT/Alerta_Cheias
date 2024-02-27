@@ -13,7 +13,6 @@ import { BaseHttpException } from "./exceptions/BaseHttpException";
 import { FloodLevelController } from "./controller/FloodLevelController";
 import { NotifierController } from "./controller/NotifierController";
 
-
 const SERVER_PORT = 3000;
 const server = express();
 server.use(express.json());
@@ -103,21 +102,22 @@ server.use(new AuthenticationMiddleware().validateAuthentication);
 server.get(
   "/user",
   async (request: AuthenticatedRequest, response: Response) => {
-      try{
-      const token = request.headers.authorization?.split(' ')[1];
+    try {
+      const token = request.headers.authorization?.split(" ")[1];
       if (!token) {
-        return response.status(401).json({ error: 'Unauthorized: Token not provided' });
+        return response
+          .status(401)
+          .json({ error: "Unauthorized: Token not provided" });
       }
       const userController = new UserController();
       const userId = request.userId;
-      const loggedUser = await userController.getUser(userId)
+      const loggedUser = await userController.getUser(userId);
 
       return response.status(200).json(loggedUser);
-    } catch (error){
-      throw new Error(error.message)
-    };
-   }
- 
+    } catch (error) {
+      throw new Error(error.message);
+    }
+  }
 );
 
 // Configurar perfil para incluir foto
@@ -152,7 +152,7 @@ server.post(
       next,
       async (request: AuthenticatedRequest, response: Response) => {
         console.log(request);
-        
+
         const userController = new UserController();
         const userId = request.userId;
         const associatedBenchmark = await userController.associateUserBenchmark(
@@ -212,9 +212,8 @@ AppDataSource.initialize()
     setInterval(() => {
       const notifierController = new NotifierController();
       notifierController.verifyAllUsers();
-      console.log('ok');
-      
-    }, 100000)
+      console.log("Verificação para email rodando a cada 15min");
+    }, 900000);
     server.listen(SERVER_PORT, () => {
       console.log(`Server listening in port: ${SERVER_PORT}`);
     });

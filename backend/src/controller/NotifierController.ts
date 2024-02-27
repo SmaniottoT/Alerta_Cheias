@@ -104,7 +104,7 @@ export class NotifierController {
           from: "alertacheias@gmail.com", // Sender
           to: benchmark.user.email, // Recipient
           subject: "ALERTA CHEIAS", // Email subject
-          html: `<h1>ALERTA CHEIAS - AVISO</h1><p>Atenção!</p><p>O nível do Rio atual é de: ${currentFloodLevel}.</p><p>Você selecionou o alerta para a Rua ${
+          html: `<h1>ALERTA CHEIAS - AVISO</h1><h3>Atenção!</h3><p>O nível do Rio atual é de: ${currentFloodLevel}m.</p><p>Você selecionou o alerta para a Rua ${
             benchmark.benchmark.street
           } faltando ${benchmark.alert}m. </p>`,
         };
