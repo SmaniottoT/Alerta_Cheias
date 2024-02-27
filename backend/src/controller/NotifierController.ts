@@ -74,6 +74,12 @@ export class NotifierController {
     return associatedList;
   }
 
+  async verifyAllUsers() {
+    const userRepository = AppDataSource.getRepository(User);
+    const allUsers = await userRepository.find();
+    await Promise.all(allUsers.map(async (user) => await this.verifyFlood(user.id)));
+  }
+
   async verifyFlood(userId: number) {
     const currentFloodLevel = await this.fetchCurrentLevel();
     const associatedBenchmarks = await this.getAssociatedBenchmarks(userId);

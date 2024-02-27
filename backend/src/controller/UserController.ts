@@ -65,6 +65,8 @@ export class UserController {
   }
 
   async associateUserBenchmark(userId: number, benchmarkId: number) {
+    console.log(userId, benchmarkId);
+    
     const associatedBenchmarkRepository =
       AppDataSource.getRepository(UserToBenchmark);
     const benchmarkRepository = AppDataSource.getRepository(Benchmark);

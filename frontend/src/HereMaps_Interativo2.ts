@@ -3,6 +3,7 @@
 import { benchmark } from "./apiBenchmark";
 import "@here/maps-api-for-javascript";
 import { user } from "./apiUser";
+import axios from "axios";
 
 /**
  * Cria um marcador capaz de receber eventos DOM e adiciona-o ao mapa.
@@ -13,24 +14,28 @@ import { user } from "./apiUser";
 
 // execução dos mapas fixos
 
-function initMap(center: any, zoom: any) {
+function initMap(center: any, zoom: any, id: any) {
   var defaultLayers = platform.createDefaultLayers({
     // Cria camadas padrão usando a plataforma HERE Maps
     lg: "POR", // Define o idioma para Português
     static: true, // Adicione a opção static para remover o termo de uso
   } as any) as any;
-  var mapa1 = document.getElementById("mapa1").firstElementChild
-  var mapa2 = document.getElementById("mapa2").firstElementChild
-  var mapa3 = document.getElementById("mapa3").firstElementChild
-  var mapId = "mapa1"
+  var mapa1 = document.getElementById("mapa1").firstElementChild;
+  var mapa2 = document.getElementById("mapa2").firstElementChild;
+  var mapa3 = document.getElementById("mapa3").firstElementChild;
+  var mapId = "mapa1";
   if (mapa1 && mapa2 && mapa3) {
-    console.log("erro"); 
+    window.alert(
+      "Os três mapas estão selecionados. Exclua um mapa antes de adicionar seu próximo ponto de interesse. Ou assine nosso plano Premium para adicionar pontos de interesse ilimitados."
+    );
     // colocar aqui um window alert para que a pessoa delete primeiro para depois add
   } else if (mapa1 && mapa2) {
-    mapId = "mapa3"
+    mapId = "mapa3";
   } else if (mapa1) {
-    mapId = "mapa2"
-  } 
+    mapId = "mapa2";
+  }
+
+  document.getElementById(mapId).dataset.id = id;
 
   var map = new H.Map(
     document.getElementById(mapId), // Obtém o elemento HTML para o mapa
@@ -44,7 +49,6 @@ function initMap(center: any, zoom: any) {
   var marker = new H.map.Marker(center); // Adicionar um marcador ao mapa
   map.addObject(marker);
   window.addEventListener("resize", () => map.getViewPort().resize());
-  
 }
 
 // Chamadas para inicializar mapa geral
@@ -136,14 +140,37 @@ async function addDomMarker(MapaZero: any) {
       const verificadores = document.getElementsByClassName("adicionarMapa");
 
       async function adicionarMapaClickHandler() {
-        console.log("botão clicado",evt.target.getData().latitude, evt.target.getData().longitude);
-
+        const token = localStorage.getItem("token");
+        console.log(token);
+        var mapa1 = document.getElementById("mapa1").firstElementChild;
+        var mapa2 = document.getElementById("mapa2").firstElementChild;
+        var mapa3 = document.getElementById("mapa3").firstElementChild;
+        if (mapa1 && mapa2 && mapa3) {
+          window.alert(
+            "Os três mapas estão selecionados. Exclua um mapa antes de adicionar seu próximo ponto de interesse. Ou assine nosso plano Premium para adicionar pontos de interesse ilimitados."
+          );
+          return;
+          // colocar aqui um window alert para que a pessoa delete primeiro para depois add
+        } 
+        const response = await axios.post(
+          "http://localhost:3000/user/benchmarks",
+          {
+            benchmarkId: evt.target.getData().benchmarkId,
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        console.log(response);
         initMap(
           {
             lat: evt.target.getData().latitude,
             lng: evt.target.getData().longitude,
           },
-          12
+          12,
+          evt.target.getData().benchmarkId
         );
       }
 
@@ -234,3 +261,40 @@ var ui = H.ui.UI.createDefault(map, defaultLayers);
 
 // Agora use o mapa conforme necessário...
 addDomMarker(map);
+
+async function loadUserMaps() {
+  const token = localStorage.getItem("token");
+  const response = await axios.get("http://localhost:3000/user/benchmarks", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  response.data.forEach((userBenchmark: any) => {
+    initMap(
+      {
+        lat: userBenchmark.benchmark.lat,
+        lng: userBenchmark.benchmark.long,
+      },
+      12,
+      userBenchmark.benchmark.id
+    );
+  });
+}
+
+loadUserMaps();
+
+async function removerMapa(id:any) {
+  console.log(id);
+  const mapa = document.getElementById(`mapa${id}`);
+  const token = localStorage.getItem("token");
+  const response = await axios.delete(`http://localhost:3000/user/benchmarks/${mapa.dataset.id}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  window.location.reload();
+}
+
+document.getElementById("Botao_Remover1").addEventListener("click", () => removerMapa(1));
+document.getElementById("Botao_Remover2").addEventListener("click", () => removerMapa(2));
+document.getElementById("Botao_Remover3").addEventListener("click", () => removerMapa(3));

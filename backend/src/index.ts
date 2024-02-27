@@ -11,9 +11,8 @@ import cors from "cors";
 import RouteExecutor from "./routes/RouteExecutor";
 import { BaseHttpException } from "./exceptions/BaseHttpException";
 import { FloodLevelController } from "./controller/FloodLevelController";
-import { request } from "http";
-import { UserToBenchmark } from "./entity/UserToFloodLevel";
-import { error } from "console";
+import { NotifierController } from "./controller/NotifierController";
+
 
 const SERVER_PORT = 3000;
 const server = express();
@@ -152,10 +151,13 @@ server.post(
       response,
       next,
       async (request: AuthenticatedRequest, response: Response) => {
+        console.log(request);
+        
         const userController = new UserController();
+        const userId = request.userId;
         const associatedBenchmark = await userController.associateUserBenchmark(
-          request.userId,
-          request.body.benchmark
+          userId,
+          request.body.benchmarkId
         );
         return response.status(201).json(associatedBenchmark);
       }
@@ -207,6 +209,10 @@ AppDataSource.initialize()
   .then(async () => {
     console.log("Database initialized!");
     // setInterval tempo e chama execução.
+    setInterval(() => {
+      const notifierController = new NotifierController();
+      notifierController.verifyAllUsers();
+    }, 100000000)
     server.listen(SERVER_PORT, () => {
       console.log(`Server listening in port: ${SERVER_PORT}`);
     });
