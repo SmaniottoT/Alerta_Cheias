@@ -29,10 +29,6 @@
 <p align="center"><i>Funcionalidade de cotas de enchente cadastradas conforme levantamento municipal.</i></p>
 
 
-<div align="center" ><img src="https://github.com/SmaniottoT/Alerta_Cheias/assets/142633387/bf546369-7129-46cf-83ca-fb41c3200f28" alt="html-login" border="0" width="800"></div>
-<p align="center"><i>Funcionalidade de cotas de enchente cadastradas, conforme levantamento municipal.</i></p>
-
-
 <div align="center" ><img src="https://github.com/SmaniottoT/Alerta_Cheias/assets/142633387/c5aa511e-1a9a-4ed3-a43b-614238c5e2b7" alt="html-login" border="0" width="800"></div>
 <p align="center"><i>Funcionalidade para consulta do nível do rio, conforme levantamento da Defesa Civil.</i></p>
 
