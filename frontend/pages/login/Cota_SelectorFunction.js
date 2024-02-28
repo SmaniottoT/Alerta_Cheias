@@ -22,7 +22,7 @@ const cidadesPorEstado = {
 };
 
 // Função para atualizar as opções da cidade com base no estado selecionado
-function atualizarCidades() {
+async function atualizarCidades() {
   // Limpa as opções atuais da cidade
   cidadeSelect.innerHTML = "<option selected>Selecione sua cidade</option>";
 
@@ -31,14 +31,22 @@ function atualizarCidades() {
 
   // Obtém as cidades correspondentes ao estado selecionado
   const cidades = cidadesPorEstado[estadoSelecionado];
-
-  // Adiciona as novas opções de cidade ao select
-  cidades.forEach((cidade) => {
-    const option = document.createElement("option");
-    option.textContent = cidade;
-    cidadeSelect.appendChild(option);
-  });
+  if (
+    (cidadeSelect.innerHTML = "<option selected>Selecione sua cidade</option>")
+  ) {
+    try {
+      // Adiciona as novas opções de cidade ao select
+      cidades.forEach((cidade) => {
+        const option = document.createElement("option");
+        option.textContent = cidade;
+        cidadeSelect.appendChild(option);
+      });
+    } catch (error) {
+      console.log(error);
+    }
+    return;
+  }
 }
 
 // Adiciona um ouvinte de evento para detectar mudanças no select de estado
-estadoSelect.addEventListener("change", atualizarCidades);
+estadoSelect.addEventListener("click", atualizarCidades);

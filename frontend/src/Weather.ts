@@ -86,7 +86,7 @@ async function getWeather(cityCode: any) {
             </g>
         </svg>
     </div>`;
-  } else if (previsao == "Chuvas Isoladas") {
+  } else if (previsao == "Chuvas Isoladas" || previsao == "Chuva") {
     document.getElementById("elementoClima").innerHTML = ` <!-- Rainy -->
     <div class="element">
         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
