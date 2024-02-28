@@ -1,8 +1,8 @@
 <h1 align="center">🚨ALERTA CHEIAS🚨</h1>
 <h3 align="center">Projeto de Conclusão de Curso desenvolvido no programa Entra21/2023 🚀</h3>
-
-<div align="center" ><a href="https://ibb.co/P9DHJqr"><img src="https://i.ibb.co/TbW3J9w/html-login.png" alt="html-login" border="0" width="800"></a></div>
-<p align="center"><i>Página de login em desenvolvimento.</i></p>
+<p align="center">
+<img  src="https://github.com/SmaniottoT/Alerta_Cheias/assets/142633387/d9e82bbe-9cc7-4977-a414-a376688d5702" alt="logo" border="0" width="500">
+</p>
 <br></br>
 <p align="justify">Esta aplicação é destinada ao acompanhamento das cheias do Brasil, iniciando por Timbó/SC, com a integração junto ao Sistema de Monitoramento da Defesa Civil, permitindo a vinculação de imóveis e a emissão de alertas personalizados conforme o avanço das cotas de cheia!</p>
 <br></br>
@@ -17,6 +17,33 @@
 <p align="justify">💸 Desgastes emocional e financeiro das pessoas, instituições e empresas afetadas por enchentes;</p>
 
 
+<div align="center" ><img src="https://github.com/SmaniottoT/Alerta_Cheias/assets/142633387/fc41e223-15f4-47e9-bbc5-9e90774660a4" alt="html-login" border="0" width="800"></div>
+<p align="center"><i>Página de login.</i></p>
+
+
+<div align="center" ><img src="https://github.com/SmaniottoT/Alerta_Cheias/assets/142633387/55c72319-7106-4130-b7f6-e53543ce3b45" alt="html-login" border="0" width="800"></div>
+<p align="center"><i>Página principal.</i></p>
+
+
+<div align="center" ><img src="https://github.com/SmaniottoT/Alerta_Cheias/assets/142633387/a9fb08a5-f677-44c8-ab09-da7e1d9da205" alt="html-login" border="0" width="800"></div>
+<p align="center"><i>Funcionalidade de cotas de enchente cadastradas conforme levantamento municipal.</i></p>
+
+
+<div align="center" ><img src="https://github.com/SmaniottoT/Alerta_Cheias/assets/142633387/bf546369-7129-46cf-83ca-fb41c3200f28" alt="html-login" border="0" width="800"></div>
+<p align="center"><i>Funcionalidade de cotas de enchente cadastradas, conforme levantamento municipal.</i></p>
+
+
+<div align="center" ><img src="https://github.com/SmaniottoT/Alerta_Cheias/assets/142633387/c5aa511e-1a9a-4ed3-a43b-614238c5e2b7" alt="html-login" border="0" width="800"></div>
+<p align="center"><i>Funcionalidade para consulta do nível do rio, conforme levantamento da Defesa Civil.</i></p>
+
+
+<div align="center" ><img src="https://github.com/SmaniottoT/Alerta_Cheias/assets/142633387/9b0cfc11-2230-4952-9977-8cd121a8f60a" alt="html-login" border="0" width="800"></div>
+<p align="center"><i>Funcionalidade para consulta da situação de barragens, conforme levantamento da Defesa Civil.</i></p>
+
+
+<div align="center" ><img src="https://github.com/SmaniottoT/Alerta_Cheias/assets/142633387/759e9698-ed10-4943-98d8-3203eb483dfe" alt="html-login" border="0" width="800"></div>
+<p align="center"><i>Funcionalidade para consulta de previsão do tempo, conforme BrasilAPI.</i></p>
+
 
 <br></br>
 <p>💻 Para desenvolver esse projeto, utilizamos:</p>
@@ -29,6 +56,7 @@
    <a href="https://www.figma.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> 
    </p>
 
+
 <br></br>
 
 <p>📫 Ficou interessado no projeto? Alguma dúvida? Fale com a gente!</p>
@@ -36,3 +64,6 @@
 <p>➡ <a href="https://github.com/Labenvenutti" target="_blank" rel="noreferrer noopener">Laércio J. Benvenutti F. </a></p>
 <p>➡ <a href="https://github.com/LucasD18" target="_blank" rel="noreferrer noopener">Lucas Demarchi</a></p>
 <p>➡ <a href="https://github.com/SmaniottoT" target="_blank" rel="noreferrer noopener" >Tamires Smaniotto </a></p>
+
+
+
